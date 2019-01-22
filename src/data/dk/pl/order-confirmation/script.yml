@@ -1,0 +1,23 @@
+scriptMain: '%%[
+            VAR @products, @product, @link, @headline
+            ]%%
+            %%[
+            SET @products = LOOKUPROWS("PL Order Confirmation", "event_id", EventId)
+            SET @product = ROW(@products, 1)
+            SET @providerCode = FIELD(@product, "provider_code")
+            SET @link=FIELD(@product, "order_status_url")
+            ]%%'
+headerTitleBanner:
+  columnTitleList:
+    - description:
+    - description:
+    - description:
+headerBanner:
+  headline1: 'Hi <strong>%%=ProperCase(FIELD(@product, "name"))=%%</strong>'
+apiProductInfo:
+  provider: "%%=FIELD(@product, 'provider_name')=%%"
+  loanAmount: "%%=FIELD(@product, 'loan_amount')=%% €"
+  loanDuration: "%%=FIELD(@product, 'loan_duration')=%% months"
+  statusPageUrl: "%%=RedirectTo(@link)=%%"
+  bankIcon: '<img class="text-right"
+             src="http://image.email.vertaaensin.fi/lib/fe8a13727262077e7c/m/1/%%=v(@providerCode)=%%_logo.png"/>'

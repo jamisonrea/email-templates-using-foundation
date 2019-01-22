@@ -1,0 +1,89 @@
+{{#conditionalWith tiConfirmation config.tiConfirmation}}
+
+{{#if scriptIf}}
+{{{scriptIf}}}
+{{/if}}
+<container class="ciab-confirmation-container ti">
+  <container class="ciab-confirmation-title">
+    <columns small="12" large="12" class="order-number">
+      <p class="text-center">
+        {{{orderTitle}}}
+        <b class="order-number">{{{orderNumber}}}</b><br/>
+      </p><br/>
+     
+    </columns>
+  </container>
+  <container class="section-wrapper" align="center">
+    <tbody>
+    <tr class="section-header">
+      <td>
+        <h6>{{{sectionHeader}}}</h6>
+      </td>
+      <td class="text-right">
+        {{#if logo}}
+        <img src="{{{logo}}}">
+        {{/if}}
+      </td>
+    </tr>
+    {{#each sections}}
+    <tr class="section-header">
+      <td colspan="2">
+        <h6>{{{header}}}</h6>
+      </td>
+    </tr>
+    {{#if subheader}}
+    <tr class="section-subheader">
+      <td><p><b>{{subheader}}</b></p></td>
+    </tr>
+    {{/if}}
+    {{#each items}}
+    {{#if scriptIf}}
+    {{{scriptIf}}}
+    <tr>
+      <td>
+        {{{name}}}
+      </td>
+      <td class="text-right">
+        {{{value}}}
+      </td>
+    </tr>
+      {{#if scriptIf}}
+        %%[ENDIF]%%
+      {{/if}}
+    {{else}}
+    <tr>
+      <td>
+        {{{name}}}
+      </td>
+      <td class="text-right">
+        {{{value}}}
+      </td>
+    </tr>
+    {{/if}}
+    {{/each}}
+    {{/each}}
+    </tbody>
+  </container>
+  <container class="section-terms">
+    <columns>
+      {{#if terms}}
+        <div class="terms">
+          <p><b>{{{terms.title}}}</b></p>
+          <p>{{{terms.details}}}</p>
+        </div>
+      {{/if}}
+      {{#if notes}}
+        <div class="notes">          
+          {{#each notes}}
+            <p>{{{text}}}</p>
+          {{/each}}
+        </div>
+      {{/if}}
+    </columns>
+  </container>
+</container>
+{{#if scriptIf}}
+%%[ENDIF]%%
+{{/if}}
+
+{{/conditionalWith}}

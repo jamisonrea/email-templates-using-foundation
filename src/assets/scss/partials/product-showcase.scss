@@ -1,0 +1,113 @@
+//  product showcase
+//  ------------------------------
+
+.ciab-product-showcase {
+	@media only screen and (max-width: #{$global-breakpoint}) {
+		&.container {
+			width: 100% !important;
+		}
+	}
+	.item {
+		padding-left: 10px;
+		padding-right: 10px;
+		vertical-align: bottom;
+
+		@media only screen and (max-width: #{$global-breakpoint}) {
+			padding-left: 0 !important;
+			padding-right: 0 !important;
+		}
+	}
+	img {
+		margin: 0 auto;
+		text-align: center;
+	}
+	.circle-top-container {
+		width: 100%;
+		text-align: center;
+		background-color: map-get( $color, royal-blue );
+		.item {
+			@media only screen and (max-width: #{$global-breakpoint}) {
+				& {
+					display: none !important;
+				}
+				&:first-child {
+					display: inline-block !important;
+				}
+			}
+		}
+	}
+
+	.vertical-container {
+		text-align: center;
+		margin-left: 0;
+		margin-right: 0;
+		.item {
+			padding-bottom: 20px;
+		}
+		.vertical-image-container {
+			height: 100px;
+
+			@media only screen and (max-width: #{$global-breakpoint}) {
+				height: 85px !important;
+			}
+		}
+		h4 {
+			text-align: center;
+			font-size: 16px;
+			font-weight: bold;
+			@media only screen and (max-width: #{$global-breakpoint}) {
+				margin: 0 auto !important;
+			}
+		}
+		p {
+			text-align: center;
+			font-size: 13px;
+			color: map-get( $color, light-gray2 );
+			margin-bottom: 15px;
+			&.description {
+				height: auto;
+				@media only screen and (max-width: #{$global-breakpoint}) {
+					margin-bottom: 10px !important;
+				}
+			}
+			@media only screen and (max-width: #{$global-breakpoint}) {
+				width: 60% !important;
+				margin-bottom: 0 !important;
+			}
+			&.cta-button-container {
+				@media only screen and (max-width: #{$global-breakpoint}) {
+					margin-top: 0 !important;
+				}
+			}
+		}
+		small {
+			font-weight: normal;
+			text-align: center;
+		}
+	}
+}
+
+// CTA button
+.cta-button-container {
+	margin-top: 20px;
+	margin-bottom: 20px;
+
+	.cta-button,
+	.cta-button:link,
+	.cta-button:visited {
+		@extend .cta-button;
+		font-size: 15px;
+		font-weight: bold;
+		display: block;
+		margin: 0 auto 10px;
+		width: inherit;
+		color: map-get( $color, white );
+		@include vendor-prefixed( box-shadow, #e56035 0 5px 0 );
+		@media only screen and (max-width: #{$global-breakpoint}) {
+			border-width: 0 !important;
+			width: 100% !important;
+			padding: 10px 0 !important;
+		}
+
+	}
+}

@@ -1,0 +1,28 @@
+facebook:
+    link: 
+      - https://www.facebook.com/
+    countryName:
+      - samlino.dk
+    imagePath: 
+      - http://image.email.samlino.dk/lib/fe9213727262077975/m/1/cf4ff2a2-0288-402b-8c93-643181110b41.png
+twitter:
+    link: 
+      - https://twitter.com/
+    countryName:
+      - Samlinodk
+    imagePath: 
+      - http://image.email.samlino.dk/lib/fe9213727262077975/m/1/d39a3024-f642-4d24-aa2f-c76ee836027c.png
+googlePlus:
+    link: 
+      - https://plus.google.com/
+    countryName:
+      - +SamlinoDkogspar
+    imagePath: 
+      - http://image.email.samlino.dk/lib/fe9213727262077975/m/1/15f7bcf9-8a93-47e4-94a3-5c5e17a9a96c.png
+youtube:
+    link: 
+      - https://www.youtube.com/channel/
+    countryName:
+      - UCNLHDarZn0YE9_lFKSEzd1A
+    imagePath: 
+      - http://image.email.samlino.dk/lib/fe9213727262077975/m/1/45921b3a-bd77-4af4-9620-e0d9c0fb4492.png

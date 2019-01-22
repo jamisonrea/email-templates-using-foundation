@@ -1,0 +1,75 @@
+featuredText: "Sponsored Advertisement"
+applyText: Apply
+
+header:
+  headerLink:
+  headerLinkText: Ver Coreo en el Navegador
+  headerLogoPath: http://image.email.comparaguru.com/lib/fe9013727262077977/m/1/comparaguru-logo.png
+  introText: Tu póliza <strong>%%=ProperCase(FIELD(@application, "provider_name"))=%%</strong> número <strong>%%=FIELD(@application, "policy_number")=%%</strong> está disponible. Puedes descargarte el/los documento(s) relacionado(s) con tu póliza aquí:%%[IF (NOT EMPTY(FIELD(@application,'policy_url_1'))) THEN]%% <a href="%%=RedirectTo(FIELD(@application,'policy_url_1'))=%%" target="_blank"> documento 1</a>%%[ELSE]%%%%[ENDIF]%%%%[IF (NOT EMPTY(FIELD(@application,'policy_url_2'))) THEN]%%, <a href="%%=RedirectTo(FIELD(@application,'policy_url_2'))=%%" target="_blank">documento 2</a>%%[ELSE]%%%%[ENDIF]%%%%[IF (NOT EMPTY(FIELD(@application,'policy_url_3'))) THEN]%%, <a href="%%=RedirectTo(FIELD(@application,'policy_url_3'))=%%" target="_blank">documento 3</a>%%[ELSE]%%%%[ENDIF]%%%%[IF (NOT EMPTY(FIELD(@application,'policy_url_4'))) THEN]%%, <a href="%%=RedirectTo(FIELD(@application,'policy_url_4'))=%%" target="_blank">documento 4</a>%%[ELSE]%%%%[ENDIF]%%.
+
+headerBanner:
+  headline1: Gracias por comprar tu seguro de auto en <a href="https://www.ComparaGuru.com">ComparaGuru.com</a>
+  headline2: Tu póliza ha sido emitida y está disponible.
+  image:
+  descriptionList:
+      - description: 100% gratis
+        class: first
+      - description: Rápido y fácil
+        class: second
+      - description: Independiente e imparcial
+        class: third
+
+apiDescriptions:
+  buttonTitle:
+  buttonContent:
+
+menu:
+  - title: Inicio
+    link: https://www.comparaguru.com/
+  - title: Tarjetas de crédito
+    link: https://www.comparaguru.com/tarjetas-de-credito
+  - title: Préstamos
+    link: https://www.comparaguru.com/prestamos-personales/prestamos-inmediatos
+  - title: Seguros de auto
+    link: https://www.comparaguru.com/seguro-de-autos
+
+showcase:
+  - title: Tarjetas de crédito
+    imagePath: http://image.email.comparaguru.com/lib/fe9013727262077977/m/1/icon-email-green-cc.png
+    description: Vuelos gratis y más promociones
+    buttonText: Compara Ahora
+    buttonLink: https://www.comparaguru.com/tarjetas-de-credito
+    footnote: Toma 15 segundos
+  - title: Préstamos
+    imagePath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/0af2d900-9c3a-4db2-9241-0d7f700426ed.png
+    description: Ahorra hasta $2,000 en intereses
+    buttonText: Compara Ahora
+    buttonLink: https://www.comparaguru.com/prestamos-personales
+    footnote: Toma 15 segundos
+  - title: Seguros de auto
+    imagePath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/e9a387af-243d-4aaa-bd4d-9a863c275c2f.png
+    description: Ahorra un mínimo de $500 en tu seguro de auto
+    buttonText: Compara Ahora
+    buttonLink: https://www.comparaguru.com/seguro-de-autos
+    footnote: Toma 15 segundos
+
+footerBanner:
+  headline1: "El sitio #1 de comparación financiera en México"
+  headline2: <a href="#" class="link-remove--mobile">ComparaGuru.com</a> es tu mejor opción para comparar tarjetas de crédito, seguros de autos y préstamos personales o inmediatos. Utiliza nuestra herramienta de comparación para obtener información actualizada e imparcial.
+
+  descriptionList:
+  buttonText:
+  buttonLink:
+
+footer:
+  socialMedia:
+    - link: https://www.facebook.com/ComparaGuru/
+      imagePath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/cf4ff2a2-0288-402b-8c93-643181110b41.png
+    - link: https://twitter.com/comparaguru
+      imagePath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/d39a3024-f642-4d24-aa2f-c76ee836027c.png
+    - link: https://plus.google.com/+ComparaGuruMX
+      imagePath: http://image.s7.exacttarget.com/lib/fe9813727663007d75/m/1/googleplus.png
+    - link: https://www.youtube.com/channel/UCDUw50qJTd5cBLyhkwmN2fQ
+      imagePath: http://image.s7.exacttarget.com/lib/fe9813727663007d75/m/1/youtube.png
+  termsTitle:
+  termsDescription: Ejército Nacional 373, colonia Granada, delegación Miguel Hidalgo, CP 11520, Ciudad de México. Al usar este sitio aceptas nuestros Términos y Condiciones y el Aviso de privacidad.

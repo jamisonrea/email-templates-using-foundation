@@ -1,0 +1,19 @@
+showcase:
+  - title: Mobile SIM
+    imagePath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/abaa0f97-8c9e-49b8-86de-d597cb7364ee.png
+    description: Find cheapest mobile subscription for your needs
+    buttonText: COMPARE NOW
+    buttonLink: /
+    footnote: Take about 10 seconds
+  - title: Car Insurance
+    imagePath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/e9a387af-243d-4aaa-bd4d-9a863c275c2f.png
+    description: Find the right cover for you and your family
+    buttonText: COMPARE NOW
+    buttonLink: /
+    footnote: Take about 10 seconds
+  - title: Personal Loans
+    imagePath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/0af2d900-9c3a-4db2-9241-0d7f700426ed.png
+    description: Choose the best personal loan thaat suits you
+    buttonText: COMPARE NOW
+    buttonLink: /
+    footnote: Take about 10 seconds

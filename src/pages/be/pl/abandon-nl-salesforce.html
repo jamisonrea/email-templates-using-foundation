@@ -1,0 +1,32 @@
+---
+#title and description show on the tab of the email (browser)
+subject: Hier zijn de beste leningen die aan uw behoeften voldoen
+description:
+
+staticFile: be/pl/abandon/static-nl.yml
+scriptFile: all/pl/abandon/script.yml
+demoFile:
+---
+{{setConfig}}
+{{{config.scriptMain}}}
+
+<wrapper class="ciab-abandon cc-abandon">
+  {{> common-header}}
+  <!-- BEGIN header banner -->
+  {{> common-header-title-banner}}
+  <!-- END header banner -->
+
+  <!-- BEGIN featured product -->
+  {{#each config.featuredProducts as |product index|}}
+  {{> pl-result-item ccResultItem=product globalConfig=config applyText=../config.applyText featuredText=../config.featuredText isFeatured=true}}
+  {{/each}}
+  <!-- END featured product-->
+  <!-- BEGIN general product -->
+  {{#each config.generalProducts as |product index|}}
+  {{> pl-result-item ccResultItem=product applyText=../config.applyText isFeatured=false}}
+  {{/each}}
+  <!-- END general product -->
+  {{> common-footer-banner}}
+  {{> common-showcase}}
+  {{> common-footer}}
+</wrapper>

@@ -1,0 +1,10 @@
+header:
+      title: 'Dear John,'
+      bankIcon: "%%=FIELD(@application, 'product_logo')=%%"
+
+apiProductInfo:
+      provider: 'Telia TV 20/2 Mbit (inkl. 15 kanaler)'
+      benefit1: 'John Doe'
+      benefit2: '0679******'
+      benefit3: 'Vesterbo 123 3500 Værløse'
+      statusPageUrl: '%%=RedirectTo(FIELD(@application, "apply_url"))=%%'

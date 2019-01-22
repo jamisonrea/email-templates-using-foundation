@@ -1,0 +1,26 @@
+---
+#title and description show on the tab of the email (browser)
+subject: HK PL ZH Abandon checkout
+description:
+
+staticFile: hk/pl/abandon-checkout/static-zh.yml
+scriptFile: hk/pl/abandon-checkout/script-zh.yml
+---
+{{setConfig}}
+<!-- ============================== -->
+<!-- Flexible Branding Template -->
+<!-- ============================== -->
+{{{config.scriptMain}}}
+
+<wrapper class="ciab-abandon cc-abandon">
+  {{> common-header}}
+  {{> common-menu}}
+  <!-- BEGIN header banner -->
+  {{> common-header-abandon-checkout}}
+  <!-- END header banner -->
+ {{> pl-abandon-checkout}}
+  <!-- END general product -->
+  {{> common-footer-banner}}
+  {{> common-showcase}}   
+  {{> common-footer}}
+</wrapper>

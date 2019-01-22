@@ -1,0 +1,26 @@
+---
+#title and description show on the tab of the email (browser)
+subject: DK BB Confirmation Email
+description:
+
+staticFile: dk/bb/confirmation/static.yml
+scriptFile: dk/bb/confirmation/script.yml
+demoFile:
+---
+{{setConfig}}
+{{#if config.scriptMain}}
+{{{config.scriptMain}}}
+{{/if}}
+<wrapper class="ciab-confirmation">
+    {{> common-header}}
+    {{> common-menu}}
+    {{> common-header-banner}}
+    <!-- BEGIN confirmation product -->
+	{{> bb-confirmation bbConfirmation=config.bbConfirmation}}
+    {{> common-abandon-checkout-other-results}}
+    {{> common-survey}}
+    <!-- END  confirmation product -->
+    {{> common-whats-next}}
+    {{> common-showcase}}
+    {{> common-footer}}
+</wrapper>

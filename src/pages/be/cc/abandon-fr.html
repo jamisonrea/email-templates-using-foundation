@@ -1,0 +1,30 @@
+---
+#title and description show on the tab of the email (browser)
+subject: Voici les prêts qui correspondent le mieux à vos besoins
+description:
+
+staticFile: be/cc/abandon/static-fr.yml
+scriptFile: be/cc/abandon/script-fr.yml
+demoFile: bel/cc/abandon/demo.yml
+---
+{{setConfig}}
+<wrapper class="ciab-abandon cc-abandon">
+  {{> common-header}}
+  <!-- BEGIN header banner -->
+  {{> common-header-title-banner}}
+  <!-- END header banner -->
+
+  <!-- BEGIN featured product -->
+  {{#each config.featuredProducts as |product index|}}
+  {{> cc-result-item ccResultItem=product globalConfig=config applyText=../config.applyText featuredText=../config.featuredText isFeatured=true}}
+  {{/each}}
+  <!-- END featured product-->
+  <!-- BEGIN general product -->
+  {{#each config.generalProducts as |product index|}}
+  {{> cc-result-item ccResultItem=product applyText=../config.applyText isFeatured=false}}
+  {{/each}}
+  <!-- END general product -->
+  {{> common-footer-banner}}
+  {{> common-showcase}}
+  {{> common-footer}}
+</wrapper>

@@ -1,0 +1,31 @@
+tiConfirmation:
+  orderTitle: Order Number
+  orderDescription: order description
+  orderNumber: 1234
+  sections:
+    - header: i-Travel
+      logo: 'https://d3b6ttmccdjuev.cloudfront.net/denmark/samlino.dk/staging/dk/images/providerLogos/Telenor.png'
+      items:
+        - name: Insurance Type
+          value: i-Travel (Single Trip)
+        - name: Plan
+          value: Individual Plan - Plan B
+        - name: Date of Enrollment (D/M/Y)
+          value: 20/01/2017
+        - name: Applicant Name
+          value: Sample Name
+        - name: Period of Insurance
+          value: 24/02/2017 - 07/03/2017
+    - header: Insured Person(s)
+      subheader: sub header
+      items:
+        - name: Name
+          value: Insured Name 1
+        - name: Name
+          value: Insured Name 2
+      summary:
+        name: sub summary
+        value: 123
+  summary:
+    name: Total Summary
+    value: $600,00.00

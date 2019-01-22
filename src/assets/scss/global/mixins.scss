@@ -1,0 +1,28 @@
+/**
+ * -------------------------------------------------------------
+ *         Name: MIXINS
+ * -------------------------------------------------------------
+ */
+
+/*-------------------------------------------------
+    CSS3 PROPERTY | VENDOR COMPATIBILITIES
+--------------------------------------------------*/
+@mixin vendor-prefixed($name, $argument) {
+  -webkit-#{$name}: #{$argument};
+     -moz-#{$name}: #{$argument};
+      -ms-#{$name}: #{$argument};
+       -o-#{$name}: #{$argument};
+          #{$name}: #{$argument};
+}
+
+@mixin media-min-bp {
+  @media (min-width: #{$global-breakpoint}) {
+    @content
+  }
+}
+
+@mixin media-max-bp {
+  @media (max-width: #{$global-breakpoint}) {
+    @content
+  }
+}

@@ -1,0 +1,152 @@
+table.ciab-header-title-banner {
+  border-spacing: 0 10px;
+  color: map-get( $color, white );
+  background-color: map-get( $color, royal-blue );
+
+  @include media-max-bp {
+    border-bottom: 10px solid map-get( $color, dark-royal-blue );
+  }
+
+  .description-list-item {
+    img, span {
+      float: left;
+    }
+    span{
+      width: 75%;
+    }
+    img {
+      margin-top: 3px !important;
+    }
+  }
+
+  //WORK AROUND FOR REMOVING LINKS ON MOBILE VIEW
+  .link-remove--mobile {
+  	color: #ffffff !important;
+  	text-decoration: none !important;
+  	cursor: default !important;
+  }
+
+  &-wrapper {
+    width: 92%;
+    margin: 0 auto;
+
+    td {
+      vertical-align: bottom;
+
+      p.header-banner-text {
+        font-size: 15px;
+        color: map-get( $color, white );
+      }
+
+      h1.header-headline {
+        font-size: 22px;
+        font-weight: normal;
+        color: map-get( $color, white );
+        margin-top: 20px;
+        padding-bottom: 0;
+
+        a {
+          color: map-get( $color, white );
+          text-decoration: none;
+          &:visited {
+            color: map-get( $color, white );
+            text-decoration: none;
+          }
+        }
+
+        @include media-max-bp {
+          font-weight: bold;
+        }
+      }
+
+      td.columns, td.column, th.columns, th.column {padding-bottom: 0;}
+
+      .banner-description {
+        width: 100%;
+        vertical-align: bottom;
+
+        .benefits-table {
+          width: 100%;
+        }
+
+        td, th {
+          font-size: 13px;
+          color: map-get( $color, white );
+          vertical-align: middle;
+
+          table th {
+            padding-bottom: 10px;
+            padding-right: 5px;
+
+            @include media-max-bp {
+              display: block !important;
+              padding-right: 0 !important;
+            }
+          }
+
+          img {
+            display: inline;
+            margin: 0 4px;
+          }
+
+          span {
+            width: 75%;
+          }
+
+          span.first {
+            width: 79%;
+          }
+        }
+      }
+
+      .banner-image {
+        vertical-align: bottom;
+
+        img {
+          display: inline;
+          text-align: right;
+        }
+      }
+    }
+  }
+
+  .ciab-header-title {
+    width: 100%;
+    background-color: map-get( $color, dark-royal-blue );
+
+    @include media-max-bp {
+      display: none;
+    }
+
+    table.ciab-header-title-table {
+      width: 92%;
+      margin: 0 auto;
+
+      tr.ciab-header-title-tr {
+        height: 50px;
+      }
+
+      th.data-column-header {
+        width: 15%;
+        text-align: center;
+        vertical-align: middle;
+        color: map-get( $color, white );
+        font-size: 12px;
+      }
+
+      th.data-column-header-last {
+        width: 25%;
+      }
+    }
+  }
+}
+
+.api {
+  .ciab-header-title-banner {
+    table.ciab-header-title-table {
+      tr.ciab-header-title-tr {
+        height: 10px !important;
+      }
+    }
+  }
+}

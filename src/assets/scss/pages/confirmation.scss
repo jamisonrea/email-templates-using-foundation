@@ -1,0 +1,119 @@
+//  Confirmation Layout
+//  ------------------------------
+.ciab-confirmation-container {
+	background-color: map-get( $color, white );
+
+	.ciab-confirmation-title {
+		margin: 20px auto 10px;
+		th {
+			font-size: 15px;
+			font-weight: normal;
+		}
+		.order-number {
+			p {
+				margin-bottom: 0;
+			}
+			@media only screen and (max-width: #{$global-breakpoint}) {
+				display: block;
+			}
+		}
+	}
+	.item-details {
+		width: 70%;
+		margin: 0 auto 20px;
+		p {
+			font-size: 14px;
+		}
+		h2 {
+			font-size: 18px;
+			font-weight: bold;
+			padding-bottom: 4px;
+			border-bottom: 1px solid  map-get( $color, light-gray );
+		}
+		.item {
+			font-size: 14px;
+
+			th.columns {
+				padding: 1px 0 !important;
+			}
+			p {
+				margin: 0 !important;
+			}
+
+			&.margin-top-15 {
+				margin-top: 15px;
+			}
+			&.total-after-discount,
+			&.cost-per-months,
+			&.monthly-costs,
+			&.sub-total {
+				margin-top: 4px;
+				border-top: 1px solid  map-get( $color, light-gray );
+				& th {
+					padding-top: 2px;
+				}
+			}
+			&.total-after-discount {
+				border-top: 2px solid map-get( $color, black );
+			}
+			&.cost-per-months {
+				p{
+					margin-top: 6px;
+				}
+			}
+			&.discount {
+				margin: 10px auto;
+				p{
+					color: map-get( $color, blue );
+				}
+			}
+			&.total-after-discount {
+				margin: 10px auto;
+				p{
+					padding-top: 10px;
+				}
+			}
+		}
+	}
+	.package-details {
+		border-bottom: 1px solid  map-get( $color, light-gray );
+		margin-bottom: 10px; 
+		th {
+			padding-bottom: 0;
+			text-align: right;
+			vertical-align: bottom;
+			h2 {
+				border-bottom: none;
+				margin-bottom: 0;
+				padding-bottom: 0;
+			}
+			img {
+				width: 80px;
+				display: inline;
+			}
+		}		
+	}
+	.personal-details {
+		th {
+			padding-bottom: 0;
+		}
+		p {
+			margin-bottom: 0;
+			padding-bottom: 0;
+		}
+	}
+	a.email-override--link,
+	a.email-override--link:link,
+	a.email-override--link:active,
+	a.email-override--link:visited {
+		color: map-get( $color, black1) !important;
+		cursor: text;
+		pointer-events: none;
+	}
+	a.external_link,
+	a.external_link:link,
+	a.external_link:active,
+	a.external_link:visited {
+		color: map-get($color, green) !important;
+	}
+}

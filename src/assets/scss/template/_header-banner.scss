@@ -1,0 +1,86 @@
+table.ciab-header-banner {
+	border-spacing: 0 10px;
+	color: map-get( $color, white );
+	background-color: map-get( $color, royal-blue );
+	border-bottom: 15px solid map-get( $color, dark-royal-blue );
+	a{
+		color: map-get( $color, white );
+	}
+	
+	//WORK AROUND FOR REMOVING LINKS ON MOBILE VIEW
+  .link-remove--mobile {
+  	color: #ffffff !important;
+  	text-decoration: none !important;
+  	cursor: default !important;
+  }
+
+	&-wrapper {
+		width: 540px; //Fallback for outlook lower version
+		width: 90%;
+		margin: 0 auto;
+		@media only screen and (max-width: #{$global-breakpoint}) {
+			width: 98% !important;
+		}
+		td {
+			vertical-align: bottom;
+			p {
+				color: map-get( $color, white );
+				a{
+					color: map-get( $color, green );
+					font-weight: bold;
+				}
+			}
+			h1 {
+				font-size: 18px;
+				color: map-get( $color, white );
+				margin-top: 20px;
+				padding-bottom: 0;
+				font-weight: normal;
+				@media only screen and (max-width: #{$global-breakpoint}) {
+					font-size: 19px;
+				}
+			}
+			td.columns, td.column, th.columns, th.column {
+				padding-bottom: 0;
+			}
+			.banner-description {
+				width: 100%;
+				vertical-align: bottom;
+				td,
+				th {
+					font-size: 13px;
+					color: map-get( $color, white );
+					vertical-align: middle;
+
+					table th {
+						padding-bottom: 10px;
+						padding-right: 12px;
+						@media only screen and (max-width: #{$global-breakpoint}) {
+						  display: block !important;
+							padding-right: 0 !important;
+						}
+					}
+					img {
+						margin: 3px 4px 0 0;
+    					float: left;
+					}
+					span{
+						display: inline-block;
+					}
+				}
+			}
+			.banner-image {
+				vertical-align: bottom;
+				img {
+					display: inline;
+					text-align: right;
+				}
+			}
+		}
+
+		.header-banner-text-small{
+			font-size: 13px;
+    		line-height: 18px;
+		}
+	}
+}

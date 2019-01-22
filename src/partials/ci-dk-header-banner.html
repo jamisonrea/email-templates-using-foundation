@@ -1,0 +1,25 @@
+<container class="ciab-header-banner-ci">
+  <table class="ciab-header-banner-ci-wrapper collapse">
+    <tr>
+      <td class="large-8 small-7 padding-0-xs">
+        <h1 class="header-headline">
+          {{{config.headerBanner.headline1}}}
+
+          <span>
+            {{#with config.generalProducts.[0]}}  
+              {{{finalPrice}}}
+            {{/with}}
+          </span>
+        </h1>
+
+        {{#if config.headerBanner.headline2}}
+          <p class="header-banner-text text-white">{{{config.headerBanner.headline2}}}</p>
+        {{/if}}
+      </td>
+
+      <td class="large-4 small-5 header-image">
+        <img src="{{config.headerBanner.image}}">
+      </td>
+    </tr>
+  </table>
+</container>

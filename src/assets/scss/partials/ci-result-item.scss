@@ -1,0 +1,116 @@
+.product--ci {
+  .product-column {
+    padding-top: 15px;
+    th.columns {
+      padding-bottom: 0 !important;
+    }
+    &.columns.first {
+      padding-right: 0 !important;
+    }
+    &.columns.last {
+      padding-left: 0 !important;
+    }
+  }
+
+  &.general table.product-row {
+    border-bottom: 2px solid #e7e6e2;
+  }
+  &.featured table.product-row {
+    border-bottom: 2px solid #fff;
+    background-color: #f6edc9;
+  }
+
+  .provider {
+    &.columns {
+      padding: 0;
+    }
+    &-name {
+      width: 135px;
+      min-height: 17px;
+      font-size: 17px;
+      font-weight: bold;
+      font-style: normal;
+      font-stretch: normal;
+      color: #312f2e;
+      margin: 0;
+      //  padding-bottom: 15px;
+      line-height: 1;
+    }
+
+    &-logo {
+      height: 40px;
+    }
+
+    &-footer {
+      width: 84px;
+      height: 12px;
+      font-size: 11px;
+      font-style: italic;
+      color: #312f2e;
+      padding-top: 5px;
+      margin: 0;
+    }
+  }
+
+  .feature {
+    &-icon {
+      vertical-align: middle;
+      width: 15px;
+    }
+    &-text {
+      font-size: 12px;
+      line-height: 16px;
+    }
+
+  }
+
+  .price {
+    &.columns {
+      padding: 0;
+      margin-bottom: 7px;
+    }
+    &-value {
+      font-size: 17px;
+      font-weight: bold;
+      line-height: 1.12;
+      color: #989898;
+      margin: 0;
+      &.royal-blue{
+        color: map-get( $color, blue );
+      }
+    }
+    &-small {
+      font-size: 13px;
+    }
+
+    &-delete {
+      text-decoration: line-through;
+    }
+
+    &-footer {
+
+      opacity: 0.8;
+      font-size: 12px;
+      color: #989898;
+      margin-bottom: 4px;
+    }
+  }
+  .apply-button-container {
+    text-align: center;
+    vertical-align: middle;
+    .apply-button,
+    .apply-button:active,
+    .apply-button:link,
+    .apply-button:visited {
+      @extend .cta-button;
+      @include vendor-prefixed( box-shadow, 0 8px 0 map-get( $color, dark-orange2 ) );
+      @media only screen and (max-width: #{$global-breakpoint}) {
+        display: block !important;
+        width: auto !important;
+        padding: 12px !important;
+        border-width: 0 !important;
+        @include vendor-prefixed( border-radius, 0 !important );
+      }
+    }
+  }
+}

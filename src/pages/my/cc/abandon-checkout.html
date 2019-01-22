@@ -1,0 +1,38 @@
+---
+#title and description show on the tab of the email (browser)
+subject: Abandon Email CC MX
+description:
+
+staticFile: my/cc/abandon-checkout/static.yml
+scriptFile: my/cc/abandon-checkout/script.yml
+demoFile: 
+---
+{{setConfig}}
+{{{config.scriptMain}}}
+<wrapper class="ciab-abandon cc-abandon">
+  {{> common-header}}
+  {{> common-menu}}
+  <!-- BEGIN header banner -->
+  {{> common-header-abandon-checkout}}
+  <!-- END header banner -->
+
+  {{> cc-abandon-checkout}}
+  %%[IF NOT EMPTY(@products) THEN]%%
+    {{> common-abandon-checkout-other-results}}
+
+    <!-- BEGIN featured product -->
+    {{#each config.featuredProducts as |product index|}}
+    {{> cc-result-item ccResultItem=product applyText=../config.applyText featuredText=../config.featuredText isFeatured=true}}
+    {{/each}}
+    <!-- END featured product-->
+    <!-- BEGIN general product -->
+    {{#each config.generalProducts as |product index|}}
+    {{> cc-result-item ccResultItem=product applyText=../config.applyText isFeatured=false}}
+    {{/each}}
+  %%[ENDIF]%%
+  <!-- END general product -->
+  {{> common-footer-banner}}
+  {{> common-showcase}}
+  {{> common-menu}}
+  {{> common-footer}}
+</wrapper>

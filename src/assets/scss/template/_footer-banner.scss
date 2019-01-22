@@ -1,0 +1,63 @@
+table.ciab-footer-banner {
+  background-color: #056f9d;
+  a, a:visited {
+    color: white;
+    text-decoration: none;
+  }
+
+  //WORK AROUND FOR REMOVING LINKS ON MOBILE VIEW
+  .link-remove--mobile {
+  	color: #ffffff !important;
+  	text-decoration: none !important;
+  	cursor: default !important;
+  }
+  
+  .footer-banner {
+    &-title {
+      padding: 40px 40px 20px 40px;
+      font-size: 30px;
+      color: map-get( $color, white );
+      text-align: center;
+      @media only screen and (max-width: #{$global-breakpoint}) {
+        color: map-get( $color, white !important );
+      }
+    }
+    &-text {
+      padding: 0 40px;
+      font-size: 15px;
+      color: #fff;
+      text-align: center;
+      a,
+      a:link,
+      a:visited {
+        color: map-get( $color, white );
+        text-decoration: none;
+      }
+    }
+    &-description {
+      li {
+        color: map-get( $color, white );
+        font-size: 14px;
+      }
+    }
+    &-button {
+      text-align: center;
+      padding: 50px 0 30px 0;
+      a,
+      a:link,
+      a:visited {
+        @extend .cta-button;
+        //padding: 17px 20px;
+        display: inline-block;
+        width: 80%;
+        @include vendor-prefixed( box-shadow, #e56035 0 3px 0 );
+      }
+      &-text {
+        color: map-get( $color, white );
+        font-size: 22px;
+        font-weight: bold;
+        line-height: 40px;
+      }
+    }
+  }
+}

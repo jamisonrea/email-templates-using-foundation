@@ -1,0 +1,61 @@
+featuredText: "Produit sponsorisé"
+applyText: "Demandez maintenant"
+
+header:
+  headerLink: '%%view_email_url%%'
+  headerLinkText: Voir l'email sur le navigateur web
+  headerLogoPath: http://image.email.topcompare.be/lib/fe9113727262077974/m/1/fr-top-left-logo.png
+
+headerBanner:
+  headline1: Merci de comparer les cartes de crédit sur <a href="#" class="link-remove--mobile">TopCompare.be</a>
+  headline2: "Voici les meilleures offres que nous avons trouvé pour vous"
+  image: http://image.s7.exacttarget.com/lib/fe9813727663007d75/m/2/icon-email-cc.png
+  descriptionList:
+      - description: 100% gratuit
+      - description: Rapide & facile
+      - description: Objectif & indépendant
+
+headerTitleBannerStatic:
+  firstColumn: Produit
+  secondColumn: "Conditions minimum"
+
+menu:
+  - title: Accueil
+    link: https://www.topcompare.be/fr/?utm_content=Nav_bar
+  - title: Prêts
+    link: https://www.topcompare.be/fr/pret-personnel?utm_content=Nav_bar
+  - title: Cartes de crédit
+    link: https://www.topcompare.be/fr/cartes-de-credit?utm_content=Nav_bar
+
+showcase:
+  - title: Prêts personnels
+    imagePath: http://image.email.comparaguru.com/lib/fe9013727262077977/m/1/pl+icon+abandon.png
+    description: Comparez le TAEG de tous les prêts pour le montant et la durée souhaitée
+    buttonText: COMPAREZ
+    buttonLink: https://www.topcompare.be/fr/pret-personnel?utm_content=PL_icon
+    footnote: En 30 secondes
+  - title: Cartes de crédit
+    imagePath: http://image.email.comparaguru.com/lib/fe9013727262077977/m/1/icon-email-green-cc.png
+    description: Comparez les assurances, les frais, crédits et limites, et obtenez la meilleure offre
+    buttonText: COMPAREZ
+    buttonLink: https://www.topcompare.be/fr/cartes-de-credit/meilleures-offres?utm_content=CC_icon
+    footnote: En 30 secondes
+
+footerBanner:
+  headline1: "Le site de comparaison de produits financiers N°1 en Belgique"
+  headline2: <a href="#" class="link-remove--mobile">TopCompare.be</a> est la meilleure plateforme pour comparer les cartes de crédits et les crédits à la consommation tels que les prêts à tempérament, auto et rénovation. Nous comparons pour vous tout le marché belge et nous vous fournissons toute l’information qui vous aidera à faire le bon choix.
+  descriptionList:
+  buttonText: COMPAREZ
+  buttonLink: https://www.topcompare.be/fr/cartes-de-credit/meilleures-offres?utm_content=Compare_Button
+
+footer:
+  socialMedia:
+    - link: https://www.facebook.com/topcompare.be
+      imagePath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/cf4ff2a2-0288-402b-8c93-643181110b41.png
+    - link: https://twitter.com/TopCompareBE
+      imagePath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/d39a3024-f642-4d24-aa2f-c76ee836027c.png
+  termsTitle: Conditions Générales
+  termsDescription: "Nous comparons les prêts remboursables sur une durée allant de minimum 3 mois à maximum 120 mois. Le Taux Annuel Effectif Global (TAEG) dépend du type de crédit, de la durée et du montant choisi. Il peut varier entre minimum 1,44% et maximum 18,5%. Exemple représentatif: si vous souscrivez en ligne à un prêt personnel tous buts de 5.000€ à rembourser sur 24 mois, à un TAEG de 5,70% (taux débiteur actuariel fixe de 5,70%), vous rembourserez 220,60€ par mois. Le montant total dû s’élèvera à 5.294,40€."
+  termsLink: https://www.topcompare.be/fr/conditions-generales
+  privacyTitle: Politique de Confidentialité
+  privacyLink: https://www.topcompare.be/fr/informations-legales

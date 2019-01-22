@@ -1,0 +1,39 @@
+<container class="ciab-footer">
+  {{#if config.footer.socialMedia}}
+    <table align="center" class="ciab-footer-social-list">
+      <tr>
+        {{#each config.footer.socialMedia}}
+        <td width="70">
+          <a href="{{link}}"><img src="{{imagePath}}"></a>
+        </td>
+        {{/each}}
+      </tr>
+    </table>
+  {{/if}}
+  <p class="ciab-footer-company">
+    {{#if config.footer.companyLink}}<a class="ciab-footer-name" href="{{config.footer.companyLink}}">{{config.footer.companyName}}</a>{{/if}}
+    {{#if config.footer.companyAddress}}<p class="ciab-footer-address">{{config.footer.companyAddress}}</p>{{/if}}
+  </p>
+  <p class="ciab-footer-terms text-center">
+    {{config.footer.beforeTermsText}}
+    {{#if config.footer.privacyLink}}
+    <a href="{{{config.footer.privacyLink}}}">{{{config.footer.privacyText}}}</a> {{config.footer.middleTermsText}}
+    {{/if}}
+    {{#if config.footer.termsLink}}
+    <a href="{{{config.footer.termsLink}}}">{{{config.footer.termsText}}}</a>
+    {{/if}}
+    {{#if config.footer.termsDescription}}
+        <p class="ciab-footer-terms">{{{config.footer.termsDescription}}}</p>
+    {{/if}}
+  </p>
+  <!-- Unsubscribe -->
+  {{#if config.footer.unsubscribeLink}}
+  <p class="ciab-footer-unsubscribe text-center">
+    {{{config.footer.beforeUnsubscribeText}}}
+    <a href="{{{config.footer.unsubscribeLink}}}" target="_blank">
+      {{config.footer.unsubscribeText}}
+    </a>
+  </p>
+  {{/if}}
+
+</container>

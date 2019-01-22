@@ -1,0 +1,9 @@
+footerBanner:
+  headline1: Headline1
+  headline2: Headline2
+  descriptionList:
+    - description: Description 1
+    - description: Description 2
+    - description: Description 3
+  buttonText: Compare
+  buttonLink: /

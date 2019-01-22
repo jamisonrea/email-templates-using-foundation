@@ -1,0 +1,58 @@
+##----- static content -----##
+header:
+  headerLink: '%%view_email_url%%'
+  headerLinkText: Se emailen i din browser
+  headerLogoPath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/94598368-1bce-4b25-87e8-e79012a8e31f.png
+  headerVerticalLogoPath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/18bc83fd-1f16-4e5a-b53e-d90fec337ba5.png
+
+headerBanner:
+  headline1: Hello
+  image: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/78fcc08d-b3d4-4720-937c-d835164058d6.png
+  backgroundImage: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/1ca37ab0-11a8-484e-bc1a-4eb4626e85e8.png
+  headline2: Thank you for purchasing Car Insurance through <a href="">Samlino.dk</a>. Your policy cover is now effective, and details of your policy and coverage are listed below. Please also download your policy brochure in case of use in the event of an emergency or a claim
+
+menu:
+  - title: HJEM
+    link: https://www.samlino.dk/
+  - title: BILFORKSIKRING
+    link: https://www.samlino.dk/bilforsikring/
+  - title: BREDBÅND
+    link: https://www.samlino.dk/bredbaand/
+  - title: FORBRUGSLÅN
+    link: https://www.samlino.dk/forbrugslaan/
+  - title: KREDITKORT
+    link: https://www.samlino.dk/kreditkort/
+
+showcase:
+  - title: Mobilabonnement
+    imagePath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/abaa0f97-8c9e-49b8-86de-d597cb7364ee.png
+    description: Find det billigste mobilabonnement der passer til dine behov
+    buttonText: Sammenlign nu
+    buttonLink: https://www.samlino.dk/mobilabonnement
+    footnote: Det tager kun 15 sek.
+  - title: Bilforsikring
+    imagePath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/e9a387af-243d-4aaa-bd4d-9a863c275c2f.png
+    description: Find den helt rigtige bilforsikring der passer til dine behov
+    buttonText: Sammenlign nu
+    buttonLink: https://www.samlino.dk/bilforsikring
+    footnote: Det tager under 1 minut
+  - title: Forbrugslån
+    imagePath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/0af2d900-9c3a-4db2-9241-0d7f700426ed.png
+    description: Find det bedste lån der passer til dine behov
+    buttonText: Sammenlign nu
+    buttonLink: https://www.samlino.dk/forbrugslaan
+    footnote: Det tager under 1 minut
+
+footerBanner:
+  headline1: Danmarks største sammenligningsportal
+  headline2: <a href="#" class="link-remove--mobile">Samlino.dk</a> er stedet, hvor du kan sammenligne priser på mange finansielle ydelser, såsom bilforsikringer, bredbånd, mobilabonnementer og forbrugslån.
+  descriptionList:
+  buttonText: SAMMENLIGN NU
+  buttonLink: https://www.samlino.dk
+
+footer:
+  termsTitle: Vilkår & Betingelser
+  termsLink: https://www.samlino.dk/vilkaar
+  termsDescription: 2016 Alle rettigheder er forbeholdt <a href="#" class="link-remove--mobile">Samlino.dk</a> ApS. Ved brug af <a href="#" class="link-remove--mobile">Samlino.dk</a>, accepteres vores vilkår, betingelser og persondatapolitik.
+  unsubscribeLink: '%%unsub_center_url%%'
+  unsubscribeText: Unsubscribe

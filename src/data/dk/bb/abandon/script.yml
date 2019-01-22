@@ -1,0 +1,166 @@
+# "dk_ec19b9e7-2ac7-5ac1-aaeb-ef34fc39e869"
+# "event_8ff46fca-bc94-506e-b630-0538e4285ab9"
+scriptMain: '%%[
+                 VAR @productslist, @products, @userlist, @user, @resultspageurl, @apply_url
+             ]%%
+
+             %%[
+                 SET @userlist = LOOKUPROWS("User", "SubscriberKey", SubscriberKey)
+                 SET @productslist = LookupOrderedRows("BB Top 3 Products",1,"event_time Desc","SubscriberKey",SubscriberKey)
+             ]%%
+
+             %%[
+                 IF ((ROWCOUNT(@productslist) != 1)
+                     AND (ROWCOUNT(@userlist) != 1))
+                 THEN
+                     RaiseError("Error finding corresponding products list and/or user", 1)
+                 ENDIF
+                 SET @user = ROW(@userlist, 1)
+                 SET @products = ROW(@productslist, 1)
+                 IF EMPTY(FIELD(@products,"tp_0_company_name")) AND EMPTY(FIELD(@products,"fp_0_company_name")) THEN
+                     RaiseError("No available products to show the customer", true)
+                 ENDIF
+                 SET @resultspageurl = CONCAT(FIELD(@products, "results_page_url"))
+             ]%%'
+
+generalProducts:
+  - scriptIf: '%%[IF (NOT EMPTY(FIELD(@products,"tp_0_company_name"))) THEN]%%
+               %%[IF (NOT EMPTY(FIELD(@products,"tp_0_apply_url"))) THEN
+                    SET @apply_url=FIELD(@products,"tp_0_apply_url")
+                  ELSE
+                    SET @apply_url=FIELD(@products,"results_page_url")
+                  ENDIF]%%'
+    provider:
+      name: '%%=FIELD(@products,"tp_0_company_name")=%%'
+      logo: "%%=FIELD(@products,'tp_0_product_logo')=%%"
+    footerLabel: #Gratis oprettelse
+    buttonText: Vis
+    features:
+      - text: Bingdinsperiode
+        value: '%%[IF FIELD(@products,"tp_0_contract_length")==0 THEN]%%
+                 Ingen binding
+                 %%[ELSE]%%
+                 %%=FIELD(@products,"tp_0_contract_length")=%% måneder
+                 %%[ENDIF]%%'
+      - text:  Data inkluderet
+        value: '%%[IF FIELD(@products,"tp_0_data_value")=="N/A" THEN]%%
+                 Ubegrænset
+                 %%[ELSE]%%
+                 %%=FIELD(@products,"tp_0_data_value")=%% GB
+                 %%[ENDIF]%%'
+      - text: Download hastighed
+        value: '%%=FIELD(@products,"tp_0_speed_max_speed_download")=%%  Mbit/s'
+    priceDetail:
+      discountText: Rabat
+      discount: '%%[IF FIELD(@products,"tp_0_discount")==0 THEN]%%
+                  0 kr.
+                  %%[ELSE]%%
+                  - %%=FIELD(@products,"tp_0_discount")=%% kr.
+                  %%[ENDIF]%%'
+      monthlyPrice: '%%=FIELD(@products,"tp_0_monthly_cost")=%% kr.'
+      monthlyPriceText: Pr. måned
+      setupCost:
+        text: Oprettelse
+        value: '%%[IF FIELD(@products,"tp_0_total_upfront_cost")==0 THEN]%%
+                 0 kr.
+                 %%[ELSE]%%
+                 %%=FIELD(@products,"tp_0_total_upfront_cost")=%% kr.
+                 %%[ENDIF]%%'
+      totalPrice:
+        text: Pris 6 måneder
+        value: '%%=FIELD(@products,"tp_0_total_contract")=%% kr.'
+    apply_url: '%%=RedirectTo(@apply_url)=%%'
+
+  - scriptIf: '%%[IF (NOT EMPTY(FIELD(@products,"tp_1_company_name"))) THEN]%%
+               %%[IF (NOT EMPTY(FIELD(@products,"tp_1_apply_url"))) THEN
+                    SET @apply_url=FIELD(@products,"tp_1_apply_url")
+                  ELSE
+                    SET @apply_url=FIELD(@products,"results_page_url")
+                  ENDIF]%%'
+    provider:
+      name: '%%=FIELD(@products,"tp_1_company_name")=%%'
+      logo: "%%=FIELD(@products,'tp_1_product_logo')=%%"
+    footerLabel: #Gratis oprettelse
+    buttonText: Vis
+    features:
+      - text: Bingdinsperiode
+        value: '%%[IF FIELD(@products,"tp_1_contract_length")==0 THEN]%%
+                 Ingen binding
+                 %%[ELSE]%%
+                 %%=FIELD(@products,"tp_1_contract_length")=%% måneder
+                 %%[ENDIF]%%'
+      - text:  Data inkluderet
+        value: '%%[IF FIELD(@products,"tp_1_data_value")=="N/A" THEN]%%
+                 Ubegrænset
+                 %%[ELSE]%%
+                 %%=FIELD(@products,"tp_1_data_value")=%% GB
+                 %%[ENDIF]%%'
+      - text: Download hastighed
+        value: '%%=FIELD(@products,"tp_1_speed_max_speed_download")=%%  Mbit/s'
+    priceDetail:
+      discountText: Rabat
+      discount: '%%[IF FIELD(@products,"tp_1_discount")==0 THEN]%%
+                 0 kr.
+                 %%[ELSE]%%
+                 - %%=FIELD(@products,"tp_1_discount")=%% kr.
+                 %%[ENDIF]%%'
+      monthlyPrice: '%%=FIELD(@products,"tp_1_monthly_cost")=%% kr.'
+      monthlyPriceText: Pr. måned
+      setupCost:
+        text: Oprettelse
+        value: '%%[IF FIELD(@products,"tp_1_total_upfront_cost")==0 THEN]%%
+                 0 kr.
+                 %%[ELSE]%%
+                 %%=FIELD(@products,"tp_1_total_upfront_cost")=%% kr.
+                 %%[ENDIF]%%'
+      totalPrice:
+        text: Pris 6 måneder
+        value: '%%=FIELD(@products,"tp_1_total_contract")=%% kr.'
+    apply_url: '%%=RedirectTo(@apply_url)=%%'
+
+  - scriptIf: '%%[IF (NOT EMPTY(FIELD(@products,"tp_2_company_name"))) THEN]%%
+               %%[IF (NOT EMPTY(FIELD(@products,"tp_2_apply_url"))) THEN
+                    SET @apply_url=FIELD(@products,"tp_2_apply_url")
+                  ELSE
+                    SET @apply_url=FIELD(@products,"results_page_url")
+                  ENDIF]%%'
+    provider:
+      name: '%%=FIELD(@products,"tp_2_company_name")=%%'
+      logo: "%%=FIELD(@products,'tp_2_product_logo')=%%"
+    footerLabel: #Gratis oprettelse
+    buttonText: Vis
+    features:
+      - text: Bingdinsperiode
+        value: '%%[IF FIELD(@products,"tp_2_contract_length")==0 THEN]%%
+                 Ingen binding
+                 %%[ELSE]%%
+                 %%=FIELD(@products,"tp_2_contract_length")=%% måneder
+                 %%[ENDIF]%%'
+      - text:  Data inkluderet
+        value: '%%[IF FIELD(@products,"tp_2_data_value")=="N/A" THEN]%%
+                 Ubegrænset
+                 %%[ELSE]%%
+                 %%=FIELD(@products,"tp_2_data_value")=%% GB
+                 %%[ENDIF]%%'
+      - text: Download hastighed
+        value: '%%=FIELD(@products,"tp_2_speed_max_speed_download")=%%  Mbit/s'
+    priceDetail:
+      discountText: Rabat
+      discount: '%%[IF FIELD(@products,"tp_2_discount")==0 THEN]%%
+                 0 kr.
+                 %%[ELSE]%%
+                 - %%=FIELD(@products,"tp_2_discount")=%% kr.
+                 %%[ENDIF]%%'
+      monthlyPrice: '%%=FIELD(@products,"tp_2_monthly_cost")=%% kr.'
+      monthlyPriceText: Pr. måned
+      setupCost:
+        text: Oprettelse
+        value: '%%[IF FIELD(@products,"tp_2_total_upfront_cost")==0 THEN]%%
+                 0 kr.
+                 %%[ELSE]%%
+                 %%=FIELD(@products,"tp_2_total_upfront_cost")=%% kr.
+                 %%[ENDIF]%%'
+      totalPrice:
+        text: Pris 6 måneder
+        value: '%%=FIELD(@products,"tp_2_total_contract")=%% kr.'
+    apply_url: '%%=RedirectTo(@apply_url)=%%'

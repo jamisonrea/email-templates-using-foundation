@@ -1,0 +1,100 @@
+apiDescriptions:
+  detailsTitle: Your Personal Loan
+  provider: "Provider"
+  benefit1: "Name"
+  benefit2: "Email Address"
+  benefit3:   "Phone"
+  buttonTitle: ""
+  buttonContent: "Resume Your Order"
+
+header:
+  headerLink: '%%view_email_url%%'
+  headerLinkText: View in your browser
+  headerLogoPath: http://image.email.moneyhero.com.hk/lib/fe9213727262077e74/m/1/MoneyHero-logo-180x35.png
+  introText: "We noticed you've started an application for a personal loan. We've saved your application! It will take two minutes to complete."
+
+headerBanner:
+  headline1: 'Thank you for using <a href="https://www.moneyhero.com.hk">MoneyHero.com.hk</a> to apply for a personal loan.'
+  headline2: "Your personal loan application is being processed."
+  image: http://image.email.comparaguru.com/lib/fe9013727262077977/m/1/icon-email-pl.png
+  descriptionList:
+      - description: 100% free
+      - description: Quick and easy
+      - description: Impartial and independent
+
+headerTitleBannerStatic:
+  firstColumn: Provider
+  secondColumn: ""
+
+menu:
+  - title: Home
+    link: https://www.moneyhero.com.hk/en?utm_content=Nav_bar
+  - title: Personal Loans / Tax Loans
+    link: https://www.moneyhero.com.hk/en/personal-loan/personal-instalment?utm_content=Nav_bar
+  - title: Credit Cards
+    link: https://www.moneyhero.com.hk/en/credit-card/best-deals?utm_content=Nav_bar
+  - title: Mortgage
+    link: https://www.moneyhero.com.hk/en/mortgage/all?utm_content=Nav_bar
+  - title: Travel Insurance
+    link: https://www.moneyhero.com.hk/en/travel-insurance/get-quote?utm_content=Nav_bar
+  - title: Local Medical Insurance
+    link: https://www.moneyhero.com.hk/en/local-medical-insurance/get-quote?utm_content=Nav_bar
+
+showcase:
+  - title: Personal Loans / Tax Loans
+    imagePath: http://image.email.comparaguru.com/lib/fe9013727262077977/m/1/pl+icon+abandon.png
+    description: Make your dreams a reality with the cheapest personal loan / tax loan
+    buttonText: COMPARE NOW
+    buttonLink: https://www.moneyhero.com.hk/en/personal-loan/personal-instalment?utm_content=PL_icon
+    footnote: Takes about 15 seconds
+  - title: Credit Cards
+    imagePath: http://image.email.comparaguru.com/lib/fe9013727262077977/m/1/icon-email-green-cc.png
+    description: Get cashback, air miles, and other rewards with the right credit card
+    buttonText: COMPARE NOW
+    buttonLink: https://www.moneyhero.com.hk/en/credit-card/best-deals?utm_content=CC_icon
+    footnote: Takes about 15 seconds
+  - title: Mortgage
+    imagePath: http://image.email.moneyhero.com.hk/lib/fe9213727262077e74/m/1/hl-int.png
+    description: Build your future and own your space with affordable mortgage plans
+    buttonText: COMPARE NOW
+    buttonLink: https://www.moneyhero.com.hk/en/mortgage/all?utm_content=MG_icon
+    footnote: Takes about 15 seconds
+showcaseRow2:
+  - title: Travel Insurance
+    imagePath: http://image.email.moneyhero.com.hk/lib/fe9213727262077e74/m/1/ti-int.png
+    description: Travel safe and save money with the best travel insurance policy
+    buttonText: COMPARE NOW
+    buttonLink: https://www.moneyhero.com.hk/en/travel-insurance/get-quote?utm_content=TI_icon
+    footnote: Takes about 15 seconds
+  - title: Local Medical Insurance
+    imagePath: http://image.email.moneyhero.com.hk/lib/fe9213727262077e74/m/1/mi-int.png
+    description: Save money on local medical bills with the best medical insurance policy
+    buttonText: COMPARE NOW
+    buttonLink: https://www.moneyhero.com.hk/en/local-medical-insurance/get-quote?utm_content=LMI_icon
+    footnote: Takes about 15 seconds
+
+footerBanner:
+  headline1: "What's next?"
+  headline2: 'The bank will be in touch shortly.'
+  descriptionList:
+  buttonText: 
+  buttonLink: 
+
+footer:
+  socialMedia:
+    - link: https://www.facebook.com/moneyhero.com.hk
+      imagePath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/cf4ff2a2-0288-402b-8c93-643181110b41.png
+    - link: https://www.instagram.com/moneyhero.com.hk/
+      imagePath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/d39a3024-f642-4d24-aa2f-c76ee836027c.png
+  companyLink: https://www.moneyhero.com.hk
+  companyName: MoneyHero.com.hk
+  companyAddress: "21st Floor, 88 Hing Fat Street, Causeway Bay, Hong Kong. Tel: 2866 7791"
+  beforeUnsubscribeText: 'You are receiving this e-mail because your email is subscribed to <a href="https://www.moneyhero.com.hk">MoneyHero.com.hk</a> e-newsletter mailing list. To unsubscribe, '
+  unsubscribeLink: '%%unsub_center_url%%'
+  unsubscribeText: "click here"
+  termsTitle: Terms and Conditions
+  termsDescription: '<a href="https://www.moneyhero.com.hk">MoneyHero.com.hk</a> compares loans that can be paid back over terms of between 12 and 84 months. The APR interest rate you will be charged will depend on your personal circumstances, and will be between APR: 2% and APR: 59%. This is a representative example of what it may cost: a Loan of HK$200,000 over 12 months at 7.02% APR and monthly interest rate at 0.31% would equate to monthly repayments of HK$17,287, and the total repayment of the loan that you pay back would be HK$207,444.'
+  termsLink: https://www.moneyhero.com.hk/en/terms
+  privacyTitle: Privacy Policy
+  privacyLink: https://www.moneyhero.com.hk/en/privacy-policy
+

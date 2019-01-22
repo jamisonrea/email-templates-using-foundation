@@ -1,0 +1,70 @@
+featuredText: "Esittelyssä"
+applyText: Jatka
+
+header:
+  headerLink: '%%view_email_url%%'
+  headerLinkText: Katso viesti selaimessa
+  headerLogoPath: http://image.email.vertaaensin.fi/lib/fe8a13727262077e7c/m/1/vertaaensin-Logo-FI-fullcolor.png
+
+headerBanner:
+  headline2: '%%[IF @status == "APPROVED" OR @status == "REJECTED" THEN SET @headline="Kiitos lainan kilpailuttamisesta" ELSE SET @headline="Olemme vastaanottaneet lainahakemuksesi" ENDIF]%% %%=v(@headline)=%%'
+  image: http://image.email.vertaaensin.fi/lib/fe8a13727262077e7c/m/1/graphic-coin-euro.png
+  descriptionList:
+      - description: 100% ilmainen
+      - description: Helppo ja nopea vertailu
+      - description: Puoleeton ja riippumaton vertailusivusto
+
+headerTitleBannerStatic:
+  firstColumn:
+  secondColumn:
+
+apiDescriptions:
+  title: "Olet hakenut alla olevaa lainaa:"
+  detailsTitle: "Lainan tiedot"
+  provider: "Lainantarjoaja"
+  loanAmount: "Lainasumma"
+  loanDuration: "Laina-aika"
+  buttonTitle: "Nähdäksesi lainahakemuksesi tilan voit siirtyä sivuillemme alla olevasta painikkeesta"
+  buttonContent: "Katso lainahakemuksesi tila"
+
+menu:
+  - title: Etusivu
+    link: https://www.vertaaensin.fi/?utm_content=Nav_bar
+  - title: Lainat
+    link: https://www.vertaaensin.fi/laina?utm_content=Nav_bar
+  - title: Luottokortit
+    link: https://www.vertaaensin.fi/luottokortti?utm_content=Nav_bar
+
+showcase:
+  - title: Lainat
+    imagePath: http://image.email.comparaguru.com/lib/fe9013727262077977/m/1/pl+icon+abandon.png
+    description: Löydä lainalaskurilla sinulle sopivin laina heti
+    buttonText: Vertaile nyt
+    buttonLink: https://www.vertaaensin.fi/laina/funnel#/?utm_content=PL_icon
+    footnote: Vie alle minuutin
+  - title: Luottokortit
+    imagePath: http://image.email.comparaguru.com/lib/fe9013727262077977/m/1/icon-email-green-cc.png
+    description: Vertaile Suomen parhaita luottokorttitarjouksia
+    buttonText: Vertaile nyt
+    buttonLink: https://www.vertaaensin.fi/luottokortti/funnel#/?utm_content=CC_icon
+    footnote: Vie alle minuutin
+
+footerBanner:
+  headline1: "Mitäs nyt?"
+  headline2: Tarkkaile sähköpostiasi, lähetämme uuden viestin lainahakemuksen tuloksilla mahdollisimman nopeasti.
+  descriptionList:
+
+
+footer:
+  socialMedia:
+    - link: https://www.facebook.com/VertaaEnsin.fi/
+      imagePath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/cf4ff2a2-0288-402b-8c93-643181110b41.png
+    - link: https://twitter.com/VertaaEnsin
+      imagePath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/d39a3024-f642-4d24-aa2f-c76ee836027c.png
+  termsText: Käyttöehdot
+  termsLink: https://www.vertaaensin.fi/ehdot
+  beforeTermsText: "Vertailemme lainoja, joiden takaisinmaksuaika on 3 ja 180 kuukauden välillä. Todellinen vuosikorko riippuu valitusta lainatuotteesta, lainasummasta ja laina-ajasta, ja se voi olla välillä 4,18% ja 322,46%. Esimerkkilaskelma: Laina 5 000€, takaisinmaksuaika 24 kk. Todellisen vuosikoron ollessa 10%, kuukausierä on 229,74€. Maksettava kokonaismäärä on 5513,76€."
+  privacyText: Rekisteriseloste
+  privacyLink: https://www.vertaaensin.fi/rekisteriseloste
+  unsubscribeLink: '%%unsub_center_url%%'
+  unsubscribeText: "En halua jatkossa saada vastaavaa sähköpostia"

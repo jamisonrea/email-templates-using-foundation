@@ -1,0 +1,36 @@
+/**
+ * -------------------------------------------------------------
+ *         Name: MAIN
+ * -------------------------------------------------------------
+ */
+body, table.body, h1, h2, h3, h4, h5, h6, p, td, th, a {
+	font-family: ArialMT, Arial, Tahoma;
+	color: map-get( $color, black1 );
+}
+.padding-0-xs{
+	@media only screen and (max-width: #{$global-breakpoint}) {
+		padding: 0 !important;
+	}
+}
+
+.cta-button,
+.cta-button:link,
+.cta-button:visited {
+	font-size: 15px;
+	font-weight: bold;
+	display: inline-block;
+	text-align: center;
+	text-decoration: none;
+	margin: 0 auto 10px;
+	padding: 0;
+	mso-line-height-rule: exactly; //LINE-HEIGHT WORKAROUND FOR IT TO WORK IN OUTLOOK
+	line-height: 14px;
+	color: map-get( $color, white );
+	background-color: map-get( $color, orange );
+	border: solid #f58423;
+	border-width: 10px; // IMPORTANTE: REPLACING 'PADDING' TO 'BORDER-WIDTH' WORK AROUND FOR OUTLOOK TO HAVE A PADDING
+	width: 116px;
+	@include vendor-prefixed( border-radius, 3px );
+	@include vendor-prefixed( box-shadow, 0 2px 0 map-get( $color, dark-orange2 ) );
+
+}

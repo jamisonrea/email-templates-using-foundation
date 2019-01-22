@@ -1,0 +1,21 @@
+table.ciab-header-title-banner-checkout {
+  border-spacing: 0 10px;
+  color: map-get( $color, white );
+  background-color: map-get( $color, royal-blue );
+
+  @include media-max-bp {
+    border-bottom: 10px solid map-get( $color, dark-royal-blue );
+
+  p.header-banner-text {
+        font-size: 15px;
+        color: map-get( $color, white );
+      }
+  }
+  .header-center-text{
+    text-align:center;
+    padding-top: 10px;
+    color: map-get( $color, white );
+    font-weight: bold;
+    font-size:16px;
+  }
+}

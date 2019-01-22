@@ -1,0 +1,24 @@
+---
+#title and description show on the tab of the email (browser)
+subject: HK TI Confirmation
+description:
+
+staticFile: hk/ti/policy-reminder/static.yml
+scriptFile: hk/ti/policy-reminder/script.yml
+demoFile: 
+---
+{{setConfig}}
+{{#if config.scriptMain}}
+{{{config.scriptMain}}}
+{{/if}}
+{{#if config.scriptBcc}}
+{{{config.scriptBcc}}}
+{{/if}}
+<wrapper class="ciab-confirmation">
+  {{> common-header}}
+  {{> common-menu}}
+  {{> common-header-banner}}
+
+  {{> ti-confirmation tiConfirmation=config.tiConfirmation}}
+  {{> common-footer}}
+</wrapper>

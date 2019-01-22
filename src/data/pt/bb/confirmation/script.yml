@@ -1,0 +1,171 @@
+# "pt_ec19b9e7-2ac7-5ac1-aaeb-ef34fc39e869"
+# "5d7febe9-4291-597c-b05a-5c445990e5a0"
+scriptMain: '%%[
+                VAR @orderlist, @order, @userlist, @user
+            ]%%
+            %%[
+                SET @userlist = LOOKUPROWS("User", "SubscriberKey", SubscriberKey)
+                SET @orderlist = LOOKUPROWS("BB Order Confirmation", "event_id", EventId)
+            ]%%
+            %%[
+            IF ((ROWCOUNT(@orderlist) != 1)
+                AND (ROWCOUNT(@userlist) != 1))
+            THEN
+                RaiseError("Error finding corresponding order and/or user", 1)
+            ENDIF
+            SET @user = ROW(@userlist, 1)
+            SET @order = ROW(@orderlist, 1)
+            ]%%'
+
+bbConfirmation:
+
+  orderTitle: "O seu pedido está a ser processado."
+  orderDescription: Encontre em baixo detalhes do seu pedido
+  orderNumber: '%%=FIELD(@order,"event_key")=%%'
+  sections:
+    - header: Detalhes do pacote
+      subheader: Dados para Portátil e Tablet
+      logo: "%%=FIELD(@order,'company_logo')=%%"
+      items:
+        - name: '%%=FIELD(@order,"features_1_name")=%%' #download speed
+          value: '%%=FIELD(@order,"features_1_value")=%%'
+        - name: '%%=FIELD(@order,"features_2_name")=%%' #upload speed
+          value: '%%=FIELD(@order,"features_2_value")=%%'
+        - name: '%%=FIELD(@order,"features_3_name")=%%' #data limit
+          value: '%%=FIELD(@order,"features_3_value")=%%'
+    - subheader: '%%=FIELD(@order,"features_4_name")=%%'
+      items:
+        - name: '%%=FIELD(@order,"features_5_name")=%%' #number of channels
+          value: '%%=FIELD(@order,"features_5_value")=%%'
+          url: "%%=RedirectTo(FIELD(@order,'features_5_value_url'))=%%"
+          scriptIf: '%%[IF (NOT EMPTY(FIELD(@order,"features_5_value_url"))) THEN]%%'
+        - name: '%%=FIELD(@order,"features_6_name")=%%' #channels included
+          value: '%%=FIELD(@order,"features_6_value")=%%'
+        - name: '%%=FIELD(@order,"features_7_name")=%%' #premium channels
+          value: '%%=FIELD(@order,"features_7_value")=%%'
+          url: "%%=RedirectTo(FIELD(@order,'features_7_value_url'))=%%"
+          scriptIf: '%%[IF (NOT EMPTY(FIELD(@order,"features_7_value_url"))) THEN]%%'
+    - subheader: '%%=FIELD(@order,"features_8_name")=%%' #landline title
+      items:
+        - name: '%%=FIELD(@order,"features_9_name")=%%' #local calls included
+          value: '%%=FIELD(@order,"features_9_value")=%%'
+        - name: '%%=FIELD(@order,"features_10_name")=%%' #international calls included
+          value: '%%=FIELD(@order,"features_10_value")=%%'
+        - name: '%%=FIELD(@order,"features_11_name")=%%' #local landline costs /min
+          value: '%%=FIELD(@order,"features_11_value")=%%'
+        - name: '%%=FIELD(@order,"features_12_name")=%%' #international calls included
+          value: '%%=FIELD(@order,"features_12_value")=%%'
+          url: "%%=RedirectTo(FIELD(@order,'features_12_value_url'))=%%"
+          scriptIf: '%%[IF (NOT EMPTY(FIELD(@order,"features_12_value_url"))) THEN]%%'
+        - name: '%%=FIELD(@order,"features_13_name")=%%' #international calls destination
+          value: '%%=FIELD(@order,"features_13_value")=%%'
+        - name: '%%=FIELD(@order,"features_14_name")=%%' #landline transfer cost
+          value: '%%=FIELD(@order,"features_14_value")=%%'
+    - subheader: '%%=FIELD(@order,"features_15_name")=%%' #mobile phone
+      items:
+        - name: '%%=FIELD(@order,"features_16_name")=%%' #mobile phone local min
+          value: '%%=FIELD(@order,"features_16_value")=%%'
+        - name: '%%=FIELD(@order,"features_17_name")=%%' #mobile phone local min
+          value: '%%=FIELD(@order,"features_17_value")=%%'
+        - name: '%%=FIELD(@order,"features_18_name")=%%'
+          value: '%%=FIELD(@order,"features_18_value")=%%'
+        - name: '%%=FIELD(@order,"features_19_name")=%%'
+          value: '%%=FIELD(@order,"features_19_value")=%%'
+        - name: '%%=FIELD(@order,"features_20_name")=%%'
+          value: '%%=FIELD(@order,"features_20_value")=%%'
+        - name: '%%=FIELD(@order,"features_21_name")=%%'
+          value: '%%=FIELD(@order,"features_21_value")=%%'
+        - name: '%%=FIELD(@order,"features_22_name")=%%'
+          value: '%%=FIELD(@order,"features_22_value")=%%'
+        - name: '%%=FIELD(@order,"features_23_name")=%%'
+          value: '%%=FIELD(@order,"features_23_value")=%%'
+          url: "%%=RedirectTo(FIELD(@order,'features_23_value_url'))=%%"
+          scriptIf: '%%[IF (NOT EMPTY(FIELD(@order,"features_23_value_url"))) THEN]%%'
+        - name: '%%=FIELD(@order,"features_24_name")=%%'
+          value: '%%=FIELD(@order,"features_24_value")=%%'
+          url: "%%=RedirectTo(FIELD(@order,'features_24_value_url'))=%%"
+          scriptIf: '%%[IF (NOT EMPTY(FIELD(@order,"features_23_value_url"))) THEN]%%'
+        - name: '%%=FIELD(@order,"features_25_name")=%%'
+          value: '%%=FIELD(@order,"features_25_value")=%%'
+        - name: '%%=FIELD(@order,"features_26_name")=%%'
+          value: '%%=FIELD(@order,"features_26_value")=%%'
+        - name: '%%=FIELD(@order,"features_27_name")=%%'
+          value: '%%=FIELD(@order,"features_27_value")=%%'
+        - name: '%%=FIELD(@order,"features_28_name")=%%'
+          value: '%%=FIELD(@order,"features_28_value")=%%'
+          url: "%%=RedirectTo(FIELD(@order,'features_28_value_url'))=%%"
+          scriptIf: '%%[IF (NOT EMPTY(FIELD(@order,"features_28_value_url"))) THEN]%%'
+        - name: '%%=FIELD(@order,"features_29_name")=%%'
+          value: '%%=FIELD(@order,"features_29_value")=%%'
+        - name: '%%=FIELD(@order,"features_30_name")=%%'
+          value: '%%=FIELD(@order,"features_30_value")=%%'
+        - name: '%%=FIELD(@order,"features_31_name")=%%'
+          value: '%%=FIELD(@order,"features_31_value")=%%'
+        - name: '%%=FIELD(@order,"features_32_name")=%%'
+          value: '%%=FIELD(@order,"features_32_value")=%%'
+    - subheader: '%%=FIELD(@order,"mobile_header_name")=%%'
+      items:
+        - name: '%%=FIELD(@order,"mobile_download_speed_label")=%%'
+          value: '%%=FIELD(@order,"mobile_download_speed_value")=%%'
+        - name: '%%=FIELD(@order,"mobile_upload_speed_label")=%%'
+          value: '%%=FIELD(@order,"mobile_upload_speed_value")=%%'
+        - name: '%%=FIELD(@order,"mobile_data_limit_label")=%%'
+          value: '%%=FIELD(@order,"mobile_data_limit_value")=%%'
+        - name: '%%=FIELD(@order,"mobile_additional_data_cost_label")=%%'
+          value: '%%=FIELD(@order,"mobile_additional_data_cost_value")=%%'
+          url: "%%=RedirectTo(FIELD(@order,'mobile_additional_data_cost_value_url'))=%%"
+          scriptIf: '%%[IF (NOT EMPTY(FIELD(@order,"mobile_additional_data_cost_value_url"))) THEN]%%'
+    - subheader: Cálculo de preço
+      items:
+        - name: '%%=FIELD(@order,"costs_monthly_details_0_name")=%%'
+          value: '%%=FIELD(@order,"costs_monthly_details_0_value")=%%'
+        - name: '%%=FIELD(@order,"costs_monthly_details_1_name")=%%'
+          value: '%%=FIELD(@order,"costs_monthly_details_1_value")=%%'
+        - name: '%%=FIELD(@order,"costs_monthly_details_2_name")=%%'
+          value: '%%=FIELD(@order,"costs_monthly_details_2_value")=%%'
+        - name: '%%=FIELD(@order,"costs_monthly_details_3_name")=%%'
+          value: '%%=FIELD(@order,"costs_monthly_details_3_value")=%%'
+        - name: '%%=FIELD(@order,"costs_monthly_details_4_name")=%%'
+          value: '%%=FIELD(@order,"costs_monthly_details_4_value")=%%'
+        - name: '%%=FIELD(@order,"costs_monthly_details_5_name")=%%'
+          value: '%%=FIELD(@order,"costs_monthly_details_5_value")=%%'
+        - name: '%%=FIELD(@order,"costs_monthly_details_6_name")=%%'
+          value: '%%=FIELD(@order,"costs_monthly_details_6_value")=%%'
+  summary:
+    name: '%%=FIELD(@order,"costs_monthly_details_7_name")=%%'
+    value: '%%=FIELD(@order,"costs_monthly_details_7_value")=%%'
+  userInformation:
+    header: A sua informação
+    fullName: '%%=FIELD(@order,"user_first_name")=%% %%=FIELD(@order,"user_last_name")=%%'
+    email: '%%=FIELD(@order,"user_email")=%%'
+    phone: '%%=FIELD(@order,"user_tel")=%%'
+    address: '%%=FIELD(@order,"user_address")=%%'
+
+header:
+  OtherProducts: A sua opinião conta
+
+survey:
+  title: "Qual é a probabilidade de recomendar o ComparaJá.pt a um amigo?"
+  lowrate:  Nada Provável
+  highrate: Muito Provável
+  rating:
+    - title: "1"
+      link: "https://suojattusivu.vertaaensin.fi/kysely/kiitos/?rate=1&SubscriberKey=%%SubscriberKey%%"
+    - title: "2"
+      link: "https://suojattusivu.vertaaensin.fi/kysely/kiitos/?rate=2&SubscriberKey=%%SubscriberKey%%"
+    - title: "3"
+      link: "https://suojattusivu.vertaaensin.fi/kysely/kiitos/?rate=3&SubscriberKey=%%SubscriberKey%%"
+    - title: "4"
+      link: "https://suojattusivu.vertaaensin.fi/kysely/kiitos/?rate=4&SubscriberKey=%%SubscriberKey%%"
+    - title: "5"
+      link: "https://suojattusivu.vertaaensin.fi/kysely/kiitos/?rate=5&SubscriberKey=%%SubscriberKey%%"
+    - title: "6"
+      link: "https://suojattusivu.vertaaensin.fi/kysely/kiitos/?rate=6&SubscriberKey=%%SubscriberKey%%"
+    - title: "7"
+      link: "https://suojattusivu.vertaaensin.fi/kysely/kiitos/?rate=7&SubscriberKey=%%SubscriberKey%%"
+    - title: "8"
+      link: "https://suojattusivu.vertaaensin.fi/kysely/kiitos/?rate=8&SubscriberKey=%%SubscriberKey%%"
+    - title: "9"
+      link: "https://suojattusivu.vertaaensin.fi/kysely/kiitos/?rate=9&SubscriberKey=%%SubscriberKey%%"
+    - title: "10"
+      link: "https://suojattusivu.vertaaensin.fi/kysely/kiitos/?rate=10&SubscriberKey=%%SubscriberKey%%"

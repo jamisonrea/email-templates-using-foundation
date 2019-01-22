@@ -1,0 +1,96 @@
+apiDescriptions:
+  title: "O seu pedido está a ser processado."
+  detailsTitle: "O seu crédito pessoal"
+  provider: "Instituição"
+  loanAmount: ""
+  loanDuration: ""
+  buttonTitle: 
+  buttonContent: 
+
+header:
+  headerLink: '%%view_email_url%%'
+  headerLinkText: Veja o e-mail no seu browser
+  headerLogoPath: http://image.email.comparaja.pt/lib/fe8b13727262077e7d/m/1/pt-top-left-logo.png
+  introText:  
+  otherProducts: 
+
+applyText: PEDIR CRÉDITO
+featuredText: Patrocinado
+
+headerBanner:
+  headline1: 'Obrigado por ter utilizado o <a href="https://www.comparaja.pt">ComparaJá.pt</a> para escolher o seu crédito pessoal.'
+  headline2: ""
+  image: http://image.email.vertaaensin.fi/lib/fe8a13727262077e7c/m/1/graphic-coin-euro.png
+  descriptionList:
+      - description: Gratuito
+      - description: Imparcial
+      - description: Independente
+
+menu:
+  - title: Home
+    link: https://www.comparaja.pt/?utm_content=Nav_bar
+  - title: TV NET VOZ
+    link: https://www.comparaja.pt/tv-net-voz
+  - title: Crédito Pessoal
+    link: https://www.comparaja.pt/credito-pessoal?utm_content=Nav_bar
+  - title: Cartões de Crédito
+    link: https://www.comparaja.pt/cartao-de-credito?utm_content=Nav_bar
+  - title: Crédito Habitação
+    link: https://www.comparaja.pt/credito-habitacao
+
+showcase:
+  - title: Crédito Habitação
+    imagePath: http://image.email.comparaja.pt/lib/fe8b13727262077e7d/m/1/houseloan.png
+    description: Poupe até 30.000 € no melhor crédito
+    buttonText: COMPARE AGORA
+    buttonLink: https://www.comparaja.pt/credito-habitacao
+    footnote: 
+  - title: TV NET VOZ
+    imagePath: http://image.email.comparaja.pt/lib/fe8b13727262077e7d/m/1/broadband.png
+    description: Encontre o pacote ideal para si
+    buttonText: COMPARE AGORA
+    buttonLink: https://www.comparaja.pt/tv-net-voz
+    footnote: 
+
+showcaseRow2:
+  - title: Crédito Pessoal
+    imagePath: http://image.email.comparaja.pt/lib/fe9213727262077975/m/1/0af2d900-9c3a-4db2-9241-0d7f700426ed.png
+    description: Poupe até 5.500 € 
+    buttonText: COMPARE AGORA
+    buttonLink: https://www.comparaja.pt/credito-pessoal
+    footnote: 
+  - title: Cartões de Crédito
+    imagePath: http://image.email.comparaja.pt/lib/fe9013727262077977/m/1/icon-email-green-cc.png
+    description: Poupe até 270 € mensais 
+    buttonText: COMPARE AGORA
+    buttonLink: https://www.comparaja.pt/cartao-de-credito
+    footnote: 
+
+footerBanner:
+  headline1: Por favor aguarde.
+  headline2: Um agente entrará em contacto consigo brevemente.
+  descriptionList:
+  buttonText: 
+  buttonLink:
+
+headerTitleBannerStatic:
+  firstColumn: Instituição
+  secondColumn: "Requisitos Mínimos"
+
+footer:
+  socialMedia:
+    - link: https://www.facebook.com/ComparaJa
+      imagePath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/cf4ff2a2-0288-402b-8c93-643181110b41.png
+    - link: https://twitter.com/comparaja
+      imagePath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/d39a3024-f642-4d24-aa2f-c76ee836027c.png
+  companyLink: https://www.comparaja.pt/
+  companyName: ComparaJa.pt
+  companyAddress: "Praça de Alvalade, nº6, 6º Frente, 1700-036 Lisboa, Portugal. Tel: 211 165 765"
+  beforeUnsubscribeText: 'Está a receber este e-mail porque subscreveu os emails do <a href="https://www.comparaja.pt">ComparaJá.pt</a>. Se desejar deixar de os receber, por favor '
+  unsubscribeLink: '%%unsub_center_url%%'
+  unsubscribeText: "clique aqui"
+  termsTitle: Termos & Condições
+  termsLink: https://www.comparaja.pt/termos-condicoes-gerais
+  termsDescription: "O Comparajá.pt apresenta soluções de crédito pessoal com prazos entre 6 e 84 meses. A TAEG praticada difere consoante o perfil de cada cliente e a finalidade do empréstimo. Para um crédito pessoal de 5.000€ a 48 meses, com uma TAEG de 10%, as prestações mensais seriam de 126€, sendo o montante total imputado ao consumidor de 6.036€. O ComparaJá.pt não disponibiliza quaisquer conselhos profissionais ou financeiros. Apenas providenciamos um serviço gratuito e imparcial de comparação de preços. Não somos passíveis de ser responsabilizados por qualquer informação inexata que possa existir no nosso website. Em caso de discrepâncias entre informações disponibilizadas pelo ComparaJá.pt e outras provenientes de bancos, emissores ou fornecedores de cartões de crédito ('instituições parceiras'), a informação dos últimos deve prevalecer. Por favor leia atentamente os nossos termos e condições e política de privacidade para mais informações."
+  privacyTitle: Política de Privacidade
+  privacyLink: https://www.comparaja.pt/politica-privacidade

@@ -1,0 +1,29 @@
+<container class="ciab-footer-banner">
+  <tr>
+    <td>
+      <p class="footer-banner-title">{{{config.footerBanner.headline1}}}</p>
+      {{#if config.footerBanner.headline2}}
+      <p class="footer-banner-text">{{{config.footerBanner.headline2}}}</p>
+      {{/if}}
+      {{#if config.footerBanner.descriptionList}}
+      <ul class="footer-banner-description">
+        {{#each config.footerBanner.descriptionList}}
+        <li>{{description}}</li>
+        {{/each}}
+      </ul>
+      {{/if}}
+    </td>
+  </tr>
+  {{#if config.footerBanner.buttonText}}
+  <tr>
+    <td class="footer-banner-button">
+      <a class="footer-banner-button-link" href="{{{config.footerBanner.buttonLink}}}">
+        <span class="footer-banner-button-text">{{config.footerBanner.buttonText}}</span>
+      </a>
+    </td>
+  </tr>
+  {{/if}}
+  <tr class="spacer">
+    <td height="50px"></td>
+  </tr>
+</container>

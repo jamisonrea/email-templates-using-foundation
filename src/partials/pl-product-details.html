@@ -1,0 +1,55 @@
+<center class="">
+  <container>
+    <spacer size="30"></spacer>
+    <center class="api-title">{{config.apiDescriptions.title}}</center>
+    <spacer size="30"></spacer>
+    <container class="api-product-info-container" >
+      <row class="title-row">
+        <columns small="6" large="6">
+          <p class="text-left"><strong>{{config.apiDescriptions.detailsTitle}}</strong></p>
+        </columns>
+        <columns small="6" large="6">
+          {{{config.apiProductInfo.bankIcon}}}
+        </columns>
+      </row>
+      <hr class="separator-line"/>
+      <spacer size="20"></spacer>
+      <row class="detail-row">
+        <columns small="6" large="6">
+          <p class="text-left">{{config.apiDescriptions.provider}}</p>
+        </columns>
+        <columns small="6" large="6"> 
+          <p class="text-right">{{{config.apiProductInfo.provider}}}</p>
+        </columns>
+      </row>
+      <row class="detail-row">
+        <columns small="6" large="6">
+          <p class="text-left">{{config.apiDescriptions.loanAmount}}</p>
+        </columns>
+        <columns small="6" large="6">
+          <p class="text-right">{{{config.apiProductInfo.loanAmount}}}</p>
+        </columns>
+      </row>
+      <row class="detail-row">
+        <columns small="6" large="6">
+          <p class="text-left">{{config.apiDescriptions.loanDuration}}</p>
+        </columns>
+        <columns small="6" large="6">
+          <p class="text-right">{{{config.apiProductInfo.loanDuration}}}</p>
+        </columns>
+      </row>
+      <hr class="separator-line"/>
+      <spacer size="20"/>
+      <row class="button-intro">
+        <columns>
+          <p>{{config.apiDescriptions.buttonTitle}}</p>
+        </columns>
+      </row>
+      <row>
+        <columns>
+          <button href="{{{config.apiProductInfo.statusPageUrl}}}" class="btn-orange-primary-normal large radius expanded">{{config.apiDescriptions.buttonContent}}</button>
+        </columns>
+      </row>
+    </container>
+  </container>
+</center>

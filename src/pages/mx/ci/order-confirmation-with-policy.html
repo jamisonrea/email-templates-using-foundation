@@ -1,0 +1,21 @@
+---
+#title and description show on the tab of the email (browser)
+subject: MX CI Confirmation with policy
+description:
+
+staticFile: mx/ci/confirmation-with-policy/static.yml
+scriptFile: mx/ci/confirmation-with-policy/script.yml
+---
+{{setConfig}}
+{{#if config.scriptMain}}
+{{{config.scriptMain}}}
+{{/if}}
+{{#if config.scriptBcc}}
+{{{config.scriptBcc}}}
+{{/if}}
+<wrapper class="ciab-confirmation">
+  {{> common-header}}
+  {{> common-header-banner}}
+  {{> ci-confirmation-with-policy}}
+  {{> common-footer}}
+</wrapper>

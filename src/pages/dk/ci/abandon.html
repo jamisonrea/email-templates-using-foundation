@@ -1,0 +1,35 @@
+---
+#title and description show on the tab of the email (browser)
+subject: Abandon Email
+description:
+
+staticFile: dk/ci/abandon/static.yml
+scriptFile: dk/ci/abandon/script.yml
+demoFile: dk/ci/abandon/demo.yml
+---
+{{setConfig}}
+{{#if config.scriptMain}}
+{{{config.scriptMain}}}
+{{/if}}
+<wrapper class="ciab-abandon">
+  {{> common-header}}
+  {{> common-menu}}
+  <!-- BEGIN header banner -->
+  {{> ci-dk-header-banner}}
+
+  <!-- END header banner -->
+  <!-- BEGIN featured product -->
+  {{#each config.featuredProducts as |product index|}}
+  {{> ci-dk-result-item ciResultItem=product isFeatured=true}}
+  {{/each}}
+  <!-- END featured product-->
+  <!-- BEGIN general product -->
+  {{#each config.generalProducts as |product index|}}
+  {{> ci-dk-result-item ciResultItem=product isFeatured=false}}
+  {{/each}}
+  <!-- END general product -->
+  {{> common-footer-banner}}
+  {{> common-showcase}}
+  {{> common-menu}}
+  {{> common-footer}}
+</wrapper>

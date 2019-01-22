@@ -1,0 +1,47 @@
+<container class="ciab-header-banner">
+  <table class="ciab-header-banner-wrapper collapse">
+    <tr>
+      <td class="large-10 small-12 padding-0-xs">
+        <h1 class="header-headline">
+          {{{config.headerBanner.headline1}}}
+
+          {{#if config.personalDetails.fullName}}
+            <b>{{{config.personalDetails.fullName}}}</b>
+          {{/if}}
+        </h1>
+
+        {{#if config.headerBanner.headline2}}
+          <p class="header-banner-text text-white">{{{config.headerBanner.headline2}}}</p>
+        {{/if}}
+
+        {{#if config.headerBanner.headline3}}
+          <p class="header-banner-text-small text-white">{{{config.headerBanner.headline3}}}</p>
+        {{/if}}
+
+        {{#if config.headerBanner.descriptionList}}
+          <table class="banner-description  text-center collapse">
+            <tr>
+              <td class="large-12 small-9">
+                <table>
+                  {{#each config.headerBanner.descriptionList}}
+                    <th>
+                      <img src="http://image.email.samlino.dk/lib/fe9213727262077975/m/1/e6ab7cc5-3a93-463e-9c67-d063e8a67212.png">
+                      <span>{{{description}}}</span>
+                    </th>
+                  {{/each}}
+                </table>
+              </td>
+              <td class="show-for-mobile small-3">
+                <img src="{{config.headerBanner.image}}" class="text-right">
+              </td>
+            </tr>
+          </table>
+        {{/if}}
+      </td>
+
+      <td class="large-2 show-for-large">
+        <img src="{{config.headerBanner.image}}" class="text-right">
+      </td>
+    </tr>
+  </table>
+</container>

@@ -1,0 +1,199 @@
+.common-cross-sell{  
+   img.provider-logo {
+               display: inline-block !important;
+             }
+  .test{
+    font-size: 14px;
+    width:408px !important;
+  }
+  .separator-line-dashed {
+      border-top: 1px dashed #dcdad7;
+    }
+  .title-customer{
+    font-size:14px;
+  }
+  .intro-centered {
+    font-size:14px;
+  }
+  .text-size{
+    font-size: 13px;
+  }
+  .text-size-intro{
+    font-size: 13px;
+    text-align:justify;
+    line-height:1.67;
+  }
+  .guide-link{
+    font-size: 13px;
+    font-weight:bold;
+    color: #77aa43;
+  }
+  .list-product {
+      font-size: 13px;
+      padding:0;
+      margin:0;
+  }
+  .text-title {
+    font-size:13px;
+    font-weight: bold;
+    line-height: 1;
+  }
+  .text-features{
+    font-size: 12px;
+    padding:0;
+    margin:0 10px;
+    line-height: 1.67;
+    @media only screen and (max-width: #{$global-breakpoint}) {
+      margin: 0 20px !important;
+    }
+    li { 
+      list-style-image:url('http://image.email.singsaver.com.sg/lib/fe9013727262077e76/m/1/shape-copy-3.png');
+      color: #056f9d;
+    
+    }
+    li span{ 
+      color:#312f2e;
+     }
+  }
+  .long-features{
+    font-size: 12px;
+    padding:0;
+    margin:0;
+    line-height: 1.67;
+    @media only screen and (max-width: #{$global-breakpoint}) {
+      margin: 0 15px !important;
+    }
+    li { 
+      list-style-type:disc;
+      color: #000000;
+    }
+    li span{ 
+      color:#000000;
+      padding:0;
+     }
+  }
+  .text-intro {
+    font-size: 13px;
+    padding:0;
+    margin:0;
+    line-height: 1.67;
+    li { 
+      list-style-type:disc;
+      color: #056f9d;
+    
+    }
+    li span{ 
+      color:#312f2e;
+     }
+  }
+  }
+  .button-intro-title {
+      th.columns {
+        padding-bottom: 0;
+      }
+      p {
+        font-size: 16px !important;
+        font-weight: bold !important;
+        line-height: 1 !important;
+        letter-spacing: normal !important;
+        color: #312f2e   !important;
+        text-align: left;
+      }
+    }
+  .button-intro {
+      th.columns {
+        padding-bottom: 0;
+      }
+      p {
+        font-size: 16px !important;
+        font-weight: bold !important;
+        line-height: 1.67 !important;
+        letter-spacing: normal !important;
+        color: #312f2e   !important;
+        text-align: center;
+      }
+    }
+
+  .product-title {
+      th.columns {
+        padding-bottom: 0;
+      }
+      p {
+        font-size: 24px !important;
+        font-weight: bold !important;
+        line-height: 1.67 !important;
+        letter-spacing: normal !important;
+        color: #312f2e   !important;
+        text-align: center;
+      }
+    }
+
+
+    .credit-card-image img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      
+    }
+
+  .middle {
+    display: table-cell;
+    vertical-align: middle;
+    }
+  .api-product-info-container {
+    width: 408px !important;
+
+    .title-row {
+      th.columns {
+        padding-bottom: 0;
+      }
+      img {
+        width: 100px;
+        height: 50px;
+        float: right;
+      }
+
+      tr {
+        vertical-align: bottom;
+      }
+    }
+
+    .separator-line-dashed {
+      border-top: 1px dashed #dcdad7;
+    }
+    .separator-line {
+      border-bottom: 0;
+      border-top: solid 1px #dcdad7;
+      border-left: 0;
+      border-right: 0;
+    }
+
+    .title-row {
+      font-size: 15px;
+    }
+
+    .detail-row {
+      p {
+        font-size: 14px;
+        line-height: 1.43;
+      }
+
+      th.columns {
+        height: 10px;
+        padding-bottom: 0;
+      }
+    }
+    .button-intro {
+      th.columns {
+        padding-bottom: 0;
+      }
+      p {
+        font-size: 16px !important;
+        font-weight: bold !important;
+        line-height: 1.67 !important;
+        letter-spacing: normal !important;
+        color: #312f2e   !important;
+        text-align: center;
+      }
+    }
+}

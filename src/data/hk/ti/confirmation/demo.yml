@@ -1,0 +1,51 @@
+personalDetails:
+  fullName: Anj
+tiConfirmation:
+  orderTitle: Your policy number is
+  orderDescription: Please see your details below
+  orderTitle-zh: 您的保單編號為
+  orderDescription-zh: 請檢查以下資料是否正確
+  orderNumber: 123123123
+  sectionHeader: Package Details <br/>保險計劃詳情
+  logo: 'https://d3b6ttmccdjuev.cloudfront.net/denmark/samlino.dk/staging/dk/images/providerLogos/Telenor.png'
+  sections:
+    - header: Insurance Details 保單資料
+      items:
+        - name: "Policy Number: <br/>保單編號"
+          value: 123123123
+        - name: "Insurance Type: <br/>保障類別"
+          value: i-Travel (Single Trip)
+        - name: "Plan: <br>保險計劃"
+          value: Individual Plan - Plan B
+        - name: Date of Enrollment (D/M/Y) <br/>登記日期(日/月/年)
+          value: 20/01/2017
+    - header: Period of Insurance 保單有效期
+      items:
+        - name: "From: <br/>受保日期"
+          value: 24/02/2017
+        - name: "To: <br/>到期日"
+          value: 07/03/2017
+    - header: Trip Summary 旅程資料
+      items:
+        - name: "Applicant Name: <br/>申請人姓名"
+          value: Sample Name
+        - name: "Destination: <br/>旅程目的地"
+          value: Thailand, Philippines
+        - name: "Premium Paid: <br/>已繳保費"
+          value: <b>HKD84.00</b><br/>(Discounted Price)
+    - header: Insured Person(s)受保人資料
+      items:
+        - name: "Name: <br/>受保人姓名"
+          value: Insured Name 1
+        - name: "Name: <br/>Name"
+          value: Insured Name 2
+    - header: Insurance Provider Emergency Hotline<br/>保險公司緊急支援熱線
+      items:
+        - name: "Phone No. <br/>Phone"
+          value: 52312345
+  terms:
+    title: "SUBJECT TO THE FOLLOWING CLAUSES AS ATTACHED:<br/>須受以下條款所約束："
+    details: "Subject to the insurer’s Terms and Conditions and exceptions of policy. Please Click here to download the policy wordings.</br>保單須受有關保險公司的條款及細則和除外責任所約束。請按此下載保單條款。"
+  notes:
+    - text: "*This is a computer-generated notice and requires no signature.<br/>*本函為電腦編印文件，毋須簽署。"
+    - text: "*For any inquiry, please feel free to contact us through email inquiry to info@moneyhero.com.hk<br/>*若有任何查詢，請電郵至info@moneyhero.com.hk與我們聯絡。"

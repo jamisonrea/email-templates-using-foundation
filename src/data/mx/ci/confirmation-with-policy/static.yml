@@ -1,0 +1,15 @@
+##----- static content -----##
+header:
+  headerLink: '%%view_email_url%%'
+  headerLinkText: Ver en browser
+  headerLogoPath: http://image.email.comparaguru.com/lib/fe9013727262077977/m/1/comparaguru-logo.png
+
+headerBanner:
+  headline1: Hola
+  headline3: Tu compra ha sido exitosa, gracias por confiar en <a style="color:#fff">ComparaGuru.com</a>. Por favor revisa los detalles de tu póliza.
+footer:
+  termsText: / Términos y condiciones
+  termsLink: https://www.comparaguru.com/terminos
+  privacyText: Política de privacidad
+  privacyLink: https://www.comparaguru.com/aviso-de-privacidad
+  termsDescription:

@@ -1,0 +1,51 @@
+header:
+  headerLink: '%%view_email_url%%'
+  headerLinkText: View in your browser
+  headerLogoPath: http://image.S7.exacttarget.com/lib/fe9813727663007d75/m/3/d9049305-12ac-4c26-9c2c-7b5d9336a4db.png
+
+headerBanner:
+  headline1: "Earn more rewards from overseas spending! Check out our BEST travel credit cards below"
+  headline2:
+  image: http://image.s7.exacttarget.com/lib/fe9813727663007d75/m/2/icon-email-cc.png
+  descriptionList:
+      - description: 100% free
+      - description: Quick and easy
+      - description: Impartial and independent
+headerTitleBannerStatic:
+  firstColumn: Provider
+  secondColumn: Eligibility
+
+apiDescriptions:
+  buttonContent: "Apply"
+
+menu:
+  - title: Home
+    link: https://www.moneyhero.com.hk/en?utm_content=Nav_bar
+  - title: Personal Loans
+    link: https://www.moneyhero.com.hk/en/personal-loan/personal-instalment?utm_content=Nav_bar
+  - title: Credit Cards
+    link: https://www.moneyhero.com.hk/en/credit-card/best-deals?utm_content=Nav_bar
+  - title: Mortgage
+    link: https://www.moneyhero.com.hk/en/mortgage/all?utm_content=Nav_bar
+  - title: Travel Insurance
+    link: https://www.moneyhero.com.hk/en/travel-insurance/get-quote?utm_content=Nav_bar
+  - title: Local Medical Insurance
+    link: https://www.moneyhero.com.hk/en/local-medical-insurance/get-quote?utm_content=Nav_bar
+
+footer:
+  socialMedia:
+    - link: https://www.facebook.com/moneyhero.com.hk
+      imagePath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/cf4ff2a2-0288-402b-8c93-643181110b41.png
+    - link: https://www.instagram.com/moneyhero.com.hk/
+      imagePath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/d39a3024-f642-4d24-aa2f-c76ee836027c.png
+  companyLink: https://www.moneyhero.com.hk
+  companyName: MoneyHero.com.hk
+  companyAddress: "21st Floor, 88 Hing Fat Street, Causeway Bay, Hong Kong. Tel: 2866 7791"
+  beforeUnsubscribeText: 'You are receiving this e-mail because your email is subscribed to <a href="https://www.moneyhero.com.hk">MoneyHero.com.hk</a> e-newsletter mailing list. To unsubscribe, '
+  unsubscribeLink: '%%unsub_center_url%%'
+  unsubscribeText: "click here"
+  termsTitle: Terms and Conditions
+  termsDescription: '<a href="https://www.moneyhero.com.hk">MoneyHero.com.hk</a> compares loans that can be paid back over terms of between 12 and 84 months. The APR interest rate you will be charged will depend on your personal circumstances, and will be between APR: 2% and APR: 59%. This is a representative example of what it may cost: a Loan of HK$200,000 over 12 months at 7.02% APR and monthly interest rate at 0.31% would equate to monthly repayments of HK$17,287, and the total repayment of the loan that you pay back would be HK$207,444.'
+  termsLink: https://www.moneyhero.com.hk/en/terms
+  privacyTitle: Privacy Policy
+  privacyLink: https://www.moneyhero.com.hk/en/privacy-policy

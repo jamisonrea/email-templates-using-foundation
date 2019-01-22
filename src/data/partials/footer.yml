@@ -1,0 +1,15 @@
+footer:
+  socialMedia:
+    - link: https://www.facebook.com/samlino.dk
+      imagePath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/cf4ff2a2-0288-402b-8c93-643181110b41.png
+    - link: https://twitter.com/Samlinodk
+      imagePath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/d39a3024-f642-4d24-aa2f-c76ee836027c.png
+    - link: https://plus.google.com/+SamlinoDkogspar
+      imagePath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/15f7bcf9-8a93-47e4-94a3-5c5e17a9a96c.png
+    - link: https://www.youtube.com/channel/UCNLHDarZn0YE9_lFKSEzd1A
+      imagePath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/45921b3a-bd77-4af4-9620-e0d9c0fb4492.png
+  termsTitle: terms title
+  termsDescription: terms description
+  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  unsubscribeLink: /
+  unsubscribeText: Unsubscribe

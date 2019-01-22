@@ -1,0 +1,17 @@
+plResultItem:
+  provider:
+    name: Provider1
+    logo:
+  footerLabel:
+  displayCondition:
+  apply_url: /
+  columns:
+    provider: Provider
+    eligibility: Requirements
+    column1: Interest rate
+    column2: Total cost
+    column3: Monthly cost
+    column1Value: 41%
+    column2Value: S$ 205,000
+    column3Value: S$ 20,202
+    eligibilityIcon: '<img src="http://image.email.comparaguru.com/lib/fe9013727262077977/m/1/result-icon-true.gif" height="30" />'

@@ -1,0 +1,40 @@
+.ciab-header {
+	&-link-text,
+	&-link-text:link,
+	&-link-text:active,
+	&-link-text:visited {
+    display: block;
+    color: map-get( $color, light-gray3 );
+    font-size: 10px;
+    text-align: right;
+  }
+  &-link-text,
+  &-logo {
+  	padding: 10px 10px 0;
+  }
+  &-logo {
+  	margin: 0 auto;
+  	display: block;
+  	text-align: center;
+  	padding-bottom: 10px;
+  }
+
+	table.container {
+		background-color: map-get( $color, white );
+	}
+  &-ci-wrapper{
+    width: 100%;
+    @media (min-width: #{$global-breakpoint}) {
+      width: 90%;
+      margin: 10px auto 0;
+    }
+    .ciab-header-link-text{
+      @media (min-width: #{$global-breakpoint}) {
+        padding: 0;
+      }
+    }
+  }
+  &-vertical-logo{
+    width: 40px;
+  }
+}

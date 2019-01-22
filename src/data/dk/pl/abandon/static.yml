@@ -1,0 +1,108 @@
+header:
+  headerLink: '%%view_email_url%%'
+  headerLinkText: Se denne e-mail i din browser
+  headerLogoPath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/dk-logo.png
+
+applyText: Vælg
+featuredText: Sponsoreret
+
+headerBanner:
+  headline1: Tak fordi du sammenlignede forbrugslån på <a href="#" class="link-remove--mobile">Samlino.dk!</a>
+  headline2: "Vi har fundet de bedste forbrugslån til dig:"
+  image: http://image.email.vertaaensin.fi/lib/fe8a13727262077e7c/m/1/graphic-coin-euro.png
+  descriptionList:
+      - description: 100% gratis
+      - description: Hurtigt & nemt
+      - description: Uafhængig og uvildig
+
+menu:
+  - title: Hjem
+    link: https://www.samlino.dk/?utm_content=Nav_bar
+  - title: Bilforsikring
+    link: https://www.samlino.dk/bilforsikring?utm_content=Nav_bar
+  - title: A-Kasser
+    link: https://www.samlino.dk/a-kasser?utm_content=Nav_bar
+  - title: Bredbånd
+    link: https://www.samlino.dk/bredbaand?utm_content=Nav_bar
+  - title: Mobilabonnement
+    link: https://www.samlino.dk/mobilabonnement?utm_content=Nav_bar
+  - title: Billån
+    link: https://www.samlino.dk/billaan?utm_content=Nav_bar
+  - title: Forbrugslån
+    link: https://www.samlino.dk/forbrugslaan?utm_content=Nav_bar
+  - title: Kreditkort
+    link: https://www.samlino.dk/kreditkort?utm_content=Nav_bar
+  - title: Højrentekonto
+    link: https://www.samlino.dk/hoejrentekonto?utm_content=Nav_bar
+
+showcase:
+  - title: Bredbånd og TV
+    imagePath: http://image.email.comparaguru.com/lib/fe9013727262077977/m/1/pl+icon+abandon.png
+    description: Sammenlign og find det billigste bredbånd og TV så du undgår at betale for meget
+    buttonText: SAMMENLIGN NU
+    buttonLink: https://www.samlino.dk/bredbaand?utm_content=BB_icon
+    footnote: Det tager kun 10 sekunder
+  - title: Mobilabonnement
+    imagePath: http://image.email.comparaguru.com/lib/fe9013727262077977/m/1/icon-email-green-cc.png
+    description: Sammenlign og find det billigste mobilabonnement til dit behov
+    buttonText: SAMMENLIGN NU
+    buttonLink: https://www.samlino.dk/mobilabonnement?utm_content=SIM_icon
+    footnote: Det tager kun 10 sekunder
+  - title: Bilforsikring
+    imagePath: http://image.email.comparaguru.com/lib/fe9013727262077977/m/1/icon-email-green-cc.png
+    description: Sammenlign og find den bedste dækning til den bedste pris
+    buttonText: SAMMENLIGN NU
+    buttonLink: https://www.samlino.dk/bilforsikring?utm_content=CI_icon
+    footnote: Det tager kun 10 sekunder
+  - title: Forbrugslån
+    imagePath: http://image.email.comparaguru.com/lib/fe9013727262077977/m/1/icon-email-green-cc.png
+    description: Sammenlign de bedste forbrugslån, og få råd til det du drømmer om
+    buttonText: SAMMENLIGN NU
+    buttonLink: https://www.samlino.dk/forbrugslaan?utm_content=PL_icon
+    footnote: Det tager kun 10 sekunder
+  - title: A-kasser
+    imagePath: http://image.email.comparaguru.com/lib/fe9013727262077977/m/1/icon-email-green-cc.png
+    description: Sammenlign a-kasserne i Danmark og få billig dagpengeret
+    buttonText: SAMMENLIGN NU
+    buttonLink: https://www.samlino.dk/a-kasser?utm_content=UNEMP_icon
+    footnote: Det tager kun 10 sekunder
+  - title: Billån
+    imagePath: http://image.email.comparaguru.com/lib/fe9013727262077977/m/1/icon-email-green-cc.png
+    description: Sammenlign priser på billån og spar penge
+    buttonText: SAMMENLIGN NU
+    buttonLink: https://www.samlino.dk/billaan?utm_content=CL_icon
+    footnote: Det tager kun 10 sekunder
+  - title: Kreditkort
+    imagePath: http://image.email.comparaguru.com/lib/fe9013727262077977/m/1/icon-email-green-cc.png
+    description: Sammenlign kreditkort med de bedste renter, tilbud og fordele
+    buttonText: SAMMENLIGN NU
+    buttonLink: https://www.samlino.dk/kreditkort?utm_content=CC_icon
+    footnote: Det tager kun 10 sekunder
+  - title: Højrentekonto
+    imagePath: http://image.email.comparaguru.com/lib/fe9013727262077977/m/1/icon-email-green-cc.png
+    description: Find den bedste højrentekonto, og få mest ud af din opsparing
+    buttonText: SAMMENLIGN NU
+    buttonLink: https://www.samlino.dk/hoejrentekonto?utm_content=HIL_icon
+    footnote: Det tager kun 10 sekunder
+footerBanner:
+  headline1: Danmarks største sammenligningsportal
+  headline2: <a href="#" class="link-remove--mobile">Samlino.dk</a> er stedet, hvor du kan sammenligne priser på mange finansielle ydelser, såsom bilforsikring, bredbånd, mobilabonnement, forbrugslån, mv.
+  descriptionList:
+  buttonText: Sammenlign Nu
+  buttonLink: https://www.samlino.dk/?utm_content=Compare_Button
+
+headerTitleBannerStatic:
+  firstColumn: Instituição
+  secondColumn: "Requisitos Mínimos"
+
+footer:
+  socialMedia:
+    - link: https://www.facebook.com/samlino.dk
+      imagePath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/cf4ff2a2-0288-402b-8c93-643181110b41.png
+    - link: https://twitter.com/Samlinodk
+      imagePath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/d39a3024-f642-4d24-aa2f-c76ee836027c.png
+  termsTitle: Vilkår & Betingelser
+  termsLink: https://www.samlino.dk/vilkaar
+  termsDescription: 'Vi sammenligner lån med en løbetid fra 3 måneder til 64 måneder. Den ÅOP du vil blive tilbudt, kan variere i forhold til dine personlige forhold, men kan være mellem 5,40% og 151,80%. Dette er et eksempel på hvad et lån kan koste: et lån på 50.000 kr. over 30 måneder med 7,46% i ÅOP ville give en månedlig ydelse på 1.826,46 kr. og en samlet tilbagebetaling på 54.794 kr. <a href="#" class="link-remove--mobile">Samlino.dk</a> (\"\"vi\"\") yder ikke finansiel og professionel rådgivning. Vi tilbyder udelukkende en gratis og uafhængig sammenligningsservice. Vi tager ikke ansvar for fejl og/eller ukorrekte informationer, som bliver oplyst på denne hjemmeside. Hvis oplysningerne på <a href="#" class="link-remove--mobile">Samlino.dk</a> og relevant information på samarbejdspartnernes (banker/finansielle institutioner) hjemmesider ikke stemmer overens, bør brugerne tage udgangspunkt i informationen hos samarbejdspartnerne. Rentesatser kan variere i forhold til kreditvurdering af ansøger. Læs omhyggeligt vores Vilkår & Betingelser og Fortrolighedspolitik for mere information.'
+  privacyTitle: Persondatapolitik
+  privacyLink: https://www.samlino.dk/persondatapolitik

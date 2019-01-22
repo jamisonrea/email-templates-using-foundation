@@ -1,0 +1,29 @@
+---
+#title and description show on the tab of the email (browser)
+subject: Lainavertailusi tulokset
+description:
+
+staticFile: fi/pl/api/static.yml
+scriptFile: all/pl/api/script.yml
+---
+{{setConfig}}
+{{{config.scriptMain}}}
+<wrapper class="ciab-abandon cc-abandon api">
+    {{> common-header}}
+   
+    <!-- BEGIN header banner -->
+    {{> common-header-title-banner}}
+    <!-- END header banner -->
+
+    <!-- BEGIN product details -->
+
+    {{> pl-product-details}}
+
+    {{> common-abandon-checkout-other-results}}
+    {{> common-survey}}
+
+    <!-- END general product -->
+    {{> common-footer-banner}}
+    {{> common-showcase}}
+    {{> common-footer}}
+</wrapper>

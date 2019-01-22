@@ -1,0 +1,69 @@
+featuredText: "Sponsored Advertisement"
+applyText: Apply
+
+header:
+  headerLink:
+  headerLinkText: View in your browser
+  headerLogoPath: http://assets.ciab.compareglobal.co.uk/singapore/singsaver.com.sg/secured-production/sg/images/general/en-top-left-logo.png
+
+headerBanner:
+  headline1: Thank you for visiting <a href="https://www.singsaver.com.sg">SingSaver.com.sg</a>
+  headline2: "We found the best credit cards for you. Don’t wait too long - deals expire sooner than you think!"
+  image: http://image.s7.exacttarget.com/lib/fe9813727663007d75/m/2/icon-email-cc.png
+  descriptionList:
+      - description: 100% Free
+        class: first
+      - description: Quick and easy
+        class: second
+      - description: Independent and impartial
+        class: third
+headerTitleBannerStatic:
+  firstColumn: Provider
+  secondColumn: Eligibility
+
+menu:
+  - title: Home
+    link: https://www.singsaver.com.sg/?utm_content=Nav_bar
+  - title: Personal Loans
+    link: https://www.singsaver.com.sg/personal-loan/instalment?utm_content=Nav_bar
+  - title: Credit Card
+    link: https://www.singsaver.com.sg/credit-card/best-deals?utm_content=Nav_bar
+
+showcase:
+  - title: Personal Loans
+    imagePath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/0af2d900-9c3a-4db2-9241-0d7f700426ed.png
+    description: Save up to S$1,500
+    buttonText: COMPARE NOW
+    buttonLink: http://www.singsaver.com.sg/personal-loan?utm_content=PL_icon
+    footnote: Takes about 5 seconds
+  - title: Credit Cards
+    imagePath: http://image.email.comparaguru.com/lib/fe9013727262077977/m/1/icon-email-green-cc.png
+    description: Save up to S$900 a year
+    buttonText: COMPARE NOW
+    buttonLink: http://www.singsaver.com.sg/credit-card/best-deals?utm_content=CC_icon
+    footnote: Takes about 5 seconds
+
+footerBanner:
+  headline1: Singapore's largest comparison portal
+  headline2: Singsaver is your go-to website for comparing loans and credit cards. Use our powerful comparison tool to get unbiased, up-to-date information.
+  descriptionList:
+  buttonText: Compare Now
+  buttonLink: https://www.singsaver.com.sg/credit-card/best-deals?utm_content=Nav_bar
+
+footer:
+  socialMedia:
+    - link: https://www.facebook.com/SingSaver.com.sg/
+      imagePath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/cf4ff2a2-0288-402b-8c93-643181110b41.png
+    - link: https://twitter.com/singsaverSG
+      imagePath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/d39a3024-f642-4d24-aa2f-c76ee836027c.png
+  termsTitle: Privacy Policy / Terms and Conditions
+  companyLink: https://www.singsaver.com.sg/
+  companyName: SingSaver.com.sg
+  companyAddress: "1A Keong Saik Rd, Singapore, 089109. Tel: 9278 9531"
+  beforeUnsubscribeText: 'You are receiving this email because you signed up to <a href="https://www.singsaver.com.sg">SingSaver.com.sg</a> emails. If you prefer not to receive emails from <a href="https://www.singsaver.com.sg">SingSaver.com.sg</a> please '
+  unsubscribeLink: '%%unsub_center_url%%'
+  unsubscribeText: "unsubscribe here"
+  termsLink: https://www.singsaver.com.sg/terms
+  termsDescription: "We compare loans that can be paid back over terms of between 12 months and 60 months. The effective interest rate (EIR) you will be charged depends on your personal circumstances, and will be between 8.5% p.a. and 14.94% p.a. This is a representative example of what it may cost: a loan of S$10,000 over 36 months at 4.8% p.a. nominal interest would equate to monthly repayments of S$317.77 and the total cost of the loan that you pay back would be S$11,440. The effective interest rate (EIR) you will be charged depends on your personal circumstances. Typically the lowest EIR charged by bank ranges between 5.0% p.a. to 20.0% p.a. depending on the choice of banks and products."
+  privacyTitle: Privacy Policy
+  privacyLink: https://www.singsaver.com.sg/privacy-policy

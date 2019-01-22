@@ -1,0 +1,90 @@
+featuredText: "Sponsored Advertisement"
+applyText: Apply
+
+header:
+  headerLink: '%%view_email_url%%'
+  headerLinkText: Ver Coreo en el Navegador
+  headerLogoPath: http://image.email.comparaguru.com/lib/fe9013727262077977/m/1/comparaguru-logo.png
+  introText: Solicitaste una cotización para el seguro de tu auto, protégelo ahora contra cualquier daño. 
+
+headerBanner:
+  headline1: No lo pienses más y asegura tu auto hoy mismo. 
+  headline2: "Encuentra el seguro de auto que mejor se adapte a tus necesidades."
+  image: http://image.s7.exacttarget.com/lib/fe9813727663007d75/m/2/icon-email-cc.png
+  descriptionList:
+      - description: 100% gratis
+        class: first
+      - description: Rápido y fácil
+        class: second
+      - description: Independiente e imparcial
+        class: third
+headerTitleBannerStatic:
+  firstColumn: Provider
+  secondColumn: Eligibility
+
+apiDescriptions:
+  detailsTitle: Tu solicitud
+  provider: "Aseguradora"
+  benefit1: "Marca"
+  benefit2: "Modelo"
+  benefit3: "Submodelo"
+  benefit4: "Año"
+  benefit5: "Descripción"
+  benefit6: "Precio Total"
+  benefit7: "Precio con descuento"
+  buttonTitle: ""
+  buttonContent: "¡Contrátalo ya!"
+
+menu:
+  - title: Inicio
+    link: https://www.comparaguru.com/
+  - title: Tarjetas de crédito
+    link: https://www.comparaguru.com/tarjetas-de-credito
+  - title: Préstamos
+    link: https://www.comparaguru.com/prestamos-personales/prestamos-inmediatos
+  - title: Seguros de auto
+    link: https://www.comparaguru.com/seguro-de-autos
+
+showcase:
+  - title: Tarjetas de crédito
+    imagePath: http://image.email.comparaguru.com/lib/fe9013727262077977/m/1/icon-email-green-cc.png
+    description: Más de 180 opciones
+    buttonText: Compara Ahora
+    buttonLink: https://www.comparaguru.com/tarjetas-de-credito
+    footnote: No te tomará más de 15 segundos 
+  - title: Préstamos
+    imagePath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/0af2d900-9c3a-4db2-9241-0d7f700426ed.png
+    description: Ahorra hasta $2,000 en intereses
+    buttonText: Compara Ahora
+    buttonLink: https://www.comparaguru.com/prestamos-personales
+    footnote: No te tomará más de 15 segundos 
+  - title: Seguros de auto
+    imagePath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/e9a387af-243d-4aaa-bd4d-9a863c275c2f.png
+    description: Ahorra hasta un 30% 
+    buttonText: Compara Ahora
+    buttonLink: https://www.comparaguru.com/seguro-de-autos
+    footnote: No te tomará más de 15 segundos 
+
+footerBanner:
+  headline1: "Ayudarte es nuestro principal objetivo"
+  headline2: En <a href="#" class="link-remove--mobile">ComparaGuru.com</a> te ayudamos a que encuentres la mejor tarjeta de crédito o seguro de auto de acuerdo a tus necesidades y estilo de vida. A través de nuestro comparador, podrás seleccionar el beneficio que buscas, obtener los mejores resultados y aplicar al que te brinde las mejores recompensas. Todo en un mismo lugar, sin perder tiempo ni esfuerzo.
+
+  descriptionList:
+  buttonText:
+  buttonLink:
+
+footer:
+  socialMedia:
+    - link: https://www.facebook.com/ComparaGuru/
+      imagePath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/cf4ff2a2-0288-402b-8c93-643181110b41.png
+    - link: https://twitter.com/comparaguru
+      imagePath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/d39a3024-f642-4d24-aa2f-c76ee836027c.png
+    - link: https://plus.google.com/+ComparaGuruMX
+      imagePath: http://image.s7.exacttarget.com/lib/fe9813727663007d75/m/1/googleplus.png
+    - link: https://www.youtube.com/channel/UCDUw50qJTd5cBLyhkwmN2fQ
+      imagePath: http://image.s7.exacttarget.com/lib/fe9813727663007d75/m/1/youtube.png
+  termsTitle:
+  termsDescription: Ejército Nacional 373, colonia Granada, delegación Miguel Hidalgo, CP 11520, Ciudad de México. Al usar este sitio aceptas nuestros Términos y Condiciones y el Aviso de privacidad.
+  unsubscribeLink: '%%profile_center_url%%'
+  beforeUnsubscribeText:
+  unsubscribeText:  Cancelar suscripción

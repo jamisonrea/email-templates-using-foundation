@@ -1,0 +1,111 @@
+{{#conditionalWith bbConfirmation config.bbConfirmation}}
+
+{{#if scriptIf}}
+{{{scriptIf}}}
+{{/if}}
+<container class="ciab-confirmation-container bb">
+  <container class="section section-order">
+    <tr>
+      <th  class="text-center">
+        {{orderTitle}} 
+        <b class="order-number">{{{orderNumber}}}</b>
+      </th>
+    </tr>
+    <tr>
+      <th  class="text-center">
+        {{orderDescription}}
+      </th>
+    </tr>
+  </container>
+
+  <container class="section section-wrapper" align="center">
+    {{#each sections}}
+      {{#if header}}
+      <tr class="section-header section-provider">
+        <td>
+          <h6>{{{header}}}</h6>
+        </td>
+        <td class="text-right">
+          {{#if logo}}
+          <img src="{{{logo}}}">
+          {{/if}}
+        </td>
+      </tr>
+      {{/if}}
+      {{#if subheader}}
+      <tr class="section-subheader">
+        <td>{{{subheader}}}</td>
+        <td></td>
+      </tr>
+      {{/if}}
+      {{#each items}}
+      <tr>
+        <td>
+          {{{name}}}
+        </td>
+        <td class="text-right">
+        {{#if url}}
+          {{#if scriptIf}}
+              {{{scriptIf}}}
+          {{/if}}
+          <a href="{{{url}}}" class="external_link">
+            {{{value}}}
+          </a>        
+        
+          {{#if scriptIf}}
+            %%[ELSE]%%
+          {{/if}}
+
+        
+          {{{value}}}
+          {{#if scriptIf}}
+            %%[ENDIF]%%
+          {{/if}}
+        {{else}}
+          {{{value}}}
+        {{/if}}
+        
+        </td>
+
+      </tr>
+      {{/each}}
+      {{#if summary}}
+      <tr class="section-summary">
+        <td>
+          <p><b>{{{summary.name}}}</b></p>
+        </td>
+        <td class="text-right">
+          <b>{{{summary.value}}}</b>
+        </td>
+      </tr>
+      {{/if}}
+      
+      {{/each}}
+      {{#if summary}}
+      <tr class="order-summary">  
+        <td>{{{summary.name}}}</td>
+          <td class="text-right">{{{summary.value}}}</td>
+      </tr>
+      {{/if}}
+  </container>
+  <container class="section section-wrapper  section-user-info" align="center">
+    <tr>
+      <th>{{userInformation.header}}</th>
+    </tr>
+    <tr>
+      <td>
+        <p>{{{userInformation.fullName}}}</p>
+        <p>{{{userInformation.email}}}</p>
+        <p>{{{userInformation.phone}}}</p>
+        <p class="section-user-info--address">{{{userInformation.address}}}</p>
+        <p>{{{userInformation.yearsOfStay}}}</p>
+      </td>
+      <td></td>
+    </tr>
+  </container>
+</container>
+{{#if scriptIf}}
+%%[ENDIF]%%
+{{/if}}
+
+{{/conditionalWith}}

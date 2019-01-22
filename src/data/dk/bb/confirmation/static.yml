@@ -1,0 +1,65 @@
+header:
+  headerLink: '%%view_email_url%%'
+  headerLinkText: Se denne email i din browser
+  headerLogoPath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/94598368-1bce-4b25-87e8-e79012a8e31f.png
+
+menu:
+  - title: HJEM
+    link: https://www.samlino.dk/
+  - title: BILFORKSIKRING
+    link: https://www.samlino.dk/bilforsikring/
+  - title: BREDBÅND
+    link: https://www.samlino.dk/bredbaand/
+  - title: FORBRUGSLÅN
+    link: https://www.samlino.dk/forbrugslaan/
+  - title: KREDITKORT
+    link: https://www.samlino.dk/kreditkort/
+
+headerBanner:
+  headline1: Hej %%=FIELD(@order,"user_name")=%%
+  headline2: Din bredbåndsordre er nu bekræftet!
+  image: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/ce5cc750-7a72-402c-9062-981a68603b4f.png
+  descriptionList:
+    - description: Gratis
+    - description: Hurtigt og nemt
+    - description: Uvildig og uafhængig
+
+whatsNext:
+  title: Hvad sker der nu?
+  description: En af vores kundeservicemedarbejdere vil give dig et opkald hurtigst muligt for at hjælpe dig med
+  detailList:
+    - detail: At finde en leveringsdato der passer dig
+    - detail: At aftale din foretrukne betalingsform
+
+showcase:
+  - title: Mobilabonnement
+    imagePath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/abaa0f97-8c9e-49b8-86de-d597cb7364ee.png
+    description: Find det billigste mobilabonnement der passer til dine behov
+    buttonText: Sammenlign nu
+    buttonLink: /
+    footnote: Det tager kun 15 sek.
+  - title: Bilforsikring
+    imagePath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/e9a387af-243d-4aaa-bd4d-9a863c275c2f.png
+    description: Find den helt rigtige bilforsikring der passer til dine behov
+    buttonText: Sammenlign nu
+    buttonLink: /
+    footnote: Det tager under 1 minut
+  - title: Forbrugslån
+    imagePath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/0af2d900-9c3a-4db2-9241-0d7f700426ed.png
+    description: Find det bedste lån der passer dig bedst
+    buttonText: Sammenlign nu
+    buttonLink: /
+    footnote: Det tager under 1 minut
+
+footer:
+  socialMedia:
+    - link: https://www.facebook.com/samlino.dk
+      imagePath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/cf4ff2a2-0288-402b-8c93-643181110b41.png
+    - link: https://twitter.com/Samlinodk
+      imagePath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/d39a3024-f642-4d24-aa2f-c76ee836027c.png
+    - link: https://plus.google.com/+SamlinoDkogspar
+      imagePath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/15f7bcf9-8a93-47e4-94a3-5c5e17a9a96c.png
+    - link: https://www.youtube.com/channel/UCNLHDarZn0YE9_lFKSEzd1A
+      imagePath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/45921b3a-bd77-4af4-9620-e0d9c0fb4492.png
+  termsTitle: Persondatapolitik / Vilkår & Betingelser
+  termsDescription: &copy; 2016 Alle rettigheder er forbeholdt <a href="#" class="link-remove--mobile">Samlino.dk</a> ApS. Ved brug af <a href="#" class="link-remove--mobile">Samlino.dk</a>, accepteres vores vilkår, betingelser og persondatapolitik.

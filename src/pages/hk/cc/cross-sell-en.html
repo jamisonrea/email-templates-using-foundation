@@ -1,0 +1,25 @@
+---
+#title and description show on the tab of the email (browser)
+subject: Cross selling Email CC HK
+description:
+
+staticFile: hk/cc/cross-sell/static-en.yml
+scriptFile: hk/cc/cross-sell/script-en.yml
+demoFile: 
+---
+{{setConfig}}
+{{{config.scriptMain}}}
+<wrapper class="ciab-abandon cc-abandon">
+  {{> common-header}}
+  {{> common-menu}}
+  <!-- BEGIN header banner -->
+  {{> common-header-abandon-checkout}}
+  <!-- END header banner -->
+
+  {{> common-cross-sell}}
+
+
+  <!-- END general product -->
+  {{> common-menu}}
+  {{> common-footer}}
+</wrapper>

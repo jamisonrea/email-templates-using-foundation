@@ -1,0 +1,90 @@
+{{#conditionalWith bbResultItem config.bbResultItem}}
+
+{{#if scriptIf}}
+{{{scriptIf}}}
+{{/if}}
+<center>
+  <container class="product--bb product {{#if ../isFeatured}}featured{{else}}general{{/if}}">
+    {{#if apply_url}}
+      <tr>
+        <th class="product-col large-6 small-6">
+          <table>
+            <tr>
+              <th class="large-6 small-12">
+                <p class="provider-name">{{{provider.name}}}</p>
+                <img class="provider-logo" src="{{{provider.logo}}}" height="30px">
+                {{#if footerLabel}}<span class="provider-footer">{{{footerLabel}}}</span>{{/if}}
+              </th>
+              <th class="features large-6 small-12">
+                {{#each features as |feature index|}}
+                  <p class="features-value">{{{feature.value}}}
+                    <span>{{feature.text}}</span>
+                  </p>
+                {{/each}}
+              </th>
+            </tr>
+          </table>
+        </th>
+
+        <th class="product-col large-6 small-6">
+          <table align="center">
+            <tr>
+              <th class="large-6 small-12">
+                <table class="price-detail-container">
+
+                  <tr>
+                    <td class="monthly-price">
+                      <h6>{{{priceDetail.monthlyPrice}}}</h6>
+                      <p>{{{priceDetail.monthlyPriceText}}}</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <table class="monthly-price--list">
+                        {{#if priceDetail.discount}}
+                        <tr>
+                          <td class="large-6 small-6">
+                              {{{priceDetail.discountText}}}
+                          </td>
+                          <td class="large-6 small-6">
+                              {{{priceDetail.discount}}}
+                          </td>
+                        </tr>
+                        {{/if}}
+                        <tr>
+                          <td class="large-6 small-6">
+                              {{{priceDetail.setupCost.text}}}
+                          </td>
+                          <td class="large-6 small-6">
+                              {{{priceDetail.setupCost.value}}}
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="large-6 small-6">
+                            {{priceDetail.totalPrice.text}}
+                          </td>
+                          <td class="large-6 small-6">
+                            {{{priceDetail.totalPrice.value}}}
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </th>
+
+              <th class="large-6 small-12 apply-button-container">                
+                <a class="apply-button" href="{{{apply_url}}}"><span>{{buttonText}}</span></a>
+              </th>
+            </tr>
+          </table>
+        </th>
+
+    {{/if}}
+  </container>
+</center>
+{{#if scriptIf}}
+%%[ENDIF]%%
+{{/if}}
+
+{{/conditionalWith}}

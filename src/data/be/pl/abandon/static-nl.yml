@@ -1,0 +1,62 @@
+featuredText: "Gesponserd product"
+applyText: "Vraag nu aan"
+
+header:
+  headerLink: '%%view_email_url%%'
+  headerLinkText: Zie email in browser
+  headerLogoPath: http://image.email.topcompare.be/lib/fe9113727262077974/m/1/nl-top-left-logo.png
+
+headerBanner:
+  headline1: Bedankt om leningen te vergelijken op <a href="#" class="link-remove--mobile">TopCompare.be</a>
+  headline2: "Hier zijn de beste aanbiedingen die we voor u gevonden hebben"
+  image: http://image.email.vertaaensin.fi/lib/fe8a13727262077e7c/m/1/graphic-coin-euro.png
+  descriptionList:
+      - description: 100% gratis
+      - description: Snel & eenvoudig
+      - description: Objectief & onafhankelijk
+
+headerTitleBannerStatic:
+  firstColumn: Product
+  secondColumn: "Minimum vereisten"
+
+menu:
+  - title: Home
+    link: https://www.topcompare.be/nl/?utm_content=Nav_bar
+  - title: Leningen
+    link: https://www.topcompare.be/nl/persoonlijke-lening?utm_content=Nav_bar
+  - title: Kredietkaarten
+    link: https://www.topcompare.be/nl/kredietkaarten?utm_content=Nav_bar
+
+showcase:
+  - title: Leningen
+    imagePath: http://image.email.comparaguru.com/lib/fe9013727262077977/m/1/pl+icon+abandon.png
+    description: Vergelijk alle leningen om de beste aanbiedingen en prijzen te vinden
+    buttonText: VERGELIJK
+    buttonLink: https://www.topcompare.be/nl/persoonlijke-lening?utm_content=PL_icon
+    footnote: In 15 seconden
+  - title: Kredietkaarten
+    imagePath: http://image.email.comparaguru.com/lib/fe9013727262077977/m/1/icon-email-green-cc.png
+    description: Vergelijk alle kaarten om de kaart te vinden met beste voordelen tegen de scherpste prijs
+    buttonText: VERGELIJK
+    buttonLink: https://www.topcompare.be/nl/kredietkaarten/beste-deals?utm_content=CC_icon
+    footnote: In 15 seconden
+
+
+footerBanner:
+  headline1: "De no. 1 vergelijkingssite voor financiële producten in België"
+  headline2: <a href="#" class="link-remove--mobile">TopCompare.be</a> is het beste platform om leningen en kredietkaarten te vergelijken. Gebruik onze website om het product te vinden dat bij u past en om op de hoogte te blijven van de beste aanbiedingen.
+  descriptionList:
+  buttonText: VERGELIJK
+  buttonLink: https://www.topcompare.be/nl/persoonlijke-lening?utm_content=Compare_Button
+
+footer:
+  socialMedia:
+    - link: https://www.facebook.com/topcompare.be
+      imagePath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/cf4ff2a2-0288-402b-8c93-643181110b41.png
+    - link: https://twitter.com/TopCompareBE
+      imagePath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/d39a3024-f642-4d24-aa2f-c76ee836027c.png
+  termsTitle: Algemene voorwaarden
+  termsDescription: "Wij vergelijken de leningen met een looptijd van minimum 3 maanden tot maximum 120 maanden. Het Jaarlijks Kostenpercentage (JKP) is afhankelijk van het type lening en het gekozen bedrag en de looptijd van de lening. Het kan variëren van minimum 1,44% tot maximum 18,5%. Representatief voorbeeld: als u online een persoonlijke lening voor alle doeleinden aangaat van €5.000, terug te betalen in 24 maanden en met een JKP van 5,70% (vaste actuariële debetrentevoet van 5,70%), betaalt u elke maand €220,60 af. Het totaal af te lossen bedrag zal €5.294,40 zijn."
+  termsLink: https://www.topcompare.be/nl/algemene-voorwaarden
+  privacyTitle: Privacybeleid
+  privacyLink: https://www.topcompare.be/nl/privacybeleid

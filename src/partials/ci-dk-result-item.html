@@ -1,0 +1,129 @@
+{{#conditionalWith ciResultItem config.ciResultItem}}
+{{#if provider.name}}
+
+{{#if scriptIf}}
+{{{scriptIf}}}
+{{/if}}
+<container class="product--ci-dk product {{#if ../isFeatured}}featured{{else}}general{{/if}}">
+  <row class="product-row">
+    <columns class="product-column" large="5" small="12">
+      <row>
+        <columns class="provider" large="6" small="12">
+          {{#if ../isFeatured}}<p class="hide-for-large provider-feature">{{featuredText}}</p>{{/if}}
+          <p class="provider-name small-text-center">{{{provider.name}}}</p>
+          <img class="provider-logo" src="{{{provider.logo}}}" height="30">
+        </columns>
+        <columns class="feature" large="6" small="12">
+            {{#each features as |feature index|}}
+            {{#if feature.name}}
+
+            {{#if feature.scriptIf}}
+            {{{feature.scriptIf}}}
+            {{/if}}
+            <div class="feature-list">
+              <!-- script icon -->
+              <span class="feature-icon">
+                {{#if feature.scriptIconIf}}
+                {{#if feature.scriptIconIf}}
+                {{{feature.scriptIconIf}}}
+                {{/if}}
+                <img class="float-left" src="{{getImageUrl true}}" width="14">
+                {{#if feature.scriptIconIf}}
+                %%[ELSE]%%
+                {{/if}}
+                <img class="float-left" src="{{getImageUrl false}}" width="14">
+                {{#if feature.scriptIconIf}}
+                %%[ENDIF]%%
+                {{/if}}<!-- END script icon-->
+                {{else}} <!-- demo icon -->
+                <img class="float-left" src="{{getImageUrl feature.value}}" width="14">
+                <!-- END demo icon -->
+                {{/if}}
+              </span>
+
+              {{#if feature.value}}
+              <span class="feature-text feature-true">&emsp;{{{feature.name}}}</span>
+              {{else}}
+              <span class="feature-text">&emsp;{{{feature.name}}}</span>
+              {{/if}}
+
+            </div>
+            {{#if feature.scriptIf}}
+            %%[ENDIF]%%
+            {{/if}}
+
+            {{/if}}
+            {{/each}}
+        </columns>
+      </row>
+    </columns>
+    <columns class="product-column" large="7" small="12">
+      <row>
+        <columns class="price" large="6" small="12">
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  {{#if originalPriceIf}}
+                    {{{originalPriceIf}}}
+                  {{/if}}                  
+                  <p class="price-head text-right small-text-center">
+                    <span>{{originalText}}</span>
+                    <span class="price-head-value">{{{originalPrice}}}</span>
+                  </p>
+                  {{#if originalPriceIf}}
+                    %%[ENDIF]%%
+                  {{/if}}
+                  <p class="price-body text-right small-text-center">
+                    {{#if originalPriceIf}}
+                      {{{originalPriceIf}}}
+                    {{/if}}
+                    <span class="price-body-value royal-blue">{{{finalPrice}}}</span>  
+                    {{#if originalPriceIf}}
+                      %%[ELSE]%%
+                    {{/if}}   
+                    <span class="price-body-value">{{{finalPrice}}}</span>  
+                    {{#if originalPriceIf}}
+                      %%[ENDIF]%%
+                    {{/if}}        
+                  </p>
+                  <div class="price-footer">
+
+                    {{#if percentageRowIf}}
+                      {{{percentageRowIf}}}
+                    {{/if}}
+                    <p class="price-footer-green text-right small-text-center">
+                      <span>{{{discountPercentage}}}</span>
+                      <span class="price-footer-green-tag">{{discountType}}</span>
+                    </p>
+                    {{#if percentageRowIf}}
+                    %%[ENDIF]%%
+                    {{/if}}
+                    <p class="text-right small-text-center">
+                      <span>{{{membershipDiscountText}}}</span>
+                      <span class="price-footer-value">{{{membershipDiscountPrice}}}</span>
+                    </p>
+                    <p class="text-right small-text-center">
+                      <span>{{deductibleText}}</span>  
+                      <span class="price-footer-value">{{{deductible}}}</span>
+                    </p>
+                  </div>
+                </td>
+              </tr>             
+            </tbody>
+          </table>
+        </columns>
+        <columns class="apply-button-container" large="6" small="12">
+          {{#if ../isFeatured}}<p class="show-for-large provider-feature">{{featuredText}}</p>{{/if}}
+          <a class="apply-button" href="{{{apply_url}}}">{{buttonText}}</a>
+        </columns>
+      </row>
+    </columns>
+  </row>
+</container>
+{{#if scriptIf}}
+%%[ENDIF]%%
+{{/if}}
+
+{{/if}}
+{{/conditionalWith}}

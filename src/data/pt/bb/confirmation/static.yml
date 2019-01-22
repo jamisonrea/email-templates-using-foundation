@@ -1,0 +1,67 @@
+header:
+  headerLink: '%%view_email_url%%'
+  headerLinkText: Veja este e-mail no seu browser
+  headerLogoPath: http://image.email.comparaja.pt/lib/fe8b13727262077e7d/m/1/pt-top-left-logo.png
+
+headerBanner:
+  headline1: Parabéns! Acabou de encontrar o melhor pacote de Telecomunicações do mercado para o seu perfil e necessidades.
+  headline2:
+  image: http://image.email.comparaja.pt/lib/fe9213727262077975/m/1/ce5cc750-7a72-402c-9062-981a68603b4f.png
+  descriptionList:
+    - description: Gratuito
+    - description: Imparcial
+    - description: Independente
+menu:
+  - title: CASA
+    link: https://www.comparaja.pt/
+  - title: TV NET VOZ
+    link: https://www.comparaja.pt/tv-net-voz
+  - title: CRÉDITO PESSOAL
+    link: https://www.comparaja.pt/credito-pessoal
+  - title: CARTÕES DE CRÉDITO
+    link: https://www.comparaja.pt/cartao-de-credito
+  - title: CRÉDITO HABITAÇÃO
+    link: https://www.comparaja.pt/credito-habitacao
+
+showcase:
+  - title: Crédito Habitação
+    imagePath: http://image.email.comparaja.pt/lib/fe8b13727262077e7d/m/1/houseloan.png
+    description: Poupe até 30.000 € no melhor crédito
+    buttonText: COMPARE AGORA
+    buttonLink: https://www.comparaja.pt/credito-habitacao
+    footnote:
+  - title: TV NET VOZ
+    imagePath: http://image.email.comparaja.pt/lib/fe8b13727262077e7d/m/1/broadband-1.png
+    description: Encontre o pacote ideal para si
+    buttonText: COMPARE AGORA
+    buttonLink: https://www.comparaja.pt/tv-net-voz
+    footnote:
+showcaseRow2:
+  - title: Crédito Pessoal
+    imagePath: http://image.email.comparaja.pt/lib/fe9213727262077975/m/1/0af2d900-9c3a-4db2-9241-0d7f700426ed.png
+    description: Poupe até 5.500 €
+    buttonText: COMPARE AGORA
+    buttonLink: https://www.comparaja.pt/credito-pessoal
+    footnote:
+  - title: Cartões de Crédito
+    imagePath: http://image.email.comparaja.pt/lib/fe9013727262077977/m/1/icon-email-green-cc.png
+    description: Poupe até 270 € mensais
+    buttonText: COMPARE AGORA
+    buttonLink: https://www.comparaja.pt/cartao-de-credito
+    footnote:
+
+footerBanner:
+  headline1: Plataforma de comparação financeira líder em Portugal
+  headline2: O <a href="#" class="link-remove--mobile">ComparaJá.pt</a> é o portal de referência dos portugueses na hora de escolher os melhores produtos financeiros para o seu perfil e necessidades. A nossa plataforma apresenta informações atualizadas e fidedignas de uma forma transparente e descomplicada.
+  descriptionList:
+  buttonText: COMPARAR
+  buttonLink: https://www.comparaja.pt
+
+footer:
+  socialMedia:
+    - link: https://www.facebook.com/Comparaja
+      imagePath: http://image.email.comparaja.pt/lib/fe9213727262077975/m/1/cf4ff2a2-0288-402b-8c93-643181110b41.png
+    - link: https://twitter.com/comparaja
+      imagePath: http://image.email.comparaja.pt/lib/fe9213727262077975/m/1/d39a3024-f642-4d24-aa2f-c76ee836027c.png
+  termsTitle: <a href="https://www.comparaja.pt/politica-privacidade">Termos e Condições e Política de Privacidade.</a>
+  termsDescription: &copy; 2017  ComparaJá Unipessoal Ltd. Todos os direitos reservados. Ao utilizar este site concorda com os nossos Termos e Condições e Política de Privacidade.

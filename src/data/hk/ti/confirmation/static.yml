@@ -1,0 +1,29 @@
+##----- static content -----##
+header:
+  headerLink: '%%view_email_url%%'
+  headerLinkText: View in your browser
+  headerLogoPath: http://image.email.moneyhero.com.hk/lib/fe9213727262077e74/m/1/MoneyHero-logo-180x35.png
+
+headerBanner:
+  headline1: Hello 您好
+  headline3: Thank you for purchasing Travel Insurance through <a href="https://www.moneyhero.com.hk">MoneyHero.com.hk</a>. Your policy cover is now effective, and details of your policy and coverage are listed below. Please also download your <a href="%%=RedirectTo(FIELD(@order,'brochure_url'))=%%" target="_blank">policy brochure</a> in case of use in the event of an emergency or a claim. <br><br> 感謝您經由<a href="https://www.moneyhero.com.hk">MoneyHero.com.hk</a>購買旅遊保險。您的旅遊保單現已正式生效，以下是您的保單及保障項目。您亦可下載有關保險計劃的<a href="%%=RedirectTo(FIELD(@order,'brochure_url'))=%%" target="_blank">產品說明書</a>產品說明書，以便遇到意外或提出索償時查閱。
+  image: https://www.moneyhero.com.hk/themes/cgg-confidence-green/assets/img/landing-page/pl_landing_holiday.png
+
+footer:
+  termsText: <a href="#" class="link-remove--mobile">MoneyHero.com.hk</a> Privacy Policy / Terms and Conditions <br><a href="#" class="link-remove--mobile">MoneyHero.com.hk</a>的私隱政策、條款及細則
+  termsLink: https://www.moneyhero.com.hk/en/privacy-policy
+  termsDescription: <a href="#" class="link-remove--mobile">MoneyHero.com.hk</a> operates and owns MoneyHero Insurance Brokers limited, a registered broker with the Hong Kong Professional Insurance Brokers Association ("PIBA"), registered number 0633. <br><a href="#" class="link-remove--mobile">MoneyHero.com.hk</a>經營並持有MoneyHero Insurance Brokers Limited (「MIBL」)，「MIBL」為香港專業保險經紀協會（「PIBA」）的註冊會員，PIBA註冊會員編號為0633
+
+menu:
+  - title: 首頁
+    link: https://www.moneyhero.com.hk/zh?utm_content=Nav_bar
+  - title: 私人／稅務貸款
+    link: https://www.moneyhero.com.hk/zh/personal-loan/personal-instalment?utm_content=Nav_bar
+  - title: 信用卡
+    link: https://www.moneyhero.com.hk/zh/credit-card/best-deals?utm_content=Nav_bar
+  - title: 按揭
+    link: https://www.moneyhero.com.hk/zh/mortgage/all?utm_content=Nav_bar
+  - title: 旅遊保險
+    link: https://www.moneyhero.com.hk/zh/travel-insurance/get-quote?utm_content=Nav_bar
+  - title: 本地醫療保險
+    link: https://www.moneyhero.com.hk/zh/local-medical-insurance/get-quote?utm_content=Nav_bar

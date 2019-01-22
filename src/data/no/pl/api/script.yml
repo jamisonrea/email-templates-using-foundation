@@ -1,0 +1,27 @@
+scriptMain: '%%[
+            VAR @applicationlist, @application, @userlist, @user
+            ]%%
+            %%[
+            SET @userlist = LOOKUPROWS("User", "SubscriberKey", SubscriberKey)
+            SET @applicationlist = LOOKUPROWS("PL Order Confirmation", "event_id", EventId)
+            ]%%
+
+            %%[
+            IF ((ROWCOUNT(@applicationlist) != 1)
+            OR (ROWCOUNT(@userlist) != 1))
+            THEN
+            RaiseError("Error finding corresponding application and/or user", 1)
+            ENDIF
+            SET @user = ROW(@userlist, 1)
+            SET @application = ROW(@applicationlist, 1)
+            ]%%'
+
+header:
+      title: 'Hei %%=ProperCase(FIELD(@application, "first_name"))=%%,'
+      bankIcon: "%%=FIELD(@application, 'product_logo')=%%"
+
+apiProductInfo:
+      benefit1: '%%=ProperCase(FIELD(@application, "first_name"))=%% %%=ProperCase(FIELD(@application, "last_name"))=%%'
+      benefit2: '%%=SUBSTRING(FIELD(@user, "emailAddress"),1,4)=%% &lowast;&lowast;&lowast;&lowast;'
+      benefit3: '%%[IF (NOT EMPTY(FIELD(@user,"phone"))) THEN]%% %%=SUBSTRING(FIELD(@application,"phone"),1,4)=%% %%[ELSE]%% %%=SUBSTRING(FIELD(@application,"mobile"),1,4)=%% %%[ENDIF]%% &lowast;&lowast;&lowast;&lowast;'
+      statusPageUrl: '%%=RedirectTo(FIELD(@application, "order_status_url"))=%%'

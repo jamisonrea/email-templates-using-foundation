@@ -1,0 +1,29 @@
+ccConfirmation:
+  orderTitle: Your order number is 
+  orderDescription:
+  orderNumber: uc-58d8d848-133f4f9
+  sections:
+    - header: Your Credit Card Application
+      logo: 
+      items:
+        - name: Provider
+          value: OCBC
+        - name: Product 
+          value: OCBC 365 Credit Card 
+        - name: Date of Application (D/M/Y)
+          value: 20/01/2017
+    - header: Your Details
+      logo: 
+      items:
+        - name: James Smith
+          value: 
+        - name: james.smith@gmail.com
+          value: 
+        - name: 05304393
+          value: 
+      summary:
+          name:
+          value:
+ 
+
+        

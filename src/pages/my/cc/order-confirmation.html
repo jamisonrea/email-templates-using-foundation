@@ -1,0 +1,24 @@
+---
+#title and description show on the tab of the email (browser)
+subject: CC MX Confirmation
+description:
+
+staticFile: my/cc/order-confirmation/static.yml
+scriptFile: my/cc/order-confirmation/script.yml
+demoFile: 
+---
+{{setConfig}}
+{{#if config.scriptMain}}
+{{{config.scriptMain}}}
+{{/if}}
+<wrapper class="ciab-confirmation">
+  {{> common-header}}
+  {{> common-menu}}
+  {{> common-header-banner}}
+
+  {{> cc-confirmation ccConfirmation=config.ccConfirmation}}
+  
+  {{> common-footer-banner}}
+  {{> common-showcase}}
+  {{> common-footer}}
+</wrapper>

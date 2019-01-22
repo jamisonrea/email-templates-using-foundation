@@ -1,0 +1,42 @@
+<center class="">
+  <container>
+    <spacer size="30"></spacer>
+    <center class="api-title">{{config.apiDescriptions.title}}</center>
+    <spacer size="30"></spacer>
+    <container class="api-product-info-container" >
+      <row class="title-row">
+        <columns small="6" large="6">
+          <p class="text-left"><strong>{{config.apiDescriptions.detailsTitle}}</strong></p>
+        </columns>
+      </row>
+      <hr class="separator-line"/>
+      <spacer size="20"></spacer>
+      <row class="detail-row">
+        <columns small="6" large="6">
+          <p class="text-left">{{config.apiDescriptions.provider}}</p>
+        </columns>
+        <columns small="6" large="6"> 
+          <p class="text-right">{{{config.apiProductInfo.provider}}}</p>
+        </columns>
+      </row>
+      <row class="detail-row">
+        <columns small="6" large="6">
+          <p class="text-left">{{config.apiDescriptions.loanAmount}}</p>
+        </columns>
+        <columns small="6" large="6">
+          <p class="text-right">{{{config.apiProductInfo.loanAmount}}}</p>
+        </columns>
+      </row>
+      <row class="detail-row">
+        <columns small="6" large="6">
+          <p class="text-left">{{config.apiDescriptions.loanDuration}}</p>
+        </columns>
+        <columns small="6" large="6">
+          <p class="text-right">{{{config.apiProductInfo.loanDuration}}}</p>
+        </columns>
+      </row>
+      <hr class="separator-line"/>
+      <spacer size="20"/> 
+    </container>
+  </container>
+</center>

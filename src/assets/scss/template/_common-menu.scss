@@ -1,0 +1,31 @@
+table.ciab-menu {
+  background-color: white;
+  @include media-max-bp {
+    display: none;
+  }
+
+  tr{text-align: center;}
+
+  td.menu-item, th.menu-item {
+    padding:4px 10px;
+
+    @include media-max-bp {
+      padding: 4px 2px !important;
+      width: 30%;
+      display: inline-block;
+    }
+  }
+
+  a,
+  a:link,
+  a:active,
+  a:visited {
+    font-size: 10px;
+    font-weight: bold;
+    color: map-get($color, blue);
+    text-transform: uppercase;
+  }
+	@media only screen and (max-width: #{$global-breakpoint}) {
+		display: none !important;
+	}
+}

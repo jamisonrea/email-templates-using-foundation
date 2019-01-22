@@ -1,0 +1,67 @@
+##----- static content -----##
+header:
+  headerLink: '%%view_email_url%%'
+  headerLinkText: View email in browser
+  headerLogoPath: http://image.S7.exacttarget.com/lib/fe9813727663007d75/m/3/eeb3f9af-95de-4b93-a75b-7a11ef6735c1.png
+
+headerBanner:
+  headline1: Thank you for visiting <a href="https://www.moneymax.ph">MoneyMax.ph</a>
+  headline2: "We found the best car insurance for you. Don’t wait too long - deals expire sooner than you think!"
+  descriptionList:
+    - description: 100% free
+    - description: Quick & Easy
+    - description: Impartial & Independant
+  image: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/312b9be3-0c6c-481a-b354-7e5f77295ba0.png
+
+menu:
+  - title: Home
+    link: https://www.moneymax.ph/
+  - title: Car Insurance
+    link: https://www.moneymax.ph/car-insurance
+  - title: Credit Card
+    link: https://www.moneymax.ph/credit-card
+  - title: Personal Loans
+    link: https://www.moneymax.ph/personal-loan
+  - title: Broadband
+    link: https://www.moneymax.ph/broadband
+
+showcase:
+  - title: Credit Card
+    imagePath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/e9a387af-243d-4aaa-bd4d-9a863c275c2f.png
+    description: Find low interest rate
+    buttonText: Compare Now
+    buttonLink: https://www.moneymax.ph/credit-card
+    footnote: Get results in less than 10 seconds
+  - title: Personal Loans
+    imagePath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/0af2d900-9c3a-4db2-9241-0d7f700426ed.png
+    description: Get the personal loan you want
+    buttonText: Compare Now
+    buttonLink: https://www.moneymax.ph/personal-loan
+    footnote: Get results in less than 1 minute
+  - title: Broadband
+    imagePath: http://image.email.comparaja.pt/lib/fe8b13727262077e7d/m/1/broadband-1.png
+    description: Find the best broadband deals
+    buttonText: Compare Now
+    buttonLink: https://www.moneymax.ph/broadband
+    footnote: Get results in less than 1 minute
+
+footerBanner:
+  headline1: Philippine's largest comparison portal
+  headline2: '<a href="#" style="color: #ffffff; !important; text-decoration: none !important; cursor: default !important;">MoneyMax.ph</a> is your go-to website for comparing insurance, loans, credit cards and broadband. Use our powerful comparison tool to get unbiased, up-to-date information.'
+  descriptionList:
+  buttonText: Compare Now
+  buttonLink: https://www.moneymax.ph
+
+footer:
+  socialMedia:
+    - link: https://www.facebook.com/moneymax.ph
+      imagePath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/cf4ff2a2-0288-402b-8c93-643181110b41.png
+    - link: https://twitter.com/moneymaxph
+      imagePath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/d39a3024-f642-4d24-aa2f-c76ee836027c.png
+    - link: https://plus.google.com/+MoneyMaxPH
+      imagePath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/15f7bcf9-8a93-47e4-94a3-5c5e17a9a96c.png
+  termsTitle: Privacy Policy / Terms and Conditions
+  termsLink: https://www.moneymax.ph/terms
+  termsDescription: ©MoneyMax Global Limited. All rights reserved. Use of this site constitutes acceptance of our Terms of Use and Privacy Policy. You are receiving this email because you subscribed to <a href="#" class="link-remove--mobile">MoneyMax.ph</a> Newsletter.
+  unsubscribeLink: '%%unsub_center_url%%'
+  unsubscribeText: Unsubscribe

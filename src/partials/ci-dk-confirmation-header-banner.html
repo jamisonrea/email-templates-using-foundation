@@ -1,0 +1,22 @@
+<container class="ciab-header-banner-ci-confirmation" align="center">
+  <table class="ciab-header-banner-ci-confirmation-wrapper">
+    <tr>
+      <td class="large-9 small-8 padding-0-xs">
+        <h1 class="header-headline">
+          {{{config.headerBanner.headline1}}} <b>{{{config.personalDetails.fullName}}}</b>,
+        </h1>
+
+        {{#if config.headerBanner.headline2}}
+          <p class="header-banner-text">{{{config.headerBanner.headline2}}}</p>
+        {{/if}}
+      </td>
+
+      <td class="large-3 small-4 header-image">
+        <img src="{{config.headerBanner.image}}">
+      </td>
+    </tr>
+  </table>
+</container>
+<container>
+  <img src="{{config.headerBanner.backgroundImage}}">
+</container>

@@ -1,0 +1,14 @@
+headerBanner:
+  headline1: 'Hello <strong>John Doe</strong>'
+headerTitleBanner:
+  columnTitleList:
+    - description:
+    - description:
+    - description:
+
+apiProductInfo:
+  provider: TFbank
+  loanAmount: 2000
+  loanDuration: 5 months
+  statusPageUrl: "#"
+  bankIcon: '<img class="text-right" src="http://image.s7.exacttarget.com/lib/fe8f13727262077e71/m/1/tfbank.png"/>'

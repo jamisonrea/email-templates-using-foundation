@@ -1,0 +1,35 @@
+scriptMain: '%%[
+            VAR @applicationlist, @application, @userlist, @user
+            ]%%
+            %%[
+            SET @userlist = LOOKUPROWS("User", "SubscriberKey", SubscriberKey)
+            SET @applicationlist = LOOKUPROWS("TI Abandon Checkout", "event_id", EventId)
+            ]%%
+
+            %%[
+            IF ((ROWCOUNT(@applicationlist) != 1)
+            OR (ROWCOUNT(@userlist) != 1))
+            THEN
+            RaiseError("Error finding corresponding application and/or user", 1)
+            ENDIF
+            SET @user = ROW(@userlist, 1)
+            SET @application = ROW(@applicationlist, 1)
+            ]%%'
+
+header:
+      title: '%%=ProperCase(FIELD(@application, "first_name"))=%% 你好：'
+      bankIcon: 
+
+apiProductInfo:
+      provider: '%%=FIELD(@application, "provider_name")=%%'
+      benefit1: '%%=ProperCase(FIELD(@application, "destinations"))=%%'
+      benefit2: '%%=FormatDate(FIELD(@application, "date_start"),"YYYY-MM-DD","","en-US")=%%'
+      benefit3: '%%=FormatDate(FIELD(@application, "date_end"),"YYYY-MM-DD","","en-US")=%%'
+      benefit4: '%%=FIELD(@application,"number_of_adults")=%%'
+      benefit5: '%%=FIELD(@application,"number_of_children")=%%'
+      benefit6: 'HKD $ %%=FIELD(@application,"price_original")=%%'
+      statusPageUrl: '%%=RedirectTo(FIELD(@application, "apply_url"))=%%'
+
+# To obtain the values, assign this to the variable: 
+# %%=FIELD(@application, "<corresponding column name>")=%%
+# %%=SUBSTRING(FIELD(@application,"phone"),1,4)=%%****

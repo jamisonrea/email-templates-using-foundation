@@ -1,0 +1,25 @@
+---
+#title and description show on the tab of the email (browser)
+subject: PL PT Confirmation
+description:
+
+staticFile: hk/pl/order-confirmation/static-en.yml
+scriptFile: hk/pl/order-confirmation/script-en.yml
+demoFile: 
+---
+{{setConfig}}
+{{#if config.scriptMain}}
+{{{config.scriptMain}}}
+{{/if}}
+<wrapper class="ciab-confirmation">
+  {{> common-header}}
+  {{> common-menu}}
+  {{> common-header-banner}}
+
+  {{> pl-confirmation}}
+
+  {{> common-footer-banner}}
+  {{> common-showcase}}
+  {{> common-menu}}
+  {{> common-footer}}
+</wrapper>

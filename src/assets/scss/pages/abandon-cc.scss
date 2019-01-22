@@ -1,0 +1,240 @@
+.cc-abandon {
+
+  table.ciab-menu {
+    th.menu-item {
+      font-weight: normal;
+      font-size: 13px;
+    }
+
+    a, a:link, a:active, a:visited {
+      font-weight: normal;
+    }
+  }
+
+  table.ciab-header-title-banner-wrapper {
+    h1.header-headline {
+      font-size: 18px;
+    }
+  }
+
+  .ciab-header-logo {
+    padding-bottom: 25px;
+  }
+
+  .ciab-header-banner {
+    .ciab-header-banner-wrapper {
+      h1.header-headline {
+        font-size: 25px;
+      }
+
+      p.header-banner-text {
+        font-size: 15px;
+        margin-bottom: 25px;
+      }
+    }
+  }
+
+  .banner-description {
+    td.small-9 { width: 70% !important;}
+
+    td.small-3 { vertical-align: bottom;}
+  }
+
+  .container--cc {
+
+    table.product--cc {
+
+      &.featured {
+        background-color: map-get( $color, cream-white );
+        border-bottom: 2px solid #fff;
+      }
+
+      &.general {
+        background-color: #fff;
+        border-bottom: 2px solid #e7e6e2;
+      }
+
+      table.product-row.show-for-desktop {
+        width: 92%;
+        margin: auto auto 15px;
+        /* CI team please make your CSS more specific to your own vertical */
+        background-color: none;
+        border-bottom: none;
+
+        @include media-max-bp {
+          display: none;
+        }
+
+        td.product-name-column {
+          width: 75%;
+
+          p.provider-name {
+            width: 100%;
+            margin-top: 15px;
+            line-height: 1.3;
+            font-size: 14px;
+          }
+        }
+
+        td.sponsored-column {
+          width: 25%;
+          text-align: center;
+
+          p {
+            color: #979290;
+            font-size: 9px;
+            margin: 15px auto auto;
+            text-align: center;
+          }
+        }
+
+        td.data-row {
+          width: 15%;
+          text-align: center;
+          vertical-align: top;
+
+          img, small, p {margin: auto;}
+
+          img.provider-logo {}
+
+          p.column-value {
+            text-align: center;
+            font-weight: bold;
+            font-size: 14px;
+          }
+
+          small {
+            font-size: 9px;
+            color: #979290;
+            line-height: 1.3;
+            display: block;
+            height: 45px;
+            max-height: 45px;
+            min-height: 45px;
+            overflow: hidden;
+          }
+        }
+
+        td.apply-button-container {
+          vertical-align: top;
+
+          a.apply-button,
+          a.apply-button:link,
+          a.apply-button:visited, {
+            @extend .cta-button;
+            width: 70%;
+            line-height: 20px;
+            /* CI team please make your CSS more specific to your own team */
+
+            // FYI: KINDLY CHECK YOUR LAYOUT AND ADJUSTS AS WHAT YOU GUYS NEED.
+            // IMPORTANTE: REPLACING 'PADDING' TO 'BORDER-WIDTH' WORK AROUND FOR OUTLOOK TO HAVE A PADDING
+            border-width: 4px;
+
+            table.apply-button-layout {
+              width: 100%;
+              background-color: #f58423;
+
+              td.apply-text {
+                color: #fff;
+                text-align: center;
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+
+      table.product-row.show-for-mobile {
+        @media yahoo {
+          display: none;
+        }
+        border-bottom: none;
+        width: 92%;
+        margin: 20px auto;
+        display: none;
+
+        @media yahoo {
+          display: none;
+        }
+
+        @include media-max-bp {
+          display: block !important;
+        }
+
+        td.half-column.left {
+          padding-right: 5px;
+        }
+
+        td.half-column.right {
+          padding-left: 5px;
+        }
+
+        td.half-column {
+          width: 49%;
+
+          p.provider-name {
+            width: 100%;
+            font-size: 15px;
+            line-height: 1.3;
+            margin-bottom: 15px;
+          }
+
+          p.column-value {
+            font-weight: bold;
+            font-size: 18px;
+            margin-top: 8px;
+            margin-bottom: 0;
+          }
+
+          p.column-value.first {margin-top: 0;}
+
+          small {
+            color: #979290;
+          }
+        }
+
+        td.half-column.eligibility-column,
+        td.half-column.apply-button-container {
+          padding-top: 15px;
+        }
+
+        td.half-column.eligibility-column {
+          img {
+            width: 20%;
+            clear: none;
+            display: inline-block;
+            vertical-align: middle;
+          }
+
+          small.eligibility-text {
+            width: 75%;
+            display: inline-block;
+            vertical-align: middle;
+          }
+
+          p.sponsored-word {
+            font-size: 14px;
+            color: #b7b2b0;
+            margin-top: 10px;
+            margin-bottom: 0;
+          }
+        }
+
+        td.half-column.apply-button-container {
+          a.apply-button {
+            @extend .cta-button;
+            width: 70%;
+            display: none;
+            /* CI team please make your CSS more specific to your own team */
+            border-width: 4px;
+            border-radius: 3px !important;
+
+            @include media-max-bp {
+              display: block !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}

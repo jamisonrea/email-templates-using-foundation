@@ -1,0 +1,25 @@
+---
+#title and description show on the tab of the email (browser)
+subject: Abandon Email CC MX
+description:
+
+staticFile: mx/cc/cross-sell/static.yml
+scriptFile: mx/cc/cross-sell/script.yml
+demoFile: 
+---
+{{setConfig}}
+{{{config.scriptMain}}}
+<wrapper class="ciab-abandon cc-abandon">
+  {{> common-header}}
+  {{> common-menu}}
+  <!-- BEGIN header banner -->
+  {{> common-header-abandon-checkout}}
+  <!-- END header banner -->
+
+  {{> common-cross-sell-short}}
+
+
+  <!-- END general product -->
+  {{> common-menu}}
+  {{> common-footer}}
+</wrapper>

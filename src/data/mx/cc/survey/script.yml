@@ -1,0 +1,47 @@
+scriptMain: '%%[
+                VAR @orderlist, @order, @userlist, @user
+            ]%%
+            %%[
+                SET @userlist = LOOKUPROWS("User", "SubscriberKey", SubscriberKey)
+                SET @orderlist = LOOKUPROWS("CC Order Confirmation", "event_id", EventId)
+            ]%%
+            %%[
+            IF ((ROWCOUNT(@orderlist) != 1)
+                AND (ROWCOUNT(@userlist) != 1))
+            THEN
+                RaiseError("Error finding corresponding order and/or user", 1)
+            ENDIF
+            SET @user = ROW(@userlist, 1)
+            SET @order = ROW(@orderlist, 1)
+            SET @today = Now()
+            ]%%'
+
+survey:
+  title: "¿Qué tan probable es que nos recomiendes a un amigo?"
+  lowrate: Nada probable
+  highrate: Muy probable
+  rating:
+    - title: "1"
+      link: "https://paginasegura.comparaguru.com/encuesta/gracias/?rate=1&SubscriberKey=%%SubscriberKey%%"
+    - title: "2"
+      link: "https://paginasegura.comparaguru.com/encuesta/gracias/?rate=2&SubscriberKey=%%SubscriberKey%%"
+    - title: "3"
+      link: "https://paginasegura.comparaguru.com/encuesta/gracias/?rate=3&SubscriberKey=%%SubscriberKey%%"
+    - title: "4"
+      link: "https://paginasegura.comparaguru.com/encuesta/gracias/?rate=4&SubscriberKey=%%SubscriberKey%%"
+    - title: "5"
+      link: "https://paginasegura.comparaguru.com/encuesta/gracias/?rate=5&SubscriberKey=%%SubscriberKey%%"
+    - title: "6"
+      link: "https://paginasegura.comparaguru.com/encuesta/gracias/?rate=6&SubscriberKey=%%SubscriberKey%%"
+    - title: "7"
+      link: "https://paginasegura.comparaguru.com/encuesta/gracias/?rate=7&SubscriberKey=%%SubscriberKey%%"
+    - title: "8"
+      link: "https://paginasegura.comparaguru.com/encuesta/gracias/?rate=8&SubscriberKey=%%SubscriberKey%%"
+    - title: "9"
+      link: "https://paginasegura.comparaguru.com/encuesta/gracias/?rate=9&SubscriberKey=%%SubscriberKey%%"
+    - title: "10"
+      link: "https://paginasegura.comparaguru.com/encuesta/gracias/?rate=10&SubscriberKey=%%SubscriberKey%%"
+
+headerSurvey:
+  headlineSurvey1: "Tu opión es muy valiosa para nosotros"
+  headlineSurvey2: "En los últimos días visitaste el sitio de ComparaGuru.com y utilizaste nuestro comparador, por lo que nos gustaría conocer tu opinión acerca de nuestro servicio y así mejorar el servicio y atención para los demás usuarios. "

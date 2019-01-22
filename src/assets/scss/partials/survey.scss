@@ -1,0 +1,111 @@
+.survey-title {
+    margin: 20px auto 5px;
+    th {
+      font-size: 15px;
+      font-weight: normal;
+    }
+    .intro-title {
+      p {
+        font-size:28px;
+        margin: 40px 30px 0px;
+        font-weight: bold;
+      }
+      @media only screen and (max-width: #{$global-breakpoint}) {
+        display: block;
+      }
+    }
+    .scale {
+      p {
+        font-size:16px;
+        margin: 0 auto 10px;
+        font-weight: normal;
+      }
+      @media only screen and (max-width: #{$global-breakpoint}) {
+        display: block;
+      }
+    }
+    .scale-mobile{
+      @media only screen and (max-width: #{$global-breakpoint}) {
+        p{
+          display: none !important;
+        }
+      }
+    }
+    .scale-desktop {
+      padding-bottom: 0;
+      @media only screen and (min-width: #{$global-breakpoint}) {
+        
+        p{
+          display: none !important;
+
+        }
+      }
+    }
+  }
+
+
+table.ciab-survey {
+  background-color: white;
+  @include media-max-bp {
+  }
+
+  tr{text-align: center;}
+
+  td.menu-item, th.menu-item {
+    padding:4px 10px;
+
+    @include media-max-bp {
+      padding: 4px 2px !important;
+      width: 30%;
+      display: inline-block;
+    }
+  }
+
+  a, a:link, a:active, a:visited {
+    font-size: 16px;
+    font-weight: bold;
+    color: map-get($color, white);
+    text-transform: uppercase;
+  }
+	@media only screen and (max-width: #{$global-breakpoint}) {
+	}
+  
+  ul {
+    @media only screen and (max-width: #{$global-breakpoint}) {
+      padding: 0 20px;
+    }
+  }
+  ul, li {
+    text-align: center;
+    list-style-type: none;
+    display:  inline-block;
+    margin: 2px 4px;
+    padding: 0px 1px 5px;
+    @media only screen and (max-width: #{$global-breakpoint}) {
+      margin: 2px 10px 0 17px;
+    }
+    
+  }
+  
+  ul li a {
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    line-height: 45px;
+    width: 40px;
+    height: 40px;
+    display: block;
+    padding: 0;
+    background-color: #076b9c;
+    text-decoration: none;
+    border-bottom: 6px solid #155072;
+    @include vendor-prefixed( border-radius, 5px );
+    @media only screen and (max-width: #{$global-breakpoint}) {
+      width: 30px;
+      height: 30px;
+      font-size: 16px;
+      line-height: 30px;
+    }
+  }
+}
+

@@ -1,0 +1,32 @@
+# this component is not configurable by config, instead it is controlled by the real data
+ciResultItem:
+  scriptIf: # used by salesforce, if the field is empty, should not display any thing, e.g. '%%[IF NOT EMPTY(FIELD(@products, "tp_col3_name1")) THEN]%%'
+  provider:
+    name: Provider Name
+    logo: http://assets.ciab.compareglobal.co.uk/denmark/samlino.dk/integration/dk/images/providerLogos/Alka.png
+  features:
+    - name:  feature 1
+      value: true
+      scriptIf:
+      scriptIconIf:
+    - name:  feature 2
+      value: false
+      scriptIf:
+      scriptIconIf:
+    - name: feature 3
+      value: false
+      scriptIf:
+      scriptIconIf:
+    - name:  feature 4
+      value: true
+      scriptIf:
+      scriptIconIf:
+  apply_url: /
+  originalPrice: kr 30.000
+  discountPrice: kr 20.000
+  deductible: kr 4.000
+  originalText: original price
+  discountText: discount price
+  deductibleText: Deductible
+  featuredText: featured product
+  buttonText: GET OFFER

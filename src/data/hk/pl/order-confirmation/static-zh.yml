@@ -1,0 +1,94 @@
+apiDescriptions:
+  detailsTitle: 你的私人貸款
+  provider: "銀行/財務公司"
+
+header:
+  headerLink: '%%view_email_url%%'
+  headerLinkText: 以瀏覽器觀看
+  headerLogoPath: http://image.email.moneyhero.com.hk/lib/fe9213727262077e74/m/1/MoneyHero-logo-180x35.png
+  introText: 
+
+headerBanner:
+  headline1: '感謝透過使用<a href="https://www.moneyhero.com.hk">MoneyHero.com.hk</a>去申請私人貸款'
+  headline2: "現正處理你的私人貸款申請"
+  image: http://image.email.comparaguru.com/lib/fe9013727262077977/m/1/icon-email-pl.png
+  descriptionList:
+      - description: 費用全免
+      - description: 簡單快捷
+      - description: 客觀公正
+
+headerTitleBannerStatic:
+  firstColumn: 產品
+  secondColumn: ""
+
+menu:
+  - title: 首頁
+    link: https://www.moneyhero.com.hk/zh?utm_content=Nav_bar
+  - title: 私人／稅務貸款
+    link: https://www.moneyhero.com.hk/zh/personal-loan/personal-instalment?utm_content=Nav_bar
+  - title: 信用卡
+    link: https://www.moneyhero.com.hk/zh/credit-card/best-deals?utm_content=Nav_bar
+  - title: 按揭
+    link: https://www.moneyhero.com.hk/zh/mortgage/all?utm_content=Nav_bar
+  - title: 旅遊保險
+    link: https://www.moneyhero.com.hk/zh/travel-insurance/get-quote?utm_content=Nav_bar
+  - title: 本地醫療保險
+    link: https://www.moneyhero.com.hk/zh/local-medical-insurance/get-quote?utm_content=Nav_bar
+
+showcase:
+  - title: 私人／稅務貸款
+    imagePath: http://image.email.comparaguru.com/lib/fe9013727262077977/m/1/pl+icon+abandon.png
+    description: "選擇最適合你的私人／稅務貸款助你實現夢想"
+    buttonText: 立即比較
+    buttonLink: https://www.moneyhero.com.hk/zh/personal-loan/personal-instalment?utm_content=PL_icon
+    footnote: 只需15秒
+  - title: 信用卡
+    imagePath: http://image.email.comparaguru.com/lib/fe9013727262077977/m/1/icon-email-green-cc.png
+    description: "選擇最適合你的信用卡即享現金回贈和飛行里數等優惠"
+    buttonText: 立即比較
+    buttonLink: https://www.moneyhero.com.hk/zh/credit-card/best-deals?utm_content=CC_icon
+    footnote: 只需15秒
+  - title: 按揭
+    imagePath: http://image.email.moneyhero.com.hk/lib/fe9213727262077e74/m/1/hl-int.png
+    description: "選擇最適合你的按揭計劃達成置業夢想"
+    buttonText: 立即比較
+    buttonLink: https://www.moneyhero.com.hk/zh/mortgage/all?utm_content=MG_icon
+    footnote: 只需15秒
+showcaseRow2:
+  - title: 旅遊保險
+    imagePath: http://image.email.moneyhero.com.hk/lib/fe9213727262077e74/m/1/ti-int.png
+    description: "購買最適合你的旅遊保險安心享受旅程"
+    buttonText: 立即比較
+    buttonLink: https://www.moneyhero.com.hk/zh/travel-insurance/get-quote?utm_content=TI_icon
+    footnote: 只需15秒
+  - title: 本地醫療保險
+    imagePath: http://image.email.moneyhero.com.hk/lib/fe9213727262077e74/m/1/mi-int.png
+    description: "選擇最適合你的本地醫療保險節省醫療開支"
+    buttonText: 立即比較
+    buttonLink: https://www.moneyhero.com.hk/zh/local-medical-insurance/get-quote?utm_content=LMI_icon
+    footnote: 只需15秒
+
+footerBanner:
+  headline1: 下一個步驟是?
+  headline2: '已申請的銀行將會短時間內聯絡你'
+  descriptionList:
+  buttonText: 立即比較
+  buttonLink: https://www.moneyhero.com.hk/zh/personal-loan?utm_content=Compare_Button
+
+footer:
+  socialMedia:
+    - link: https://www.facebook.com/moneyhero.com.hk
+      imagePath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/cf4ff2a2-0288-402b-8c93-643181110b41.png
+    - link: https://www.instagram.com/moneyhero.com.hk/
+      imagePath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/d39a3024-f642-4d24-aa2f-c76ee836027c.png
+  companyLink: https://www.moneyhero.com.hk
+  companyName: MoneyHero.com.hk
+  companyAddress: "香港銅鑼灣興發街88號21樓. 電話: 2866 7791"
+  beforeUnsubscribeText: '您收到本電郵，因為你訂閱了我們的最新消息。如您不想收取此電子郵件，請按 '
+  unsubscribeLink: '%%unsub_center_url%%'
+  unsubscribeText: "取消接收"
+  termsTitle: 條款及細則
+  termsDescription: '<a href="https://www.moneyhero.com.hk">MoneyHero.com.hk</a>比較多款還款期為12 至84個月之間的私人貸款。實際年利率將視乎個別情況而定，介乎2%至59%。以下為借貸成本的參考例子：假如你借取一筆HK$200,000的貸款，還款期為12個月，實際年利率為7.02%，每月平息0.31%，那每月還款額應為 HK$17,287，而總還款額則為HK$207,444。'
+  termsLink: https://www.moneyhero.com.hk/zh/terms
+  privacyTitle: 私隱政策
+  privacyLink: https://www.moneyhero.com.hk/zh/privacy-policy

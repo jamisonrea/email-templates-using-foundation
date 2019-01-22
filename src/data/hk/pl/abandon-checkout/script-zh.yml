@@ -1,0 +1,32 @@
+scriptMain: '%%[
+            VAR @applicationlist, @application, @userlist, @user
+            ]%%
+            %%[
+            SET @userlist = LOOKUPROWS("User", "SubscriberKey", SubscriberKey)
+            SET @applicationlist = LOOKUPROWS("PL Abandon Checkout", "event_id", EventId)
+            ]%%
+
+            %%[
+            IF ((ROWCOUNT(@applicationlist) != 1)
+            OR (ROWCOUNT(@userlist) != 1))
+            THEN
+            RaiseError("Error finding corresponding application and/or user", 1)
+            ENDIF
+            SET @user = ROW(@userlist, 1)
+            SET @application = ROW(@applicationlist, 1)
+            ]%%'
+
+header:
+      title: '%%=ProperCase(FIELD(@application, "full_name"))=%%你好：'
+      bankIcon: ""
+
+apiProductInfo:
+      provider: '%%=FIELD(@application, "provider_name")=%%'
+      benefit1: '%%=FIELD(@application, "native_full_name")=%% %%=ProperCase(FIELD(@application, "full_name"))=%%'
+      benefit2: '%%=SUBSTRING(FIELD(@application, "email_address"),1,4)=%% &lowast;&lowast;&lowast;&lowast;'
+      benefit3: '%%=SUBSTRING(FIELD(@application,"phone"),1,4)=%% / %%=SUBSTRING(FIELD(@application,"mobile"),1,4)=%% &lowast;&lowast;&lowast;&lowast;'
+      statusPageUrl: '%%=RedirectTo(FIELD(@application, "apply_url"))=%%'
+
+# To obtain the values, assign this to the variable: 
+# %%=FIELD(@application, "<corresponding column name>")=%%
+# %%=SUBSTRING(FIELD(@application,"phone"),1,4)=%%****

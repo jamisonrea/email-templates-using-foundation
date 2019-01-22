@@ -1,0 +1,52 @@
+scriptMain: '%%[
+            VAR @products, @product, @link, @headline
+            ]%%
+            %%[
+            SET @products = LOOKUPROWS("PL Order Confirmation", "event_id", EventId)
+            SET @product = ROW(@products, 1)
+            SET @providerCode = FIELD(@product, "provider_code")
+            SET @link=FIELD(@product, "order_status_url")
+            SET @status=FIELD(@product, "application_status")
+            ]%%'
+headerTitleBanner:
+  columnTitleList:
+    - description:
+    - description:
+    - description:
+
+apiProductInfo:
+  provider: "%%=FIELD(@product, 'provider_name')=%%"
+  loanAmount: "%%=FIELD(@product, 'loan_amount')=%% €"
+  loanDuration: "%%=FIELD(@product, 'loan_duration')=%% kuukautta"
+  statusPageUrl: "%%=RedirectTo(@link)=%%"
+  bankIcon: '<img class="text-right"
+             src="http://image.email.vertaaensin.fi/lib/fe8a13727262077e7c/m/1/%%=v(@providerCode)=%%_logo.png"/>'
+
+header:
+  OtherProducts: Mielipiteesi on meille tärkeä
+
+survey:
+  title: "Kuinka todennäköisesti suosittelisit vertailuamme muille?"
+  lowrate: En suosittelisi
+  highrate: Suosittelisin
+  rating:
+    - title: "1"
+      link: "https://suojattusivu.vertaaensin.fi/kysely/kiitos/?rate=1&SubscriberKey=%%SubscriberKey%%"
+    - title: "2"
+      link: "https://suojattusivu.vertaaensin.fi/kysely/kiitos/?rate=2&SubscriberKey=%%SubscriberKey%%"
+    - title: "3"
+      link: "https://suojattusivu.vertaaensin.fi/kysely/kiitos/?rate=3&SubscriberKey=%%SubscriberKey%%"
+    - title: "4"
+      link: "https://suojattusivu.vertaaensin.fi/kysely/kiitos/?rate=4&SubscriberKey=%%SubscriberKey%%"
+    - title: "5"
+      link: "https://suojattusivu.vertaaensin.fi/kysely/kiitos/?rate=5&SubscriberKey=%%SubscriberKey%%"
+    - title: "6"
+      link: "https://suojattusivu.vertaaensin.fi/kysely/kiitos/?rate=6&SubscriberKey=%%SubscriberKey%%"
+    - title: "7"
+      link: "https://suojattusivu.vertaaensin.fi/kysely/kiitos/?rate=7&SubscriberKey=%%SubscriberKey%%"
+    - title: "8"
+      link: "https://suojattusivu.vertaaensin.fi/kysely/kiitos/?rate=8&SubscriberKey=%%SubscriberKey%%"
+    - title: "9"
+      link: "https://suojattusivu.vertaaensin.fi/kysely/kiitos/?rate=9&SubscriberKey=%%SubscriberKey%%"
+    - title: "10"
+      link: "https://suojattusivu.vertaaensin.fi/kysely/kiitos/?rate=10&SubscriberKey=%%SubscriberKey%%"

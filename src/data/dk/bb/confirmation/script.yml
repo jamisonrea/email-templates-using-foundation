@@ -1,0 +1,123 @@
+# "pt_ec19b9e7-2ac7-5ac1-aaeb-ef34fc39e869"
+# "5d7febe9-4291-597c-b05a-5c445990e5a0"
+scriptMain: '%%[
+                VAR @orderlist, @order, @userlist, @user
+            ]%%
+            %%[
+                SET @userlist = LOOKUPROWS("User", "SubscriberKey", SubscriberKey)
+                SET @orderlist = LOOKUPROWS("BB Order Confirmation", "event_id", EventId)
+            ]%%
+            %%[
+            IF ((ROWCOUNT(@orderlist) != 1)
+                AND (ROWCOUNT(@userlist) != 1))
+            THEN
+                RaiseError("Error finding corresponding order and/or user", 1)
+            ENDIF
+            SET @user = ROW(@userlist, 1)
+            SET @order = ROW(@orderlist, 1)
+            ]%%'
+
+bbConfirmation:
+
+  orderTitle: "Dit ordrenummer er"
+  orderDescription: Se dine ordredetaljer nedenfor
+  orderNumber: '%%=FIELD(@order,"event_key")=%%'
+  sections:
+    - header: Produktdetaljer
+      logo: "%%=FIELD(@order,'company_logo')=%%"
+      items:
+        - name: '<p style="margin-bottom:0; padding-top:10px;">%%=FIELD(@order,"features_0_name")=%%</p>'
+          value: '<p style="margin-bottom:0; padding-top:10px;  text-align: right;"><b>%%=FIELD(@order,"features_0_value")=%%</b></p>'
+        - name: '<p style="margin-bottom:0; padding-bottom:15px;"> %%=FIELD(@order,"features_1_name")=%%</p>'
+          value: '<p style="margin-bottom:0; padding-bottom:15px; text-align: right;"><b>%%=FIELD(@order,"features_1_value")=%%</b></p>'
+        - name: '%%=FIELD(@order,"features_2_name")=%%'
+          value: '%%=FIELD(@order,"features_2_value")=%%'
+        - name: '%%=FIELD(@order,"features_3_name")=%%'
+          value: '%%=FIELD(@order,"features_3_value")=%%'
+        - name: '%%=FIELD(@order,"features_4_name")=%%'
+          value: '%%=FIELD(@order,"features_4_value")=%%'
+        - name: '%%=FIELD(@order,"features_5_name")=%%'
+          value: '%%=FIELD(@order,"features_5_value")=%%'
+        - name: '%%=FIELD(@order,"features_6_name")=%%'
+          value: '%%=FIELD(@order,"features_6_value")=%%'
+        - name: '%%=FIELD(@order,"features_7_name")=%%'
+          value: '%%=FIELD(@order,"features_7_value")=%%'
+        - name: '%%=FIELD(@order,"features_8_name")=%%'
+          value: '%%=FIELD(@order,"features_8_value")=%%'
+        - name: '%%=FIELD(@order,"features_9_name")=%%'
+          value: '%%=FIELD(@order,"features_9_value")=%%'
+
+
+    - subheader: '%%=FIELD(@order,"costs_oneoff_name")=%%'
+      items:
+        - name: '%%=FIELD(@order,"costs_oneoff_details_0_name")=%%'
+          value: '%%=FIELD(@order,"costs_oneoff_details_0_value")=%%'
+        - name: '%%=FIELD(@order,"costs_oneoff_details_1_name")=%%'
+          value: '%%=FIELD(@order,"costs_oneoff_details_1_value")=%%'
+        - name: '%%=FIELD(@order,"costs_oneoff_details_2_name")=%%'
+          value: '%%=FIELD(@order,"costs_oneoff_details_2_value")=%%'
+        - name: '%%=FIELD(@order,"costs_oneoff_details_3_name")=%%'
+          value: '%%=FIELD(@order,"costs_oneoff_details_3_value")=%%'
+        - name: '%%=FIELD(@order,"costs_oneoff_details_4_name")=%%'
+          value: '%%=FIELD(@order,"costs_oneoff_details_4_value")=%%'
+        - name: '<p style="border-top:1px solid #dcdad7; margin-bottom: 0; padding: 4px 0;"><b>%%=FIELD(@order,"costs_oneoff_total_desc")=%%</b></p>'
+          value: '<p style="border-top:1px solid #dcdad7; margin-bottom: 0; padding: 4px 0; text-align: right;"><b>%%=FIELD(@order,"costs_oneoff_total")=%%</b></p>'
+
+    - subheader: Månedlige omkostninger
+      items:
+        - name: '%%=FIELD(@order,"costs_monthly_details_0_name")=%%'
+          value: '%%=FIELD(@order,"costs_monthly_details_0_value")=%%'
+        - name: '%%=FIELD(@order,"costs_monthly_details_1_name")=%%'
+          value: '%%=FIELD(@order,"costs_monthly_details_1_value")=%%'
+        - name: '%%=FIELD(@order,"costs_monthly_details_2_name")=%%'
+          value: '%%=FIELD(@order,"costs_monthly_details_2_value")=%%'
+        - name: '%%=FIELD(@order,"costs_monthly_details_3_name")=%%'
+          value: '%%=FIELD(@order,"costs_monthly_details_3_value")=%%'
+        - name: '%%=FIELD(@order,"costs_monthly_details_4_name")=%%'
+          value: '%%=FIELD(@order,"costs_monthly_details_4_value")=%%'
+        - name: '<p style="border-top:1px solid #dcdad7; margin-bottom: 0; padding: 4px 0;">%%=FIELD(@order,"costs_monthly_monthly_total_desc")=%%</p>'
+          value: '<p style="border-top:1px solid #dcdad7; margin-bottom: 0; padding: 4px 0; text-align: right;">%%=FIELD(@order,"costs_monthly_monthly_total")=%%</p>'
+        - name: '<p style="border-top:2px solid #312f2e; margin-bottom: 0; padding: 4px 0;"><b>%%=FIELD(@order,"costs_monthly_name")=%%</b></p>'
+          value: '<p style="border-top:2px solid #312f2e; margin-bottom: 0; padding: 4px 0; text-align: right;"><b>%%=FIELD(@order,"costs_monthly_total")=%%</b></p>'
+        - name: '<p style="color: #056f9d; margin-bottom: 0; padding: 6px 0;">%%=FIELD(@order,"costs_contract_discount_name")=%%</p>'
+          value: '<p style="color: #056f9d; margin-bottom: 0; padding: 6px 0; text-align: right;">%%=FIELD(@order,"costs_contract_discount")=%%</p>'
+
+  summary:
+    name: '%%=FIELD(@order,"costs_total_desc")=%%'
+    value: '%%=FIELD(@order,"costs_total")=%%'
+  userInformation:
+    header: Dine oplysninger
+    fullName: '%%=FIELD(@order,"user_name")=%%'
+    email: '%%=FIELD(@order,"user_email")=%%'
+    phone: '%%=FIELD(@order,"user_tel")=%%'
+    address: '%%=FIELD(@order,"user_address")=%%'
+
+header:
+  OtherProducts: Din mening betyder meget for os
+
+survey:
+  title: "Vil du anbelfale Samlino.dk til andre?"
+  lowrate:  Usandsynlig
+  highrate: Sandsynlig
+  rating:
+    - title: "1"
+      link: "https://sikkerside.samlino.dk/undersoegelse/mangetak/?rate=1&SubscriberKey=%%SubscriberKey%%"
+    - title: "2"
+      link: "https://sikkerside.samlino.dk/undersoegelse/mangetak/?rate=2&SubscriberKey=%%SubscriberKey%%"
+    - title: "3"
+      link: "https://sikkerside.samlino.dk/undersoegelse/mangetak/?rate=3&SubscriberKey=%%SubscriberKey%%"
+    - title: "4"
+      link: "https://sikkerside.samlino.dk/undersoegelse/mangetak/?rate=4&SubscriberKey=%%SubscriberKey%%"
+    - title: "5"
+      link: "https://sikkerside.samlino.dk/undersoegelse/mangetak/?rate=5&SubscriberKey=%%SubscriberKey%%"
+    - title: "6"
+      link: "https://sikkerside.samlino.dk/undersoegelse/mangetak/?rate=6&SubscriberKey=%%SubscriberKey%%"
+    - title: "7"
+      link: "https://sikkerside.samlino.dk/undersoegelse/mangetak/?rate=7&SubscriberKey=%%SubscriberKey%%"
+    - title: "8"
+      link: "https://sikkerside.samlino.dk/undersoegelse/mangetak/?rate=8&SubscriberKey=%%SubscriberKey%%"
+    - title: "9"
+      link: "https://sikkerside.samlino.dk/undersoegelse/mangetak/?rate=9&SubscriberKey=%%SubscriberKey%%"
+    - title: "10"
+      link: "https://sikkerside.samlino.dk/undersoegelse/mangetak/?rate=10&SubscriberKey=%%SubscriberKey%%"
+

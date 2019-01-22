@@ -1,0 +1,232 @@
+{{#conditionalWith bbResultItem config.bbResultItem}}
+
+{{#if scriptIf}}
+{{{scriptIf}}}
+{{/if}}
+<center>
+  <container class="product--bb product {{#if ../isFeatured}}featured{{else}}general{{/if}}">
+    {{#if apply_url}}
+      <tr>
+        <th class="product-col pt-product-col">
+          <table>
+            <tr>
+              <th class="pt-custom-column-width-1">
+                <p class="provider-name">{{{provider.name}}}</p>
+                <img class="provider-logo" src="{{{provider.logo}}}" height="30px">
+
+                {{#each addressCoverage as |address index|}}
+                  {{#if address.scriptIf}}
+
+                    {{{address.scriptIf}}}
+                    <!-- START IF AVAIL ADDRESS -->
+                    {{{address.scriptAvailableAddress}}}
+                    <table class="address-coverage address-coverage__1">
+                      <tr>
+                        <td width="8px">
+                            <img src="http://image.email.comparaja.pt/lib/fe9213727262077975/m/1/2Xlocation_green.png"/>
+                        </td>
+                        <td>Cobertura Confirmada</td>
+                      </tr>
+                    </table>
+                    <!-- END IF AVAIL ADDRESS -->
+                    <!-- START IF NOT AVAIL ADDRESS -->
+                    {{{address.scriptNotAvailableAddress}}}
+                    <table class="address-coverage address-coverage__0">
+                      <tr>
+                        <td width="8px">
+                            <img src="http://image.email.comparaja.pt/lib/fe9213727262077975/m/1/2Xlocation_red.png"/>
+                        </td>
+                        <td>Sem Cobertura</td>
+                      </tr>
+                    </table>
+                    <!-- END IF NOT AVAIL ADDRESS -->
+                    <!-- START IF ADDRESS NOT CONFIRMED -->
+                    {{{address.scriptAddressNotConfirmed}}}
+                    <table class="address-coverage address-coverage__-1">
+                      <tr>
+                        <td width="8px">
+                            <img src="http://image.email.comparaja.pt/lib/fe8b13727262077e7d/m/1/2Xlocation_gray.png"/>
+                        </td>
+                        <td>Cobertura não confirmada</td>
+                      </tr>
+                    </table>
+                    <!-- END IF ADDRESS NOT CONFIRMED -->
+
+                    %%[ENDIF]%%
+                    %%[ENDIF]%%
+
+                  {{else}}
+                     <!-- demo icon-->
+                    {{#if address.value includeZero=true}}
+                    <table class="address-coverage address-coverage__{{address.value}}">
+                      <tr>
+                        <td width="8px">
+                            <img src="{{getAddressIcon address.value}}"/>
+                        </td>
+                        <td>{{getAddressText address.value}}</td>
+                      </tr>
+                    </table>
+                    {{/if}}
+                  {{/if}}
+                {{/each}}
+
+                  {{#if footerLabel}}<div class="provider-footer">{{{footerLabel}}}</div>{{/if}}
+              </th>
+              <th class="pt-custom-column-width-2">
+                {{#each services as |service index|}}
+                  <p class="features-value">{{{service.value}}}
+                    <span>{{service.text}}</span>
+                  </p>
+                {{/each}}
+              </th>
+              <th class="pt-custom-column-width-3">
+                {{#each features as |feature index|}}
+                  <p class="features-value">{{{feature.value}}}
+                    <span>{{feature.text}}</span>
+                  </p>
+                {{/each}}
+
+
+                {{#each addressCoverage as |address index|}}
+                  {{#if address.scriptIf}}
+
+                    {{{address.scriptIf}}}
+                    <!-- START IF AVAIL ADDRESS -->
+                    {{{address.scriptAvailableAddress}}}
+                    <table class="address-coverage address-coverage__1 address-coverage--mobile">
+                      <tr>
+                        <td width="8px">
+                            <img src="http://image.email.comparaja.pt/lib/fe9213727262077975/m/1/2Xlocation_green.png"/>
+                        </td>
+                        <td>Cobertura Confirmada</td>
+                      </tr>
+                    </table>
+                    <!-- END IF AVAIL ADDRESS -->
+                    <!-- START IF NOT AVAIL ADDRESS -->
+                    {{{address.scriptNotAvailableAddress}}}
+                    <table class="address-coverage address-coverage__0 address-coverage--mobile">
+                      <tr>
+                        <td width="8px">
+                            <img src="http://image.email.comparaja.pt/lib/fe9213727262077975/m/1/2Xlocation_red.png"/>
+                        </td>
+                        <td>Sem Cobertura</td>
+                      </tr>
+                    </table>
+                    <!-- END IF NOT AVAIL ADDRESS -->
+                    <!-- START IF ADDRESS NOT CONFIRMED -->
+                    {{{address.scriptAddressNotConfirmed}}}
+                    <table class="address-coverage address-coverage__-1 address-coverage--mobile">
+                      <tr>
+                        <td width="8px">
+                            <img src="http://image.email.comparaja.pt/lib/fe8b13727262077e7d/m/1/2Xlocation_gray.png"/>
+                        </td>
+                        <td>Cobertura não confirmada</td>
+                      </tr>
+                    </table>
+                    <!-- END IF ADDRESS NOT CONFIRMED -->
+
+                    %%[ENDIF]%%
+                    %%[ENDIF]%%
+
+                  {{else}}
+                     <!-- demo icon-->
+                    {{#if address.value includeZero=true}}
+                    <table class="address-coverage address-coverage__{{address.value}} address-coverage--mobile">
+                      <tr>
+                        <td width="8px">
+                            <img src="{{getAddressIcon address.value}}"/>
+                        </td>
+                        <td>{{getAddressText address.value}}</td>
+                      </tr>
+                    </table>
+                    {{/if}}
+                  {{/if}}
+                {{/each}}
+
+
+                {{#if footerLabel}}<div class="provider-footer provider-footer--mobile">{{{footerLabel}}}</div>{{/if}}
+
+              </th>
+            </tr>
+          </table>
+
+        </th>
+
+        <th class="product-col pt-product-col">
+
+          <table align="center">
+            <tr>
+              <th class="pt-custom-column-width-4">
+                <table class="price-detail-container">
+                  <tr>
+                    <td>
+                      <div class="sponsored-static-text sponsored-static-text--mobile">
+                        {{#if ../isFeatured}}
+                          {{provider.sponsoredStaticText}}
+                        {{/if}}
+                      </div>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td class="monthly-price pt-monthly-price">
+                      <h6>{{{priceDetail.monthlyPrice}}}</h6>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <table class="monthly-price--list pt-monthly-price--list">
+                        {{#if priceDetail.discount}}
+                        <tr>
+                          <td class="large-6 small-6">
+                              {{{priceDetail.discountText}}}
+                          </td>
+                          <td class="large-6 small-6">
+                              {{{priceDetail.discount}}}
+                          </td>
+                        </tr>
+                        {{/if}}
+                        <tr>
+                          <td class="large-6 small-6">
+                              {{{priceDetail.setupCost.text}}}
+                          </td>
+                          <td class="large-6 small-6">
+                              {{{priceDetail.setupCost.value}}}
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="large-6 small-6">
+                            {{priceDetail.totalPrice.text}}
+                          </td>
+                          <td class="large-6 small-6">
+                            {{{priceDetail.totalPrice.value}}}
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </th>
+
+              <th class="pt-custom-column-width-5 apply-button-container">
+
+                <div class="sponsored-static-text sponsored-static-text--desktop">
+                  {{#if ../isFeatured}}
+                    {{provider.sponsoredStaticText}}
+                  {{/if}}
+                </div>
+
+                <a class="pt-apply-button" href="{{{apply_url}}}">{{buttonText}}</a>
+              </th>
+            </tr>
+          </table>
+        </th>
+
+    {{/if}}
+  </container>
+</center>
+{{#if scriptIf}}
+%%[ENDIF]%%
+{{/if}}
+
+{{/conditionalWith}}

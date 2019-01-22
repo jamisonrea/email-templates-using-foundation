@@ -1,0 +1,49 @@
+featuredText: "Esittelyssä"
+applyText: Jatka
+
+header:
+  headerLink: '%%view_email_url%%'
+  headerLinkText: Katso viesti selaimessa
+  headerLogoPath: http://image.email.vertaaensin.fi/lib/fe8a13727262077e7c/m/1/vertaaensin-Logo-FI-fullcolor.png
+
+headerBanner:
+  headline1: 'Tässä Sinulle parhaiten sopivat vaihtoehdot'
+  headline2: "Jos vertailu jäi kesken, voit palata tuloksiin tästä"
+  image: http://image.email.vertaaensin.fi/lib/fe8a13727262077e7c/m/1/graphic-coin-euro.png
+  descriptionList:
+      - description: 100% ilmainen
+      - description: Helppo ja nopea vertailu
+      - description: Puoleeton ja riippumaton vertailusivusto
+
+headerTitleBannerStatic:
+  firstColumn: Tuote
+  secondColumn: "Hakuehdot"
+
+menu:
+  - title: Etusivu
+    link: https://www.vertaaensin.fi/?utm_content=Nav_bar
+  - title: Lainat
+    link: https://www.vertaaensin.fi/laina?utm_content=Nav_bar
+  - title: Luottokortit
+    link: https://www.vertaaensin.fi/luottokortti?utm_content=Nav_bar
+
+showcase:
+  - title: Lainat
+    imagePath: http://image.email.comparaguru.com/lib/fe9013727262077977/m/1/pl+icon+abandon.png
+    description: Löydä lainalaskurilla sinulle sopivin laina heti
+    buttonText: Vertaile nyt
+    buttonLink: https://www.vertaaensin.fi/laina/funnel#/?utm_content=PL_icon
+    footnote: Vie alle minuutin
+  - title: Luottokortit
+    imagePath: http://image.email.comparaguru.com/lib/fe9013727262077977/m/1/icon-email-green-cc.png
+    description: Vertaile Suomen parhaita luottokorttitarjouksia
+    buttonText: Vertaile nyt
+    buttonLink: https://www.vertaaensin.fi/luottokortti/funnel#/?utm_content=CC_icon
+    footnote: Vie alle minuutin
+
+footerBanner:
+  headline1: "Suomen paras rahoitustuotteiden vertailu. </br> Kaikki tuotteet ja vaihtoehdot"
+  headline2: Rahoitustuotteiden vertailu on helppoa <a href="#" class="link-remove--mobile">VertaaEnsin.fi</a> -sivuilla. Käytä lainalaskuriamme ja löydä itsellesi parhaat tarjoukset. Kaikki sivustomme tiedot ovat riippumattomia ja ajankohtaisia.
+  descriptionList:
+  buttonText: Vertaile nyt
+  buttonLink: https://www.vertaaensin.fi/laina?utm_content=Compare_Button

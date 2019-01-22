@@ -1,0 +1,52 @@
+table.ciab-header-banner-ci-confirmation {
+  border-spacing: 0 10px;
+  color: map-get( $color, black1 );
+  background-color: #ffffff;
+  border-top: 2px solid #076b9c;
+  a{
+    color: map-get( $color, white );
+  }
+
+  &-wrapper {
+    width: 515px; //Fallback for outlook lower version
+    width: 90%;
+    margin: 0 auto;
+    @media only screen and (max-width: #{$global-breakpoint}) {
+      width: 98% !important;
+    }
+    td {
+      vertical-align: bottom;
+      p {
+        font-size: 13px;
+        a{
+          color: map-get( $color, green );
+          font-weight: bold;
+        }
+        @media only screen and (max-width: #{$global-breakpoint}) {
+          padding: 0 0 20px 15px;
+        }
+      }
+      h1 {
+        font-size: 18px;
+        color: map-get( $color, black1 );
+        margin-top: 20px;
+        padding-bottom: 0;
+        font-weight: normal;
+        letter-spacing: 1px;
+        font-style: normal;
+        @media only screen and (max-width: #{$global-breakpoint}) {
+          font-size: 19px!important;
+          padding-left: 15px;
+          line-height: 35px!important;
+          margin-top: 10px;
+        }
+      }
+      td.columns, td.column, th.columns, th.column {
+        padding-bottom: 0;
+      }
+    }
+    .header-image{
+      padding: 0!important;
+    }
+  }
+}

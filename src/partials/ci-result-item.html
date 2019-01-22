@@ -1,0 +1,86 @@
+{{#conditionalWith ciResultItem config.ciResultItem}}
+{{#if provider.name}}
+
+{{#if scriptIf}}
+{{{scriptIf}}}
+{{/if}}
+<container class="product--ci product {{#if ../isFeatured}}featured{{else}}general{{/if}}">
+  <row class="product-row">
+    <columns class="product-column" large="6" small="6">
+      <row>
+        <columns class="provider" large="6" small="12">
+          <p class="provider-name">{{{provider.name}}}</p>
+          <img class="show-for-large provider-logo" src="{{{provider.logo}}}" height="30px">
+          {{#if ../isFeatured}}<p class="show-for-large provider-footer">{{featuredText}}</p>{{/if}}
+        </columns>
+        <columns class="feature" large="6" small="12">
+          <table>
+            <tbody>
+            {{#each features as |feature index|}}
+            {{#if feature.name}}
+
+            {{#if feature.scriptIf}}
+            {{{feature.scriptIf}}}
+            {{/if}}
+            <tr>
+              <td class="feature-icon">
+                <!-- script icon -->
+                {{#if feature.scriptIconIf}}
+                {{#if feature.scriptIconIf}}
+                {{{feature.scriptIconIf}}}
+                {{/if}}
+                <img src="{{getImageUrl true}}" width="10px">
+                {{#if feature.scriptIconIf}}
+                %%[ELSE]%%
+                {{/if}}
+                <img src="{{getImageUrl false}}" width="10px">
+                {{#if feature.scriptIconIf}}
+                %%[ENDIF]%%
+                {{/if}}<!-- END script icon-->
+                {{else}} <!-- demo icon -->
+                <img src="{{getImageUrl feature.value}}" width="10px">
+                <!-- END demo icon -->
+                {{/if}}
+              </td>
+              <td class="feature-text">{{{feature.name}}}</td>
+            </tr>
+            {{#if feature.scriptIf}}
+            %%[ENDIF]%%
+            {{/if}}
+
+            {{/if}}
+            {{/each}}
+            </tbody>
+          </table>
+        </columns>
+      </row>
+    </columns>
+    <columns class="product-column" large="6" small="6">
+      <row>
+        <columns class="price" large="6" small="12">
+          <div class="price-value price-small">{{{deductible}}}</div>
+          <div class="price-footer">{{deductibleText}}</div>
+
+          <div class="price-value price-delete price-small">{{{originalPrice}}}</div>
+          <div class="price-value royal-blue">{{{originalPriceOnly}}}</div>
+          <div class="price-footer">{{originalText}}</div>
+
+          <div class="price-value royal-blue">{{{discountPrice}}}</div>
+          <div class="price-footer">{{{discountText}}}</div>
+
+          <div class="price-value royal-blue">{{{membershipDiscountPrice}}}</div>
+          <div class="price-footer">{{{membershipDiscountText}}}</div>
+        </columns>
+        <columns class="apply-button-container" large="6" small="12">
+          <a class="apply-button" href="{{{apply_url}}}">{{buttonText}}</a>
+        </columns>
+      </row>
+    </columns>
+  </row>
+</container>
+{{#if scriptIf}}
+%%[ENDIF]%%
+{{/if}}
+
+{{/if}}
+{{/conditionalWith}}

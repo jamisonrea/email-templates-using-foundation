@@ -1,0 +1,42 @@
+@import 'settings';
+@import 'foundation-emails';
+
+@import 'template/template';
+
+@import 'global/colors';
+@import 'global/visibility';
+@import 'global/mixins';
+@import 'global/main';
+
+@import 'template/_common-menu';
+@import 'template/header';
+@import 'template/_common-footer';
+@import 'template/header-banner';
+@import 'template/header-title-banner';
+@import 'template/footer-banner';
+@import 'template/pl-product-details.scss';
+@import 'template/common-abandon-checkout-other-result';
+@import 'template/common-header-title';
+
+@import 'partials/whats-next';
+@import 'partials/product-showcase';
+@import 'partials/ci-result-item';
+@import 'partials/bb-confirmation';
+@import 'partials/ti-confirmation';
+@import 'partials/ci-confirmation';
+@import 'partials/cc-confirmation';
+@import 'partials/pl-abandon-checkout';
+@import 'partials/ci-policy-reminder';
+@import 'partials/cc-abandon-checkout';
+@import 'partials/common-cross-sell';
+@import 'partials/survey';
+@import 'partials/ci-dk-header-banner';
+@import 'partials/ci-dk-confirmation-header-banner';
+@import 'partials/ci-dk-result-item';
+
+@import 'pages/confirmation';
+@import 'pages/abandon-ci';
+@import 'pages/abandon-bb';
+@import 'pages/abandon-pl';
+@import 'pages/abandon-cc';
+@import 'pages/docs';

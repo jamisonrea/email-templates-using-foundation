@@ -1,0 +1,54 @@
+# retention main script, which defines the variables
+# subscriberKey, eventid for testing
+# eventid ac9cf1b7-b145-5f4d-906f-9f9f1cd59f60
+# subscriberKey hk_9d1f3dcd-e40b-5509-98b7-fb91afe00baa
+
+scriptMain: '%%[
+                 VAR @orderlist, @order, @userlist, @user
+
+                 SET @userlist = LOOKUPROWS("User", "SubscriberKey", SubscriberKey)
+                 SET @orderlist = LOOKUPROWS("CI Order Confirmation", "event_id", EventId)
+
+                 IF ROWCOUNT(@orderlist) != 1 AND ROWCOUNT(@userlist) != 1 THEN
+                     RaiseError("Error finding corresponding order and/or user", 1)
+                 ENDIF
+
+                 SET @user = ROW(@userlist, 1)
+                 SET @order = ROW(@orderlist, 1)
+                 
+             ]%%'
+
+personalDetails:
+  fullName: '%%=FIELD(@order,"first_name")=%%,'
+tiConfirmation:
+  orderTitle: "Tu número de póliza es:" 
+  orderDescription: 
+  orderNumber: '%%=FIELD(@order,"policy_number")=%%'
+  sectionHeader: Aseguradora
+  logo: "%%=FIELD(@order,'provider_logo')=%%"
+  sections:
+    - header: Detalles de póliza 
+      items:
+        - name: "Número de Póliza"
+          value: '%%=FIELD(@order,"policy_number")=%%'
+        - name: "Marca"
+          value: '%%=FIELD(@order,"car_brand")=%%'
+        - name: Modelo
+          value: '%%=FIELD(@order,"car_model")=%%'
+        - name: Submodelo
+          value: '%%=FIELD(@order,"car_submodel")=%%'
+        - name: Año
+          value: '%%=FIELD(@order,"car_year")=%%'
+        - name: Descripción
+          value: '%%=FIELD(@order,"car_description")=%%'
+
+    - header: Tu Pago
+      items:
+        - name: "Método de pago"
+          value: '%%[IF (FIELD(@order,"payment_method")=="creditCard") THEN]%% Tarjeta de crédito %%[ELSEIF (FIELD(@order,"payment_method")=="debitCard") THEN]%% Tarjeta de débito %%[ELSE]%%%%[ENDIF]%%'  
+  terms:
+    title: ""
+    details: 
+  notes:
+    - text: "*Este es un correo electrónico generado automáticamente y no necesita firma"
+    - text: "*Si tiene preguntas, no dude en contactarnos por correo electrónico o teléfono al: info@comparaguru.com / 55 50119400" 

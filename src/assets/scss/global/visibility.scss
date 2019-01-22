@@ -1,0 +1,17 @@
+;/* CIAB VISIBILITY CLASESS */
+$column-selector--show: ".show-for-mobile";
+$no-of-columns: 12 !default;
+
+/* SHOW CONTENTS INSIDE OF "TABLE CELL (<td> / <th>)" ON SMALL SCREENS (596px). 
+ * Use this only if you are using "small='x'" syntax by foundation 
+ * which equivalent of classname ".small-x" after it's compiled. 
+ * NOTE: 596px is the global breakpoint of foundation email template.
+ */
+@for $i from 2 through $no-of-columns {	
+	#{$column-selector--show}.small-#{$i} {
+		display: none;
+		@media only screen and (max-width: #{$global-breakpoint}) {
+			display: inline-block !important;
+		}
+	}
+}

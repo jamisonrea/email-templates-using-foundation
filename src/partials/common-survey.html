@@ -1,0 +1,49 @@
+<container class="survey-title">
+    <columns small="12" large="12" class="intro-title">
+      <p class="text-center">
+          {{{config.survey.title}}}
+      </p><br/>
+    </columns>
+  </container>
+
+<container class="survey-title">
+  <columns small="6" large="6" class="scale scale-desktop">
+    <p class="text-left">
+        {{{config.survey.lowrate}}}
+    </p>
+  </columns>
+</container>
+
+
+<container>
+    <center>
+        <table  class="ciab-survey">
+        	<tr>
+        		<td>
+		            <ul>
+			            {{#each config.survey.rating}}
+				        <li>
+				            <a href="{{link}}">
+				                {{title}}
+				            </a>
+				        </li>
+			            {{/each}}
+		        	</ul>
+		        </td>
+		    </tr>
+        </table>
+    </center>
+</container>
+
+<container class="survey-title">
+    <columns small="6" large="6" class="scale scale-mobile">
+      <p class="text-left">
+          {{{config.survey.lowrate}}}
+      </p><br/>
+    </columns>
+    <columns small="6" large="6" class="scale">
+      <p class="text-right">
+          {{{config.survey.highrate}}}
+      </p><br/>
+    </columns>
+  </container>

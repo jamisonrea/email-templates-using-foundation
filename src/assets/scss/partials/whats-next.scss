@@ -1,0 +1,57 @@
+//  What's next
+//  ------------------------------
+
+.ciab-whats-next {
+	color: map-get( $color, white );
+
+	table.container {
+		width: 100% !important;
+		margin-left: 0;
+		margin-right: 0;
+		color: map-get( $color, white );
+		background-color: map-get( $color, royal-blue );
+		th.columns table {
+			width: 97%;
+			margin: 0 auto;
+		}
+		ul li,
+		p {
+			font-size: 14px;
+			color: map-get( $color, white );
+		}
+		ul {
+			margin-bottom: 30px;
+			@media only screen and (max-width: #{$global-breakpoint}) {
+				padding-left: 20px;
+			}
+		}
+
+	}
+
+	.ciab-whats-next-wrapper {
+		background-color: map-get( $color, royal-blue );
+		padding: 30px 0 15px;
+		width: 100%;
+
+		.ciab-whats-next-title {
+			text-align: center;
+			background-color: map-get( $color, royal-blue );
+
+			h3 {
+				font-size: 38px;
+				color: map-get( $color, white );
+				text-align: center;
+				margin-top: 30px;
+				@media only screen and (max-width: #{$global-breakpoint}) {
+					font-size: 24px;
+				}
+			}
+		}
+		table.ciab-whats-next--details {
+			font-size: 14px;
+			margin: 0 auto !important;
+			width: 85% !important;
+			text-align: center;
+		}
+	}
+}

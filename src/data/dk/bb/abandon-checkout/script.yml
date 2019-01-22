@@ -1,0 +1,29 @@
+scriptMain: '%%[
+            VAR @applicationlist, @application, @userlist, @user
+            ]%%
+            %%[
+            SET @userlist = LOOKUPROWS("User", "SubscriberKey", SubscriberKey)
+            SET @applicationlist = LOOKUPROWS("BB Abandon Checkout", "event_id", EventId)
+            ]%%
+
+            %%[
+            IF ((ROWCOUNT(@applicationlist) != 1)
+            OR (ROWCOUNT(@userlist) != 1))
+            THEN
+            RaiseError("Error finding corresponding application and/or user", 1)
+            ENDIF
+            SET @user = ROW(@userlist, 1)
+            SET @application = ROW(@applicationlist, 1)
+            SET @resultspageurl = CONCAT(FIELD(@application, "apply_url"))
+            ]%%'
+
+header:
+      title: 'Kære  %%=ProperCase(FIELD(@application, "first_name"))=%%,'
+      bankIcon: "%%=FIELD(@application, 'product_logo')=%%"
+
+apiProductInfo:
+      provider: '%%=FIELD(@application, "product_description")=%%'
+      benefit1: '%%=ProperCase(FIELD(@application, "first_name"))=%% %%=ProperCase(FIELD(@application, "last_name"))=%%'
+      benefit2: '%%[IF (NOT EMPTY(FIELD(@user,"phone"))) THEN]%% %%=SUBSTRING(FIELD(@application,"phone"),1,4)=%% %%[ELSE]%% %%=SUBSTRING(FIELD(@application,"mobile"),1,4)=%% %%[ENDIF]%% &lowast;&lowast;&lowast;&lowast;'
+      benefit3: '%%=ProperCase(FIELD(@application, "address"))=%%'
+      statusPageUrl: '%%=RedirectTo(FIELD(@application, "apply_url"))=%%'

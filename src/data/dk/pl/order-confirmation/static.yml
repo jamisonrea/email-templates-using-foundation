@@ -1,0 +1,78 @@
+header:
+  headerLink: '%%view_email_url%%'
+  headerLinkText: Se denne e-mail i din browser
+  headerLogoPath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/dk-logo.png
+
+applyText: Vælg
+featuredText: Sponsoreret
+
+headerBanner:
+  headline1: Tak fordi du sammenlignede forbrugslån på <a href="#" class="link-remove--mobile">Samlino.dk</a>!
+  headline2: "Vi har fundet de bedste forbrugslån til dig:"
+  image: http://image.email.vertaaensin.fi/lib/fe8a13727262077e7c/m/1/graphic-coin-euro.png
+  descriptionList:
+      - description: 100% gratis
+      - description: Hurtigt & nemt
+      - description: Uafhængig og uvildig
+
+apiDescriptions:
+  title: "We received your application:"
+  detailsTitle: "Loan details"
+  provider: "Provider"
+  loanAmount: "Loan Amount"
+  loanDuration: "Loan duration"
+  buttonTitle: "Check the status of your application by clicking below"
+  buttonContent: "See your application"
+
+menu:
+  - title: HJEM
+    link: https://www.samlino.dk/
+  - title: BILFORKSIKRING
+    link: https://www.samlino.dk/bilforsikring/
+  - title: BREDBÅND
+    link: https://www.samlino.dk/bredbaand/
+  - title: FORBRUGSLÅN
+    link: https://www.samlino.dk/forbrugslaan/
+  - title: KREDITKORT
+    link: https://www.samlino.dk/kreditkort/
+
+showcase:
+  - title: Mobilabonnement
+    imagePath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/abaa0f97-8c9e-49b8-86de-d597cb7364ee.png
+    description: Find det billigste mobilabonnement der passer til dine behov
+    buttonText: Sammenlign nu
+    buttonLink: https://www.samlino.dk/mobilabonnement
+    footnote: Det tager kun 15 sek.
+  - title: Bilforsikring
+    imagePath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/e9a387af-243d-4aaa-bd4d-9a863c275c2f.png
+    description: Find den helt rigtige bilforsikring der passer til dine behov
+    buttonText: Sammenlign nu
+    buttonLink: https://www.samlino.dk/bilforsikring
+    footnote: Det tager under 1 minut
+  - title: Forbrugslån
+    imagePath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/0af2d900-9c3a-4db2-9241-0d7f700426ed.png
+    description: Find det bedste lån der passer til dine behov
+    buttonText: Sammenlign nu
+    buttonLink: https://www.samlino.dk/forbrugslaan
+    footnote: Det tager under 1 minut
+
+headerTitleBannerStatic:
+  firstColumn:
+  secondColumn:
+
+footerBanner:
+  headline1: "What's next?"
+  headline2: ".....xxxxxx"
+  descriptionList:
+
+footer:
+  socialMedia:
+    - link: https://www.facebook.com/samlino.dk
+      imagePath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/cf4ff2a2-0288-402b-8c93-643181110b41.png
+    - link: https://twitter.com/Samlinodk
+      imagePath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/d39a3024-f642-4d24-aa2f-c76ee836027c.png
+  termsTitle: Vilkår & Betingelser
+  termsLink: https://www.samlino.dk/vilkaar
+  termsDescription: 'Vi sammenligner lån med en løbetid fra 3 måneder til 64 måneder. Den ÅOP du vil blive tilbudt, kan variere i forhold til dine personlige forhold, men kan være mellem 5,40% og 151,80%. Dette er et eksempel på hvad et lån kan koste: et lån på 50.000 kr. over 30 måneder med 7,46% i ÅOP ville give en månedlig ydelse på 1.826,46 kr. og en samlet tilbagebetaling på 54.794 kr. <a href="#" class="link-remove--mobile">Samlino.dk</a> (\"\"vi\"\") yder ikke finansiel og professionel rådgivning. Vi tilbyder udelukkende en gratis og uafhængig sammenligningsservice. Vi tager ikke ansvar for fejl og/eller ukorrekte informationer, som bliver oplyst på denne hjemmeside. Hvis oplysningerne på <a href="#" class="link-remove--mobile">Samlino.dk</a> og relevant information på samarbejdspartnernes (banker/finansielle institutioner) hjemmesider ikke stemmer overens, bør brugerne tage udgangspunkt i informationen hos samarbejdspartnerne. Rentesatser kan variere i forhold til kreditvurdering af ansøger. Læs omhyggeligt vores Vilkår & Betingelser og Fortrolighedspolitik for mere information.'
+  privacyTitle: Persondatapolitik
+  privacyLink: https://www.samlino.dk/persondatapolitik

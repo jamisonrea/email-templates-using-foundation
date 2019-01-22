@@ -1,0 +1,233 @@
+# retention main script, which defines the variables
+# subscriberKey, eventid for testing
+# "dk_ec19b9e7-2ac7-5ac1-aaeb-ef34fc39e869"
+# "event_5a7a2eae-592d-53b9-b09e-c846e646f87c"
+scriptMain: '%%[
+                 VAR @productslist, @products, @userlist, @user, @resultspageurl, @apply_url
+             ]%%
+
+             %%[
+                 SET @userlist = LOOKUPROWS("User", "SubscriberKey", SubscriberKey)
+                 SET @productslist = LOOKUPROWS("CI Top 3 Products", "event_id", EventId)
+             ]%%
+
+             %%[
+                 IF ((ROWCOUNT(@productslist) != 1)
+                     AND (ROWCOUNT(@userlist) != 1))
+                 THEN
+                     RaiseError("Error finding corresponding products list and/or user", 1)
+                 ENDIF
+                 SET @user = ROW(@userlist, 1)
+                 SET @products = ROW(@productslist, 1)
+                 IF EMPTY(FIELD(@products,"top_products_0_company_name")) AND EMPTY(FIELD(@products,"featured_products_0_company_name")) THEN
+                     RaiseError("No available products to show the customer", true)
+                 ENDIF
+                 SET @resultspageurl = CONCAT(FIELD(@products, "results_page_url"))
+             ]%%'
+
+##----- Dynamic Data ------##
+featuredProducts: # one featured product
+  - scriptIf: '%%[IF (NOT EMPTY(FIELD(@products,"featured_products_0_company_name"))) THEN]%%
+               %%[IF (NOT EMPTY(FIELD(@products,"featured_products_0_apply_url"))) THEN
+                    SET @apply_url=FIELD(@products,"featured_products_0_apply_url")
+                  ELSE
+                    SET @apply_url=FIELD(@products,"results_page_url")
+                  ENDIF]%%'
+    provider:
+      name:  '%%=FIELD(@products,"featured_products_0_company_name")=%%'
+      logo:  "%%=FIELD(@products,'featured_products_0_company_logo')=%%"
+    features:
+      - name:  '%%=FIELD(@products,"featured_products_0_features_0_name")=%%'
+        value: '%%=FIELD(@products,"featured_products_0_features_0_value")=%%'
+        scriptIf: '%%[IF (NOT EMPTY(FIELD(@products,"featured_products_0_features_0_name"))) THEN]%%'
+        scriptIconIf: '%%[IF FIELD(@products,"featured_products_0_features_0_value")==true THEN]%%'
+      - name:  '%%=FIELD(@products,"featured_products_0_features_1_name")=%%'
+        value: '%%=FIELD(@products,"featured_products_0_features_1_value")=%%'
+        scriptIf: '%%[IF (NOT EMPTY(FIELD(@products,"featured_products_0_features_1_name"))) THEN]%%'
+        scriptIconIf: '%%[ IF FIELD(@products,"featured_products_0_features_1_value")==true THEN]%%'
+      - name:  '%%=FIELD(@products,"featured_products_0_features_2_name")=%%'
+        value: '%%=FIELD(@products,"featured_products_0_features_2_value")=%%'
+        scriptIf: '%%[IF (NOT EMPTY(FIELD(@products,"featured_products_0_features_2_name"))) THEN]%%'
+        scriptIconIf: '%%[IF FIELD(@products,"featured_products_0_features_2_value")==true THEN]%%'
+      - name:  '%%=FIELD(@products,"featured_products_0_features_3_name")=%%'
+        value: '%%=FIELD(@products,"featured_products_0_features_3_value")=%%'
+        scriptIf: '%%[IF (NOT EMPTY(FIELD(@products,"featured_products_0_features_3_name"))) THEN]%%'
+        scriptIconIf: '%%[IF FIELD(@products,"featured_products_0_features_3_value")==true THEN]%%'
+      - name:  '%%=FIELD(@products,"featured_products_0_features_4_name")=%%'
+        value: '%%=FIELD(@products,"featured_products_0_features_4_value")=%%'
+        scriptIf: '%%[IF (NOT EMPTY(FIELD(@products,"featured_products_0_features_4_name"))) THEN]%%'
+        scriptIconIf: '%%[IF FIELD(@products,"featured_products_0_features_4_value")==true THEN]%%'
+      - name:  '%%=FIELD(@products,"featured_products_0_features_5_name")=%%'
+        value: '%%=FIELD(@products,"featured_products_0_features_5_value")=%%'
+        scriptIf: '%%[IF (NOT EMPTY(FIELD(@products,"featured_products_0_features_5_name"))) THEN]%%'
+        scriptIconIf: '%%[IF FIELD(@products,"featured_products_0_features_5_value")==true THEN]%%'
+      - name:  '%%=FIELD(@products,"featured_products_0_features_6_name")=%%'
+        value: '%%=FIELD(@products,"featured_products_0_features_6_value")=%%'
+        scriptIf: '%%[IF (NOT EMPTY(FIELD(@products,"featured_products_0_features_6_name"))) THEN]%%'
+        scriptIconIf: '%%[IF FIELD(@products,"featured_products_0_features_6_value")==true THEN]%%'
+    apply_url: '%%=RedirectTo(@apply_url)=%%'
+    originalPrice: '%%[IF (NOT EMPTY(FIELD(@products,"featured_products_0_price_discount"))) OR (NOT EMPTY(FIELD(@products,"featured_products_0_price_membership_discount"))) THEN]%% %%=FIELD(@products,"featured_products_0_price_original")=%% %%[ENDIF]%%'
+    originalPriceOnly: '%%[IF EMPTY(FIELD(@products,"featured_products_0_price_discount")) AND EMPTY(FIELD(@products,"featured_products_0_price_membership_discount")) THEN]%% %%=FIELD(@products,"featured_products_0_price_original")=%%  %%[ENDIF]%%'
+    discountPrice: '%%=FIELD(@products,"featured_products_0_price_discount")=%%'
+    membershipDiscountPrice: '%%=FIELD(@products,"featured_products_0_price_membership_discount")=%%'
+    deductible: 
+    originalText: Precio Original
+    discountText: '%%[IF (NOT EMPTY(FIELD(@products,"featured_products_0_price_discount"))) THEN]%% Precio con discuento %%[ENDIF]%%'
+    membershipDiscountText: '%%[IF (NOT EMPTY(FIELD(@products,"featured_products_0_price_membership_discount"))) THEN]%% membership discount %%[ENDIF]%%'
+    deductibleText: 
+    featuredText: Destacado
+    buttonText: Solicítalo
+
+generalProducts: # three general products
+  - scriptIf: '%%[IF (NOT EMPTY(FIELD(@products,"top_products_0_company_name"))) THEN]%%
+               %%[IF (NOT EMPTY(FIELD(@products,"top_products_0_apply_url"))) THEN
+                    SET @apply_url=FIELD(@products,"top_products_0_apply_url")
+                  ELSE
+                    SET @apply_url=FIELD(@products,"results_page_url")
+                  ENDIF]%%'
+    provider:
+      name:  '%%=FIELD(@products,"top_products_0_company_name")=%%'
+      logo:  "%%=FIELD(@products,'top_products_0_company_logo')=%%"
+    features:
+      - name:  '%%=FIELD(@products,"top_products_0_features_0_name")=%%'
+        value: '%%=FIELD(@products,"top_products_0_features_0_value")=%%'
+        scriptIf: '%%[IF (NOT EMPTY(FIELD(@products,"top_products_0_features_0_name"))) THEN]%%'
+        scriptIconIf: '%%[IF FIELD(@products,"top_products_0_features_0_value")==true THEN]%%'
+      - name:  '%%=FIELD(@products,"top_products_0_features_1_name")=%%'
+        value: '%%=FIELD(@products,"top_products_0_features_1_value")=%%'
+        scriptIf: '%%[IF (NOT EMPTY(FIELD(@products,"top_products_0_features_1_name"))) THEN]%%'
+        scriptIconIf: '%%[ IF FIELD(@products,"top_products_0_features_1_value")==true THEN]%%'
+      - name:  '%%=FIELD(@products,"top_products_0_features_2_name")=%%'
+        value: '%%=FIELD(@products,"top_products_0_features_2_value")=%%'
+        scriptIf: '%%[IF (NOT EMPTY(FIELD(@products,"top_products_0_features_2_name"))) THEN]%%'
+        scriptIconIf: '%%[IF FIELD(@products,"top_products_0_features_2_value")==true THEN]%%'
+      - name:  '%%=FIELD(@products,"top_products_0_features_3_name")=%%'
+        value: '%%=FIELD(@products,"top_products_0_features_3_value")=%%'
+        scriptIf: '%%[IF (NOT EMPTY(FIELD(@products,"top_products_0_features_3_name"))) THEN]%%'
+        scriptIconIf: '%%[IF FIELD(@products,"top_products_0_features_3_value")==true THEN]%%'
+      - name:  '%%=FIELD(@products,"top_products_0_features_4_name")=%%'
+        value: '%%=FIELD(@products,"top_products_0_features_4_value")=%%'
+        scriptIf: '%%[IF (NOT EMPTY(FIELD(@products,"top_products_0_features_4_name"))) THEN]%%'
+        scriptIconIf: '%%[IF FIELD(@products,"top_products_0_features_4_value")==true THEN]%%'
+      - name:  '%%=FIELD(@products,"top_products_0_features_5_name")=%%'
+        value: '%%=FIELD(@products,"top_products_0_features_5_value")=%%'
+        scriptIf: '%%[IF (NOT EMPTY(FIELD(@products,"top_products_0_features_5_name"))) THEN]%%'
+        scriptIconIf: '%%[IF FIELD(@products,"top_products_0_features_5_value")==true THEN]%%'
+      - name:  '%%=FIELD(@products,"top_products_0_features_6_name")=%%'
+        value: '%%=FIELD(@products,"top_products_0_features_6_value")=%%'
+        scriptIf: '%%[IF (NOT EMPTY(FIELD(@products,"top_products_0_features_6_name"))) THEN]%%'
+        scriptIconIf: '%%[IF FIELD(@products,"top_products_0_features_6_value")==true THEN]%%'
+    apply_url: '%%=RedirectTo(@apply_url)=%%'
+    originalPrice: '%%[IF (NOT EMPTY(FIELD(@products,"top_products_0_price_discount"))) OR (NOT EMPTY(FIELD(@products,"top_products_0_price_membership_discount"))) THEN]%% %%=FIELD(@products,"top_products_0_price_original")=%% %%[ENDIF]%%'
+    originalPriceOnly: '%%[IF EMPTY(FIELD(@products,"top_products_0_price_discount")) AND EMPTY(FIELD(@products,"top_products_0_price_membership_discount")) THEN]%% %%=FIELD(@products,"top_products_0_price_original")=%% %%[ENDIF]%%'
+    discountPrice: '%%=FIELD(@products,"top_products_0_price_discount")=%%'
+    membershipDiscountPrice: '%%=FIELD(@products,"top_products_0_price_membership_discount")=%%'
+    deductible: 
+    originalText: Precio Original
+    discountText: '%%[IF (NOT EMPTY(FIELD(@products,"top_products_0_price_discount"))) THEN]%% Precio con discuento %%[ENDIF]%%'
+    membershipDiscountText: '%%[IF (NOT EMPTY(FIELD(@products,"top_products_0_price_membership_discount"))) THEN]%% membership discount %%[ENDIF]%%'
+    deductibleText: 
+    featuredText: Destacado
+    buttonText: Solicítalo
+
+  - scriptIf: '%%[IF (NOT EMPTY(FIELD(@products,"top_products_1_company_name"))) THEN]%%
+               %%[IF (NOT EMPTY(FIELD(@products,"top_products_1_apply_url"))) THEN
+                    SET @apply_url=FIELD(@products,"top_products_1_apply_url")
+                  ELSE
+                    SET @apply_url=FIELD(@products,"results_page_url")
+                  ENDIF]%%'
+    provider:
+      name:  '%%=FIELD(@products,"top_products_1_company_name")=%%'
+      logo:  "%%=FIELD(@products,'top_products_1_company_logo')=%%"
+    features:
+      - name:  '%%=FIELD(@products,"top_products_1_features_0_name")=%%'
+        value: '%%=FIELD(@products,"top_products_1_features_0_value")=%%'
+        scriptIf: '%%[IF (NOT EMPTY(FIELD(@products,"top_products_1_features_0_name"))) THEN]%%'
+        scriptIconIf: '%%[IF FIELD(@products,"top_products_1_features_0_value")==true THEN]%%'
+      - name:  '%%=FIELD(@products,"top_products_1_features_1_name")=%%'
+        value: '%%=FIELD(@products,"top_products_1_features_1_value")=%%'
+        scriptIf: '%%[IF (NOT EMPTY(FIELD(@products,"top_products_1_features_1_name"))) THEN]%%'
+        scriptIconIf: '%%[ IF FIELD(@products,"top_products_1_features_1_value")==true THEN]%%'
+      - name:  '%%=FIELD(@products,"top_products_1_features_2_name")=%%'
+        value: '%%=FIELD(@products,"top_products_1_features_2_value")=%%'
+        scriptIf: '%%[IF (NOT EMPTY(FIELD(@products,"top_products_1_features_2_name"))) THEN]%%'
+        scriptIconIf: '%%[IF FIELD(@products,"top_products_1_features_2_value")==true THEN]%%'
+      - name:  '%%=FIELD(@products,"top_products_1_features_3_name")=%%'
+        value: '%%=FIELD(@products,"top_products_1_features_3_value")=%%'
+        scriptIf: '%%[IF (NOT EMPTY(FIELD(@products,"top_products_1_features_3_name"))) THEN]%%'
+        scriptIconIf: '%%[IF FIELD(@products,"top_products_1_features_3_value")==true THEN]%%'
+      - name:  '%%=FIELD(@products,"top_products_1_features_4_name")=%%'
+        value: '%%=FIELD(@products,"top_products_1_features_4_value")=%%'
+        scriptIf: '%%[IF (NOT EMPTY(FIELD(@products,"top_products_1_features_4_name"))) THEN]%%'
+        scriptIconIf: '%%[IF FIELD(@products,"top_products_1_features_4_value")==true THEN]%%'
+      - name:  '%%=FIELD(@products,"top_products_1_features_5_name")=%%'
+        value: '%%=FIELD(@products,"top_products_1_features_5_value")=%%'
+        scriptIf: '%%[IF (NOT EMPTY(FIELD(@products,"top_products_1_features_5_name"))) THEN]%%'
+        scriptIconIf: '%%[IF FIELD(@products,"top_products_1_features_5_value")==true THEN]%%'
+      - name:  '%%=FIELD(@products,"top_products_1_features_6_name")=%%'
+        value: '%%=FIELD(@products,"top_products_1_features_6_value")=%%'
+        scriptIf: '%%[IF (NOT EMPTY(FIELD(@products,"top_products_1_features_6_name"))) THEN]%%'
+        scriptIconIf: '%%[IF FIELD(@products,"top_products_1_features_6_value")==true THEN]%%'
+    apply_url: '%%=RedirectTo(@apply_url)=%%'
+    originalPrice: '%%[IF (NOT EMPTY(FIELD(@products,"top_products_1_price_discount"))) OR (NOT EMPTY(FIELD(@products,"top_products_1_price_membership_discount"))) THEN]%% %%=FIELD(@products,"top_products_1_price_original")=%% %%[ENDIF]%%'
+    originalPriceOnly: '%%[IF EMPTY(FIELD(@products,"top_products_1_price_discount")) AND EMPTY(FIELD(@products,"top_products_1_price_membership_discount")) THEN]%% %%=FIELD(@products,"top_products_1_price_original")=%%  %%[ENDIF]%%'
+    discountPrice: '%%=FIELD(@products,"top_products_1_price_discount")=%%'
+    membershipDiscountPrice: '%%=FIELD(@products,"top_products_1_price_membership_discount")=%%'
+    deductible: 
+    originalText: Precio Original
+    discountText: '%%[IF (NOT EMPTY(FIELD(@products,"top_products_1_price_discount"))) THEN]%% Precio con discuento %%[ENDIF]%%'
+    membershipDiscountText: '%%[IF (NOT EMPTY(FIELD(@products,"top_products_1_price_membership_discount"))) THEN]%% membership discount %%[ENDIF]%%'
+    deductibleText: 
+    featuredText: Destacado
+    buttonText: Solicítalo
+
+  - scriptIf: '%%[IF (NOT EMPTY(FIELD(@products,"top_products_2_company_name"))) THEN]%%
+               %%[IF (NOT EMPTY(FIELD(@products,"top_products_2_apply_url"))) THEN
+                    SET @apply_url=FIELD(@products,"top_products_2_apply_url")
+                  ELSE
+                    SET @apply_url=FIELD(@products,"results_page_url")
+                  ENDIF]%%'
+    provider:
+      name:  '%%=FIELD(@products,"top_products_2_company_name")=%%'
+      logo:  "%%=FIELD(@products,'top_products_2_company_logo')=%%"
+    features:
+      - name:  '%%=FIELD(@products,"top_products_2_features_0_name")=%%'
+        value: '%%=FIELD(@products,"top_products_2_features_0_value")=%%'
+        scriptIf: '%%[IF (NOT EMPTY(FIELD(@products,"top_products_2_features_0_name"))) THEN]%%'
+        scriptIconIf: '%%[IF FIELD(@products,"top_products_2_features_0_value")==true THEN]%%'
+      - name:  '%%=FIELD(@products,"top_products_2_features_1_name")=%%'
+        value: '%%=FIELD(@products,"top_products_2_features_1_value")=%%'
+        scriptIf: '%%[IF (NOT EMPTY(FIELD(@products,"top_products_2_features_1_name"))) THEN]%%'
+        scriptIconIf: '%%[ IF FIELD(@products,"top_products_2_features_1_value")==true THEN]%%'
+      - name:  '%%=FIELD(@products,"top_products_2_features_2_name")=%%'
+        value: '%%=FIELD(@products,"top_products_2_features_2_value")=%%'
+        scriptIf: '%%[IF (NOT EMPTY(FIELD(@products,"top_products_2_features_2_name"))) THEN]%%'
+        scriptIconIf: '%%[IF FIELD(@products,"top_products_2_features_2_value")==true THEN]%%'
+      - name:  '%%=FIELD(@products,"top_products_2_features_3_name")=%%'
+        value: '%%=FIELD(@products,"top_products_2_features_3_value")=%%'
+        scriptIf: '%%[IF (NOT EMPTY(FIELD(@products,"top_products_2_features_3_name"))) THEN]%%'
+        scriptIconIf: '%%[IF FIELD(@products,"top_products_2_features_3_value")==true THEN]%%'
+      - name:  '%%=FIELD(@products,"top_products_2_features_4_name")=%%'
+        value: '%%=FIELD(@products,"top_products_2_features_4_value")=%%'
+        scriptIf: '%%[IF (NOT EMPTY(FIELD(@products,"top_products_2_features_4_name"))) THEN]%%'
+        scriptIconIf: '%%[IF FIELD(@products,"top_products_2_features_4_value")==true THEN]%%'
+      - name:  '%%=FIELD(@products,"top_products_2_features_5_name")=%%'
+        value: '%%=FIELD(@products,"top_products_2_features_5_value")=%%'
+        scriptIf: '%%[IF (NOT EMPTY(FIELD(@products,"top_products_2_features_5_name"))) THEN]%%'
+        scriptIconIf: '%%[IF FIELD(@products,"top_products_2_features_5_value")==true THEN]%%'
+      - name:  '%%=FIELD(@products,"top_products_2_features_6_name")=%%'
+        value: '%%=FIELD(@products,"top_products_2_features_6_value")=%%'
+        scriptIf: '%%[IF (NOT EMPTY(FIELD(@products,"top_products_2_features_6_name"))) THEN]%%'
+        scriptIconIf: '%%[IF FIELD(@products,"top_products_2_features_6_value")==true THEN]%%'
+    apply_url: '%%=RedirectTo(@apply_url)=%%'
+    originalPrice: '%%[IF (NOT EMPTY(FIELD(@products,"top_products_2_price_discount"))) OR (NOT EMPTY(FIELD(@products,"top_products_2_price_membership_discount"))) THEN]%% %%=FIELD(@products,"top_products_2_price_original")=%% %%[ENDIF]%%'
+    originalPriceOnly: '%%[IF EMPTY(FIELD(@products,"top_products_2_price_discount")) AND EMPTY(FIELD(@products,"top_products_2_price_membership_discount")) THEN]%% %%=FIELD(@products,"top_products_2_price_original")=%%  %%[ENDIF]%%'
+    discountPrice: '%%=FIELD(@products,"top_products_2_price_discount")=%%'
+    membershipDiscountPrice: '%%=FIELD(@products,"top_products_2_price_membership_discount")=%%'
+    deductible: 
+    originalText: Precio Original
+    discountText: '%%[IF (NOT EMPTY(FIELD(@products,"top_products_2_price_discount"))) THEN]%% Precio con discuento %%[ENDIF]%%'
+    membershipDiscountText: '%%[IF (NOT EMPTY(FIELD(@products,"top_products_2_price_membership_discount"))) THEN]%% membership discount %%[ENDIF]%%'
+    deductibleText: 
+    featuredText: Destacado
+    buttonText: Solicítalo

@@ -1,0 +1,23 @@
+---
+#title and description show on the tab of the email (browser)
+subject: Confirmation Email
+description:
+
+staticFile: dk/ci/confirmation/static.yml
+scriptFile: dk/ci/confirmation/script.yml
+demoFile: dk/ci/confirmation/demo.yml
+---
+{{setConfig}}
+{{#if config.scriptMain}}
+{{{config.scriptMain}}}
+{{/if}}
+{{#if config.scriptBcc}}
+{{{config.scriptBcc}}}
+{{/if}}
+<wrapper class="ciab-confirmation">
+  {{> ci-dk-confirmation-header}}
+  {{> ci-dk-confirmation-header-banner}}
+
+  {{> ci-confirmation-with-details ciConfirmation=config.ciConfirmation}}
+  {{> common-footer}}
+</wrapper>

@@ -1,0 +1,51 @@
+<center>
+  <container class="ciab-product-showcase">
+    <tr class="circle-top-container">
+      {{#each config.showcase}}
+        <th class="item  large-4 small-12">
+          <center>
+            <img src="http://image.email.comparaja.pt/lib/fe9213727262077975/m/1/4af6be9c-0e21-44d8-865c-5cd23eedf1be.png" alt="{{title}}">
+          </center>
+        </th>
+      {{/each}}
+    </tr>
+    <tr class="vertical-container">
+      {{#each config.showcase}}
+        <th class="item large-4 small-12">
+            <center class="vertical-image-container">
+              <img src="{{imagePath}}">
+            </center>
+          
+            <center>
+              <h4>{{title}}</h4>
+              <p class="description">{{description}}</p>
+              <p class="cta-button-container">
+                <a href="{{{buttonLink}}}" class="cta-button"><span>{{buttonText}}</span></a>
+              </p>
+              <p><small>{{footnote}}</small></p>
+            </center>
+        </th>
+      {{/each}}
+    </tr>
+    {{#if config.showcaseRow2}}
+    <tr class="vertical-container">
+      {{#each config.showcaseRow2}}
+      <th class="item  large-4 small-12">
+        <center class="vertical-image-container">
+          <img src="{{imagePath}}">
+        </center>
+
+        <center>
+          <h4>{{title}}</h4>
+          <p class="description">{{description}}</p>
+          <p class="cta-button-container">
+            <a href="{{{buttonLink}}}" class="cta-button"><span>{{buttonText}}</span></a>
+          </p>
+          <p><small>{{footnote}}</small></p>
+        </center>
+      </th>
+      {{/each}}
+    </tr>
+    {{/if}}
+  </container>
+</center>

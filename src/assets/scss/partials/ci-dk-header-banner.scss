@@ -1,0 +1,64 @@
+table.ciab-header-banner-ci {
+  border-spacing: 0 10px;
+  color: map-get( $color, white );
+  background-color: map-get( $color, royal-blue );
+  a{
+    color: map-get( $color, white );
+  }
+
+  &-wrapper {
+    width: 540px; //Fallback for outlook lower version
+    width: 90%;
+    margin: 0 auto;
+    @media only screen and (max-width: #{$global-breakpoint}) {
+      width: 98% !important;
+    }
+    td {
+      vertical-align: bottom;
+      p {
+        a{
+          color: map-get( $color, green );
+          font-weight: bold;
+        }
+        @media only screen and (max-width: #{$global-breakpoint}) {
+          padding: 0 0 20px 15px;
+        }
+      }
+      h1 {
+        font-size: 25px;
+        color: #ffffff;
+        margin-top: 20px;
+        padding-bottom: 0;
+        font-style: italic;
+        font-weight: 600;
+        letter-spacing: 1px;
+        @media only screen and (max-width: #{$global-breakpoint}) {
+          font-size: 19px!important;
+          padding-left: 15px;
+          line-height: 35px!important;
+          margin-top: 10px;
+        }
+        span{
+          font-weight: normal;
+          font-size: 22px;
+          @media only screen and (max-width: #{$global-breakpoint}) {
+            font-size: 16px!important;
+            line-height: 10px;
+          }
+        }
+      }
+      td.columns, td.column, th.columns, th.column {
+        padding-bottom: 0;
+      }
+    }
+    .header-image{
+      padding: 0!important;
+      img{
+        @media only screen and (min-width: #{$global-breakpoint}) {
+          width: 80%!important;
+          float: right;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+#"sg_6ca646b9-87f0-5e86-b746-c271bebafe2c"
+#"48b519be-2d26-5134-b83f-59546bc085e4"
+
+scriptMain: '%%[
+                VAR @orderlist, @order, @userlist, @user
+            ]%%
+            %%[
+                SET @userlist = LOOKUPROWS("User", "SubscriberKey", SubscriberKey)
+                SET @orderlist = LOOKUPROWS("CC Order Confirmation", "event_id", eventid)
+            ]%%
+            %%[
+            IF ((ROWCOUNT(@orderlist) != 1)
+                AND (ROWCOUNT(@userlist) != 1))
+            THEN
+                RaiseError("Error finding corresponding order and/or user", 1)
+            ENDIF
+            SET @user = ROW(@userlist, 1)
+            SET @order = ROW(@orderlist, 1)
+            SET @today = Now()
+            ]%%'
+
+
+ccConfirmation:
+  orderTitle: "Your order number is:"
+  orderDescription: 
+  orderNumber: '%%=FIELD(@order,"event_key")=%%'
+  sections:
+    - header: Your Credit Card Application 
+      logo: 
+      items:
+        - name: Provider #provider
+          value: '%%=FIELD(@order,"provider_name")=%%'
+        - name: Product #product
+          value: '%%=FIELD(@order,"product_name")=%%'
+    - header: Your Details
+      items:
+        - name: '%%=ProperCase(FIELD(@order,"first_name"))=%% %%=ProperCase(FIELD(@order,"last_name"))=%%' #number of channels
+        - name: '' 
+        - name: '%%=FIELD(@user,"EmailAddress")=%%'
+        - name: '%%=FIELD(@order,"phone_number")=%%'

@@ -1,0 +1,139 @@
+featuredProducts:
+  - provider:
+      sponsoredStaticText: Anúncio patrocinado
+      name: Waoo!
+      logo: http://assets.ciab.compareglobal.co.uk/portugal/comparaja.pt/integration/pt/images/providerLogos/3.png
+    addressCoverage:
+      - value: 1
+        scriptIf:
+    footerLabel: Ingen binding
+    buttonText: APPLY
+    services:
+      - text: tv + bb + fixed tel + mob + mob internet
+        value: 5P
+    features:
+      - text: Channels
+        value: 98
+      - text:  Mb/s
+        value: 100/10
+    priceDetail:
+      discountText: Monthly
+      discount: X €
+      monthlyPrice: X €
+      setupCost:
+        text: Oprettelse
+        value: 0 kr.
+      totalPrice:
+        text: Pris 6 måneder
+        value: 60 kr.
+    apply_url: /
+  - provider:
+      sponsoredStaticText: Anúncio patrocinado
+      name: Waoo!
+      logo: http://assets.ciab.compareglobal.co.uk/portugal/comparaja.pt/integration/pt/images/providerLogos/3.png
+    addressCoverage:
+      - value: 0
+        scriptIf:
+    footerLabel: Ingen binding
+    buttonText: APPLY
+    services:
+      - text: tv + bb + fixed tel + mob + mob internet
+        value: 5P
+    features:
+      - text: Channels
+        value: 98
+      - text:  Mb/s
+        value: 100/10
+    priceDetail:
+      discountText: Monthly
+      discount: X €
+      monthlyPrice: X €
+      setupCost:
+        text: Oprettelse
+        value: 0 kr.
+      totalPrice:
+        text: Pris 6 måneder
+        value: 60 kr.
+    apply_url: /
+generalProducts:
+  - provider:
+      name: Waoo!
+      logo: http://assets.ciab.compareglobal.co.uk/portugal/comparaja.pt/integration/pt/images/providerLogos/3.png
+    addressCoverage:
+      - value: -1
+        scriptIf:
+    footerLabel: Ingen binding
+    buttonText: APPLY
+    services:
+      - text: tv + bb + fixed tel + mob + mob internet
+        value: 5P
+    features:
+      - text: Channels
+        value: 98
+      - text:  Mb/s
+        value: 100/10
+    priceDetail:
+      discountText: Monthly
+      discount: X €
+      monthlyPrice: X €
+      setupCost:
+        text: Oprettelse
+        value: 0 kr.
+      totalPrice:
+        text: Pris 6 måneder
+        value: 60 kr.
+    apply_url: /
+  - provider:
+      name: Waoo!
+      logo: http://assets.ciab.compareglobal.co.uk/portugal/comparaja.pt/integration/pt/images/providerLogos/3.png
+    addressCoverage:
+      - value: 1
+        scriptIf:
+    footerLabel: Ingen binding
+    buttonText: APPLY
+    services:
+      - text: tv + bb + fixed tel + mob + mob internet
+        value: 5P
+    features:
+      - text: Channels
+        value: 98
+      - text:  Mb/s
+        value: 100/10
+    priceDetail:
+      discountText: Monthly
+      discount: X €
+      monthlyPrice: X €
+      setupCost:
+        text: Oprettelse
+        value: 0 kr.
+      totalPrice:
+        text: Pris 6 måneder
+        value: 60 kr.
+    apply_url: /
+  - provider:
+      name: Waoo!
+      logo: http://assets.ciab.compareglobal.co.uk/portugal/comparaja.pt/integration/pt/images/providerLogos/3.png
+    addressCoverage:
+      - value: 0
+        scriptIf:
+    footerLabel: Ingen binding
+    buttonText: APPLY
+    services:
+      - text: tv + bb + fixed tel + mob + mob internet
+        value: 5P
+    features:
+      - text: Channels
+        value: 98
+      - text:  Mb/s
+        value: 100/10
+    priceDetail:
+      discountText: Monthly
+      discount: X €
+      monthlyPrice: X €
+      setupCost:
+        text: Oprettelse
+        value: 0 kr.
+      totalPrice:
+        text: Pris 6 måneder
+        value: 60 kr.
+    apply_url: /

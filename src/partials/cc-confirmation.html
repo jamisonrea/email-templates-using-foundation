@@ -1,0 +1,72 @@
+{{#conditionalWith ccConfirmation config.ccConfirmation}}
+
+{{#if scriptIf}}
+{{{scriptIf}}}
+{{/if}}
+<container class="ciab-confirmation-container cc">
+ 
+  <container class="ciab-confirmation-title">
+    <columns small="12" large="12" class="order-number-cc">
+      <p class="text-center">
+        {{{orderTitle}}}
+        <b class="order-number">{{{orderNumber}}}</b>
+        
+      </p>
+      
+    </columns>
+  </container>
+
+      <table class="section-wrapper" align="center">
+
+        <tbody>
+        {{#each sections}}
+        <tr class="section-header">
+          <td>
+            <h6> 
+            {{header}}</h6>
+          </td>
+          <td class="text-right">
+            {{#if logo}}
+            <img src="{{logo}}">
+            {{/if}}
+          </td>
+        </tr>
+        {{#if subheader}}
+        <tr class="section-subheader">
+          <td><p><b>{{subheader}}</b></p></td>
+        </tr>
+        {{/if}}
+        {{#each items}}
+        <tr>
+          <td>
+            {{{name}}}
+          </td>
+          <td class="text-right">
+            {{{value}}}
+          </td>
+        </tr>
+        {{/each}}
+        {{#if summary}}
+        <tr class="section-summary">
+          <td>
+            <p><b>{{{summary.name}}}</b></p>
+          </td>
+          <td class="text-right">
+            <b>{{{summary.value}}}</b>
+          </td>
+        </tr>
+        {{/if}}
+        {{/each}}
+        {{#if summary}}
+       
+        {{/if}}
+        </tbody>
+     </table>
+
+
+</container>
+{{#if scriptIf}}
+%%[ENDIF]%%
+{{/if}}
+
+{{/conditionalWith}}

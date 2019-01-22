@@ -1,0 +1,136 @@
+header:
+      title: 'Dear %%=ProperCase(FIELD(@application, "first_name"))=%%,'
+      bankIcon: 
+
+apiProductInfo:
+      provider: '%%=FIELD(@application, "product_name")=%%'
+      benefit1: '%%=ProperCase(FIELD(@application, "first_name"))=%% %%=ProperCase(FIELD(@application, "last_name"))=%%'
+      benefit2: '%%=SUBSTRING(FIELD(@application, "email_address"),1,4)=%% &lowast;&lowast;&lowast;&lowast;'
+      benefit3: '%%[IF (NOT EMPTY(FIELD(@user,"phone"))) THEN]%% %%=SUBSTRING(FIELD(@application,"phone"),1,4)=%% %%[ELSE]%% %%=SUBSTRING(FIELD(@application,"mobile"),1,4)=%% %%[ENDIF]%% &lowast;&lowast;&lowast;&lowast;'
+      statusPageUrl: '%%=RedirectTo(FIELD(@application, "apply_url"))=%%'
+
+headerBanner:
+  headline1: You have an unfinished application on <a href="https://www.singsaver.com.sg">SingSaver.com.sg</a>
+
+headerTitleBanner:
+  columnTitleList:
+    - description: Minimum Annual Income
+    - description: Benefit 1
+    - description: Benefit 2
+featuredProducts:
+  - provider:
+      name: Citi PremierMiles Visa Card - New Customers (42,000 Miles Welcome Offer)
+      logo: https://d1zveg1lnnqymk.cloudfront.net/singapore/singsaver.com.sg/secured-production/sg/images/providerLogos/Citi.png
+    displayCondition:
+    apply_url: /
+    columns:
+      provider: Provider
+      eligibility: Requirements
+      column1: Interest rate
+      column2: Total cost
+      column3: Monthly cost
+      column1Footer: save 10 dollars
+      column2Footer: save 10 dollars
+      column3Footer: save 10 dollars
+      column1Value: 41%
+      column2Value: S$ 205,000
+      column3Value: S$ 20,202
+      eligibilityIcon: '<img src="http://image.email.comparaguru.com/lib/fe9013727262077977/m/1/result-icon-true.gif" height="30" />'
+      eligibilityText: You meet the minimum requirements
+  - provider:
+      name: Citi PremierMiles Visa Card - New Customers (42,000 Miles Welcome Offer)
+      logo: https://d1zveg1lnnqymk.cloudfront.net/singapore/singsaver.com.sg/secured-production/sg/images/providerLogos/Citi.png
+    displayCondition:
+    apply_url: /
+    columns:
+      provider: Provider
+      eligibility: Requirements
+      column1: Interest rate
+      column2: Total cost
+      column3: Monthly cost
+      column1Footer: save 10 dollars
+      column2Footer: save 10 dollars
+      column3Footer: save 10 dollars
+      column1Value: 41%
+      column2Value: S$ 205,000
+      column3Value: S$ 20,202
+      eligibilityIcon: '<img src="http://image.email.comparaguru.com/lib/fe9013727262077977/m/1/result-icon-true.gif" height="30" />'
+      eligibilityText: You meet the minimum requirements
+  - provider:
+      name: Citi PremierMiles Visa Card - New Customers (42,000 Miles Welcome Offer)
+      logo: https://d1zveg1lnnqymk.cloudfront.net/singapore/singsaver.com.sg/secured-production/sg/images/providerLogos/Citi.png
+    displayCondition:
+    apply_url: /
+    columns:
+      provider: Provider
+      eligibility: Requirements
+      column1: Interest rate
+      column2: Total cost
+      column3: Monthly cost
+      column1Footer: save 10 dollars
+      column2Footer: save 10 dollars
+      column3Footer: save 10 dollars
+      column1Value: 41%
+      column2Value: S$ 205,000
+      column3Value: S$ 20,202
+      eligibilityIcon: '<img src="http://image.email.comparaguru.com/lib/fe9013727262077977/m/1/result-icon-true.gif" height="30" />'
+      eligibilityText: You meet the minimum requirements
+
+generalProducts:
+  - provider:
+      name: Citi PremierMiles Visa Card - New Customers (42,000 Miles Welcome Offer)
+      logo: https://d1zveg1lnnqymk.cloudfront.net/singapore/singsaver.com.sg/secured-production/sg/images/providerLogos/Citi.png
+    displayCondition:
+    apply_url: /
+    columns:
+      provider: Provider
+      eligibility: Requirements
+      column1: Interest rate
+      column2: Total cost
+      column3: Monthly cost
+      column1Footer: save 10 dollars
+      column2Footer: save 10 dollars
+      column3Footer: save 10 dollars
+      column1Value: 41%
+      column2Value: S$ 205,000
+      column3Value: S$ 20,202
+      eligibilityIcon: '<img src="http://image.email.comparaguru.com/lib/fe9013727262077977/m/1/result-icon-true.gif" height="30" />'
+      eligibilityText: You meet the minimum requirements
+  - provider:
+      name: Citi PremierMiles Visa Card - New Customers (42,000 Miles Welcome Offer)
+      logo: https://d1zveg1lnnqymk.cloudfront.net/singapore/singsaver.com.sg/secured-production/sg/images/providerLogos/Citi.png
+    displayCondition:
+    apply_url: /
+    columns:
+      provider: Provider
+      eligibility: Requirements
+      column1: Interest rate
+      column2: Total cost
+      column3: Monthly cost
+      column1Footer: save 10 dollars
+      column2Footer: save 10 dollars
+      column3Footer: save 10 dollars
+      column1Value: 41%
+      column2Value: S$ 205,000
+      column3Value: S$ 20,202
+      eligibilityIcon: '<img src="http://image.email.comparaguru.com/lib/fe9013727262077977/m/1/result-icon-true.gif" height="30" />'
+      eligibilityText: You meet the minimum requirements
+  - provider:
+      name: Citi PremierMiles Visa Card - New Customers (42,000 Miles Welcome Offer)
+      logo: https://d1zveg1lnnqymk.cloudfront.net/singapore/singsaver.com.sg/secured-production/sg/images/providerLogos/Citi.png
+    displayCondition:
+    apply_url: /
+    columns:
+      provider: Provider
+      eligibility: Requirements
+      column1: Interest rate
+      column2: Total cost
+      column3: Monthly cost
+      column1Footer: save 10 dollars
+      column2Footer: save 10 dollars
+      column3Footer: save 10 dollars
+      column1Value: 41%
+      column2Value: S$ 205,000
+      column3Value: S$ 20,202
+      eligibilityIcon: '<img src="http://image.email.comparaguru.com/lib/fe9013727262077977/m/1/result-icon-true.gif" height="30" />'
+      eligibilityText: You meet the minimum requirements

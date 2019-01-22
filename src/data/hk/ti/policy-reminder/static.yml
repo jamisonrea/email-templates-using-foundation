@@ -1,0 +1,15 @@
+##----- static content -----##
+header:
+  headerLink: '%%view_email_url%%'
+  headerLinkText: View in your browser
+  headerLogoPath: https://www.moneyhero.com.hk/themes/cgg-confidence-mix/assets/img/en_HK-logo.png
+
+headerBanner:
+  headline1: Hello 您好
+  headline3: Thank you for purchasing Travel Insurance through <a href="#" class="link-remove--mobile">MoneyHero.com.hk</a>. Your policy cover is now effective, and details of your policy and coverage are listed below. Please also click <a href="%%=RedirectTo(FIELD(@order,'brochure_url'))=%%" target="_blank">here</a> to download your policy brochure in case of use in the event of an emergency or a claim. <br><br> 感謝您經由<a href="#" class="link-remove--mobile">MoneyHero.com.hk</a>購買旅遊保險。您的旅遊保單現已正式生效，以下是您的保單及保障項目。您亦可<a href="%%=RedirectTo(FIELD(@order,'brochure_url'))=%%" target="_blank">按此</a> 下載有關保險計劃的產品說明書，以便遇到意外或提出索償時查閱。
+  image: https://www.moneyhero.com.hk/themes/cgg-confidence-green/assets/img/landing-page/pl_landing_holiday.png
+
+footer:
+  termsText: <a href="#" class="link-remove--mobile">MoneyHero.com.hk</a> Privacy Policy / Terms and Conditions <br><a href="#" class="link-remove--mobile">MoneyHero.com.hk</a>的私隱政策、條款及細則
+  termsLink: https://www.moneyhero.com.hk/en/privacy-policy
+  termsDescription: <a href="#" class="link-remove--mobile">MoneyHero.com.hk</a> operates and owns MoneyHero Insurance Brokers limited, a registered broker with the Hong Kong Professional Insurance Brokers Association ("PIBA"), registered number 0633. <br><a href="#" class="link-remove--mobile">MoneyHero.com.hk<a/>經營並持有MoneyHero Insurance Brokers Limited (「MIBL」)，「MIBL」為香港專業保險經紀協會（「PIBA」）的註冊會員，PIBA註冊會員編號為0633

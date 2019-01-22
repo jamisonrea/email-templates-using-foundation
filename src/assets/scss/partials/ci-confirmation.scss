@@ -1,0 +1,131 @@
+.ciab-confirmation-container.ci {
+  .section {
+    &-wrapper {
+      width: 70%;
+      td, p {
+        font-size: 14px;
+        padding: 3px 0;
+      }
+      @media only screen and (max-width: #{$global-breakpoint}) {
+        width: 70%;
+      }
+    }
+    &-provider{
+      td{
+        padding-top: 40px;
+      }
+      h6{
+        font-size: 16px;
+        margin: 0;
+      }
+      h4{
+        font-size: 16px;
+        font-weight: bold;
+      }
+      img {
+        display: inline;
+        max-height: 50px;
+      }
+    }
+  }
+  .feature{
+    text-align: center;
+    &-list{
+      width: 18%;
+      display: inline-block;
+      text-align: center;
+      @media only screen and (max-width: #{$global-breakpoint}) {
+        width: 30%;
+        margin-bottom: 15px;
+      }
+    }
+    &-text{
+      font-size: 12px;
+      margin: 5px 0 10px;
+      color: #cccbc8;
+      display: block;
+      font-weight: bold;
+    }
+    &-true{
+      color: #312f2e;
+    }
+    &-icon{
+      img{
+        margin: 0 auto;
+        width: 18px;
+        height: 16px;
+      }
+    }
+  }
+  .section-banner{
+    background: #2e86bc;
+    h4{
+      color: #facb1a;
+      font-size: 18px;
+    }
+    img{
+      margin: 0 auto;
+    }
+    p{
+      font-size: 15px;
+      color: #fff;
+      padding: 10px 25px 0;
+    }
+  }
+  .section-header {
+    border-bottom: 1px solid #eee;
+    td {
+      vertical-align: bottom;
+    }
+    h6 {
+      font-size: 14px;
+      font-weight: bold;
+      margin: 20px 0 0 0;
+    }
+    img {
+      display: inline;
+      max-height: 50px;
+    }
+  }
+
+  .section-subheader {
+    p {
+      margin: 8px 0 0 0;
+    }
+  }
+
+  .text-right{
+    font-weight: bold;
+    a{
+      color: map-get( $color, green );
+      font-weight:bold;
+    }
+  }
+
+  .section-summary {
+    border-top: 1px solid #eee;
+    p {
+      margin-bottom: 15px;
+    }
+  }
+
+  .order-summary{
+    border-top:2px solid #000;
+    p {
+      margin-top: 15px;
+    }
+  }
+  .section-terms{
+    p{
+      font-size: 13px;
+      margin-bottom: 0
+    }
+    .terms{
+      margin: 20px 0;
+      a{
+        color: map-get( $color, blue );
+        text-decoration: underline;
+      }
+    }
+  }
+}

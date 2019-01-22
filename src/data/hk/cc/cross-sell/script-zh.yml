@@ -1,0 +1,71 @@
+scriptMain: '%%[
+            VAR @orderlist, @order, @userlist, @user
+            ]%%
+            %%[
+            SET @userlist = LOOKUPROWS("User", "SubscriberKey", SubscriberKey)
+            SET @orderlist = LOOKUPROWS("TI Order Confirmation", "event_id", EventId)
+            ]%%
+
+            %%[
+            IF ((ROWCOUNT(@orderlist) != 1)
+            OR (ROWCOUNT(@userlist) != 1))
+            THEN
+            RaiseError("Error finding corresponding application and/or user", 1)
+            ENDIF
+            SET @user = ROW(@userlist, 1)
+            SET @order = ROW(@orderlist, 1)
+            ]%%'
+
+header:
+      title: '%%[IF (NOT EMPTY(FIELD(@order,"myself_first_name")))THEN]%% 你好 %%=Propercase(FIELD(@order,"myself_first_name"))=%%, %%[ELSE]%%你好%%[ENDIF]%%'
+      subtitle: "節省旅行花費有很多方法。如果你每年都去旅行，最好當然是擁有一張「海外專用」的信用卡，以賺取海外簽帳的額外現金回贈、飛行里數及其他禮遇！以下是我們精選的海外消費信用卡："
+      bankIcon: 
+      feature_title: '特點:'
+      
+      ProductTitle_1: Citi Cash Back Visa 信用卡
+      Product_img_url_1: 'http://image.email.moneyhero.com.hk/lib/fe9213727262077e74/m/1/6b889018-5aaa-4a3f-9420-1c2215f8ee41.jpg'
+      Product_usp_1_1: '經MoneyHero成功申請享額外禮券'
+      Product_usp_2_1: '免外幣簽賬手續費'
+      Product_usp_3_1: ' Citi信用卡專屬旅遊禮遇'    
+      Feature_usp1_1: "迎新高達HK$1,500現金回贈" 
+      Feature_usp2_1: "海外簽賬全年享2%回贈(無上限)"
+      Feature_usp3_1: "首年年費豁免"
+      button_content_1: "Apply"
+      button_url_1: "https://www.moneyhero.com.hk/zh/credit-card/citibank"
+      
+      ProductTitle_2: 渣打亞洲萬里通萬事達卡
+      Product_img_url_2: 'http://image.email.moneyhero.com.hk/lib/fe9213727262077e74/m/1/25965e6e-83c4-4db1-aeb4-8b4eff71a24f.jpg'
+      Product_usp_1_2: '經MoneyHero成功申請享額外禮券'
+      Product_usp_2_2: '每月自動兌換里數並存入您的「亞洲萬里通」賬戶內'
+      Product_usp_3_2: '兌換酒店住宿、租車、旅遊體驗獎勵9折優惠'     
+      Feature_usp1_2: "迎新高達100,000里數"
+      Feature_usp2_2: "海外簽賬可享全年低至HK$4 = 1里數"
+      Feature_usp3_2: "首年年費豁免"
+      button_content_2: "Apply"
+      button_url_2: "https://www.moneyhero.com.hk/zh/credit-card/standard-chartered"
+
+      ProductTitle_3: 信銀國際中國國航雙幣信用卡
+      Product_img_url_3: 'http://image.email.moneyhero.com.hk/lib/fe9213727262077e74/m/1/0988105f-e3a5-416a-893f-a596f7560a5f.jpg'
+      Product_usp_1_3: 精選迎新禮品
+      Product_usp_2_3: '簽賬可賺取鳳凰知音里程兌換台灣、日本、美國、歐洲、紐西蘭等地機票' 
+      Product_usp_3_3:  免外幣簽賬手續費
+      Feature_usp1_3: "海外簽賬可享高達5%現金回贈" 
+      Feature_usp2_3: "豁免首3年年費" 
+      Feature_usp3_3: "經網上成功申請可享HK$100現金回贈" 
+      button_content_3: "Apply"
+      button_url_3: "https://www.moneyhero.com.hk/zh/credit-card/china-citic-bank"
+
+guide: 
+      intro: "想一次過比較更多信用卡?"
+      text1: ""
+      text2: "前往我們的信用卡比較平台！" 
+      link: "https://www.moneyhero.com.hk/zh/credit-card/best-deals/results"
+      link_title: "按此"
+
+footer:
+      unsubscribeLink: "%%profile_center_url%%"
+      unsubscribeText: 不訂閱
+
+# To obtain the values, assign this to the variable: 
+# %%=FIELD(@application, "<corresponding column name>")=%%
+# %%=SUBSTRING(FIELD(@application,"phone"),1,4)=%%****

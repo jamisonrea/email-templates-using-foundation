@@ -1,0 +1,116 @@
+featuredProducts:
+  - provider:
+      name: Waoo!
+      logo: http://assets.ciab.compareglobal.co.uk/denmark/samlino.dk/integration/dk/images/providerLogos/3.png
+    footerLabel: Ingen binding
+    features:
+      feature1: 6 måneder
+      feature2: 20 GB
+      feature3: 36 Mbit/s
+    priceDetail:
+      discountText: Rabat
+      discount: -20 kr.
+      monthlyPrice: 10 kr.
+      setupCost:
+        text: Oprettelse
+        value: 0 kr.
+      totalPrice:
+        text: Pris 6 måneder
+        value: 60 kr.
+    apply_url: /
+  - provider:
+      name: Waoo!
+      logo: http://assets.ciab.compareglobal.co.uk/denmark/samlino.dk/integration/dk/images/providerLogos/3.png
+    footerLabel: Gratis oprettelse
+    features:
+      feature1: 6 måneder
+      feature2: 20 GB
+      feature3: 36 Mbit/s
+    priceDetail:
+      discountText: Rabat
+      discount: -20 kr.
+      monthlyPrice: 10 kr.
+      setupCost:
+        text: Oprettelse
+        value: 0 kr.
+      totalPrice:
+        text: Pris 6 måneder
+        value: 60 kr.
+    apply_url: /
+generalProducts:
+  - provider:
+      name: 3 Mobilt
+      logo: http://assets.ciab.compareglobal.co.uk/denmark/samlino.dk/integration/dk/images/providerLogos/Waoo.png
+    footerLabel: Gratis oprettelse
+    features:
+      feature1: 6 måneder
+      feature2: 20 GB
+      feature3: 36 Mbit/s
+    priceDetail:
+      discountText: Rabat
+      discount: -20 kr.
+      monthlyPrice: 10 kr.
+      setupCost:
+        text: Oprettelse
+        value: 0 kr.
+      totalPrice:
+        text: Pris 6 måneder
+        value: 60 kr.
+    apply_url: /
+  - provider:
+      name: 3 Mobilt
+      logo: http://assets.ciab.compareglobal.co.uk/denmark/samlino.dk/integration/dk/images/providerLogos/Waoo.png
+    footerLabel: Ingen binding
+    features:
+      feature1: 6 måneder
+      feature2: 20 GB
+      feature3: 36 Mbit/s
+    priceDetail:
+      discountText: Rabat
+      discount: -20 kr.
+      monthlyPrice: 10 kr.
+      setupCost:
+        text: Oprettelse
+        value: 0 kr.
+      totalPrice:
+        text: Pris 6 måneder
+        value: 60 kr.
+    apply_url: /
+  - provider:
+      name: 3 Mobilt
+      logo: http://assets.ciab.compareglobal.co.uk/denmark/samlino.dk/integration/dk/images/providerLogos/Waoo.png
+    footerLabel: Gratis oprettelse
+    features:
+      feature1: 6 måneder
+      feature2: 20 GB
+      feature3: 36 Mbit/s
+    priceDetail:
+      discountText: Rabat
+      discount: -20 kr.
+      monthlyPrice: 10 kr.
+      setupCost:
+        text: Oprettelse
+        value: 0 kr.
+      totalPrice:
+        text: Pris 6 måneder
+        value: 60 kr.
+    apply_url: /
+  - provider:
+      name: 3 Mobilt
+      logo: http://assets.ciab.compareglobal.co.uk/denmark/samlino.dk/integration/dk/images/providerLogos/Waoo.png
+    footerLabel: Gratis oprettelse
+    features:
+      feature1: 6 måneder
+      feature2: 20 GB
+      feature3: 36 Mbit/s
+    priceDetail:
+      discountText: Rabat
+      discount: -20 kr.
+      monthlyPrice: 10 kr.
+      setupCost:
+        text: Oprettelse
+        value: 0 kr.
+      totalPrice:
+        text: Pris 6 måneder
+        value: 60 kr.
+    apply_url: /

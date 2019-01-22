@@ -1,0 +1,45 @@
+header:
+  headerLink: '%%view_email_url%%'
+  headerLinkText: Ver Coreo en el Navegador
+  headerLogoPath: http://image.email.comparaguru.com/lib/fe9013727262077977/m/1/comparaguru-logo.png
+
+headerBanner:
+  headline1: "También te puedes financiar con una tarjeta de crédito."
+  headline2:
+  image: http://image.s7.exacttarget.com/lib/fe9813727663007d75/m/2/icon-email-cc.png
+  descriptionList:
+      - description: 100% gratis
+        class: first
+      - description: Rápido y fácil
+        class: second
+      - description: Independiente e imparcial
+        class: third
+headerTitleBannerStatic:
+  firstColumn: Provider
+  secondColumn: Eligibility
+ 
+apiDescriptions:
+  buttonContent: "Aplica"
+
+menu:
+  - title: Inicio
+    link: https://www.comparaguru.com/
+  - title: Tarjetas de crédito
+    link: https://www.comparaguru.com/tarjetas-de-credito
+  - title: Préstamos
+    link: https://www.comparaguru.com/prestamos-personales/prestamos-inmediatos
+  - title: Seguros de auto
+    link: https://www.comparaguru.com/seguro-de-autos
+
+footer:
+  socialMedia:
+    - link: https://www.facebook.com/ComparaGuru/
+      imagePath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/cf4ff2a2-0288-402b-8c93-643181110b41.png
+    - link: https://twitter.com/comparaguru
+      imagePath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/d39a3024-f642-4d24-aa2f-c76ee836027c.png
+    - link: https://plus.google.com/+ComparaGuruMX
+      imagePath: http://image.s7.exacttarget.com/lib/fe9813727663007d75/m/1/googleplus.png
+    - link: https://www.youtube.com/channel/UCDUw50qJTd5cBLyhkwmN2fQ
+      imagePath: http://image.s7.exacttarget.com/lib/fe9813727663007d75/m/1/youtube.png
+  termsTitle: 
+  termsDescription: Ejército Nacional 373, colonia Granada, delegación Miguel Hidalgo, CP 11520, Ciudad de México. Al usar este sitio aceptas nuestros Términos y Condiciones y el Aviso de privacidad.

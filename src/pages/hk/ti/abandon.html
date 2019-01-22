@@ -1,0 +1,35 @@
+---
+#title and description show on the tab of the email (browser)
+subject: Abandon Email
+description:
+
+staticFile: hk/ti/abandon/static.yml
+scriptFile: hk/ti/abandon/script.yml
+demoFile: hk/ti/abandon/demo.yml
+---
+{{setConfig}}
+{{#if config.scriptMain}}
+{{{config.scriptMain}}}
+{{/if}}
+<wrapper class="ciab-abandon">
+  {{> common-header}}
+  {{> common-menu}}
+  {{> common-header-banner}}
+
+  <!-- BEGIN featured product -->
+  {{#each config.featuredProducts as |product index|}}
+  {{> ti-result-item tiResultItem=product isFeatured=true}}
+  {{/each}}
+  <!-- END featured product-->
+
+  <!-- BEGIN general product -->
+  {{#each config.generalProducts as |product index|}}
+  {{> ti-result-item tiResultItem=product isFeatured=false}}
+  {{/each}}
+  <!-- END general product -->
+
+  {{> common-footer-banner}}
+  {{> common-showcase}}
+  {{> common-menu}}
+  {{> common-footer}}
+</wrapper>

@@ -1,0 +1,96 @@
+# retention main script, which defines the variables
+# subscriberKey, eventid for testing
+# eventid ac9cf1b7-b145-5f4d-906f-9f9f1cd59f60
+# subscriberKey hk_9d1f3dcd-e40b-5509-98b7-fb91afe00baa
+
+scriptMain: '%%[
+                 VAR @orderlist, @order, @userlist, @user
+
+                 SET @userlist = LOOKUPROWS("User", "SubscriberKey", SubscriberKey)
+                 SET @orderlist = LOOKUPROWS("CI Order Confirmation", "event_id", EventId)
+
+                 IF ROWCOUNT(@orderlist) != 1 AND ROWCOUNT(@userlist) != 1 THEN
+                     RaiseError("Error finding corresponding order and/or user", 1)
+                 ENDIF
+
+                 SET @user = ROW(@userlist, 1)
+                 SET @order = ROW(@orderlist, 1)
+
+             ]%%'
+
+personalDetails:
+  fullName: '%%=Propercase(FIELD(@order,"first_name"))=%%,'
+tiConfirmation:
+  orderTitle: "Tu número de póliza es:"
+  orderDescription: Revisa los detalles de tu póliza
+  orderNumber: '%%=FIELD(@order,"policy_number")=%%'
+  sectionHeader: Aseguradora
+  logo: "%%=FIELD(@order,'provider_logo')=%%"
+  sections:
+    - header: Detalles de póliza
+      items:
+        - name: "Número de Póliza"
+          value: '%%=FIELD(@order,"policy_number")=%%'
+        - name: "Asegurado"
+          value: '%%=Propercase(FIELD(@order,"first_name"))=%% %%=Propercase(FIELD(@order,"last_name"))=%%'
+        - name: "Marca"
+          value: '%%=FIELD(@order,"car_brand")=%%'
+        - name: Modelo
+          value: '%%=FIELD(@order,"car_model")=%%'
+        - name: Submodelo
+          value: '%%=FIELD(@order,"car_submodel")=%%'
+        - name: Año
+          value: '%%=FIELD(@order,"car_year")=%%'
+        - name: Descripción
+          value: '%%=FIELD(@order,"car_description")=%%'
+
+    - header: Tu Pago
+      items:
+        - name: Precio
+          value: '$%%=FIELD(@order,"payment_amount")=%%'
+        - name: "Método de pago"
+          value: '%%[IF (FIELD(@order,"payment_method")=="creditCard") THEN]%% Tarjeta de crédito %%[ELSEIF (FIELD(@order,"payment_method")=="debitCard") THEN]%% Tarjeta de débito %%[ELSE]%% Tarjeta de débito %%[ENDIF]%%'
+        - name: "Transaction date"
+          value: '%%=FIELD(@order,"payment_date")=%%'
+
+    - header: Tus Documentos
+      items:
+        - name: '%%[IF (NOT EMPTY(FIELD(@order,"policy_url"))) THEN]%% Póliza
+                  %%[ELSE]%%
+                  %%[ENDIF]%%'
+          value: '%%[IF (NOT EMPTY(FIELD(@order,"policy_url"))) THEN]%%
+                  <a href="%%=RedirectTo(FIELD(@order,policy_url))=%%" target="_blank">Descargar</a>
+                  %%[ELSE]%%
+                  %%[ENDIF]%%'
+        - name: '%%[IF (NOT EMPTY(FIELD(@order,"endorsement_url"))) THEN]%%
+                  Endoso
+                  %%[ELSE]%%%%[ENDIF]%%'
+          value: '%%[IF (NOT EMPTY(FIELD(@order,"endorsement_url"))) THEN]%%
+                  <a href="%%=RedirectTo(FIELD(@order,endorsement_url))=%%" target="_blank">Decargar</a>
+                  %%[ELSE]%%%%[ENDIF]%%'
+        - name: '%%[IF (NOT EMPTY(FIELD(@order,"civil_liability"))) THEN]%%
+                 Responsabilidad civil
+                  %%[ELSE]%%
+                  %%[ENDIF]%%'
+          value: '%%[IF (NOT EMPTY(FIELD(@order,"civil_liability"))) THEN]%%
+                 <a href="%%=RedirectTo(FIELD(@order,civil_liability))=%%" target="_blank">Descargar</a>
+                  %%[ELSE]%%
+                  %%[ENDIF]%%'
+        - name:   '%%[IF (NOT EMPTY(FIELD(@order,"invoice_url"))) THEN]%%
+                 Factura
+                  %%[ELSE]%%
+                  %%[ENDIF]%%'
+          value: '%%[IF (NOT EMPTY(FIELD(@order,"invoice_url"))) THEN]%%
+                  <a href="%%=RedirectTo(FIELD(@order,invoice_url))=%%" target="_blank">Descargar</a>
+                  %%[ELSE]%%
+                  %%[ENDIF]%%'
+
+        # - name: ""
+        #   value: '%%[IF (NOT EMPTY(FIELD(@order,"policy_url"))) THEN]%% <a href="%%=RedirectTo(FIELD(@order,"policy_url"))=%%" target="_blank"> Póliza</a>%%[ELSE]%%%%[ENDIF]%%'
+  terms:
+    title: ""
+    details: ""
+
+  notes:
+    - text: "*Este es un correo electrónico generado automáticamente y no necesita firma"
+    - text: "*Si tiene preguntas, no dude en contactarnos por correo electrónico o teléfono al: info@comparaguru.com / 55 50119400"

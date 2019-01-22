@@ -1,0 +1,52 @@
+bbConfirmation:   
+  orderTitle: "O seu número é:"
+  orderDescription: Detalhes do seu pedido
+  orderNumber: 1234129807
+  sections:
+    - header: Detalhes do pacote
+      subheader: Dados para Portátil e Tablet
+      logo: "https://d3b6ttmccdjuev.cloudfront.net/denmark/samlino.dk/staging/dk/images/providerLogos/Telenor.png"
+      items:
+        - name: Velocidade de download #download speed
+          value: 200 Mbit/s
+        - name: Velocidade de upload #upload speed
+          value: 100 Mbit/s
+        - name: Limite de dados #data limit
+          value: Ilimitado
+    - subheader: TV & Canais
+      items:
+        - name: Número de canais #number of channels
+          value: 174
+          url: "https://www.comparaja.pt/blog/canais-do-nos-3-4-5"
+          scriptIf:
+        - name: Channels Included #channels included
+          value: 174
+        - name: Premium channels #premium channels
+          value: 20
+          url:
+          scriptIf:      
+    - subheader: Cálculo de preço
+      items:
+        - name: Duração do contrato
+          value: 24 meses
+        - name: Preço base
+          value: 
+        - name: Custo de canal premium
+          value:
+        - name: Preço de cartão de telemóvel adicional
+          value:
+        - name: Custo de instalação
+          value: 
+        - name: Valor do desconto
+          value:
+        - name: Desconto total
+          value:    
+  summary:
+    name: Custo mensal médio
+    value: 98,56 €
+  userInformation:
+    header: A sua informação
+    fullName: Karapagm 
+    email: karpi@test.com
+    phone: 2192830198
+    address: rua street

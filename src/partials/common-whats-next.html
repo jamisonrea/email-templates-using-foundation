@@ -1,0 +1,22 @@
+<container class="ciab-whats-next">
+	<table class="ciab-whats-next-wrapper collapse">
+		<tr class="ciab-whats-next-title">
+			<td  large="12" small="12">
+				<h3>{{{config.whatsNext.title}}}</h3>
+			</td>
+		</tr>
+
+    <tr>
+	    <td  large="12" small="12">
+	    	<container class="ciab-whats-next--details">
+          <p>{{{config.whatsNext.description}}}</p>
+          <ul>
+        	{{#each config.whatsNext.detailList}}
+	    			<li>{{detail}}</li>
+	    		{{/each}}
+		    	</ul>
+	    	</container>
+	    </td>
+    </tr>
+	</table>
+</container>

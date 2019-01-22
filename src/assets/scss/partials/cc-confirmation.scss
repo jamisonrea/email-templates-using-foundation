@@ -1,0 +1,65 @@
+.ciab-confirmation-container.cc {
+
+  .section {
+    
+    &-wrapper {
+       margin-bottom: 20px;
+
+      width: 80%;
+      td, p {
+        font-size: 14px;
+        line-height: 24px;
+      }
+      @media only screen and (max-width: #{$global-breakpoint}) {
+        width: 90%;
+      }
+    }
+
+  }
+
+  .ciab-confirmation-title{
+    margin:20px auto 0px auto;
+  }
+
+  th.columns.order-number-cc {
+    padding-bottom: 0;
+  }
+
+  .section-header {
+
+    border-bottom: 1px solid #eee;
+    td {
+      vertical-align: bottom;
+    }
+    h6 {
+      font-size: 18px;
+      font-weight: bold;
+      margin: 20px 0 0 0;
+    }
+    img {
+      display: inline;
+      max-height: 60px;
+    }
+  }
+
+
+  .section-subheader {
+    p {
+      margin: 8px 0 0 0;
+    }
+  }
+
+  .section-summary {
+   
+    p {
+      margin-bottom: 15px;
+    }
+  }
+
+  .order-summary{
+    border-top:2px solid #000;
+    p {
+      margin-top: 15px;
+    }
+  }
+}

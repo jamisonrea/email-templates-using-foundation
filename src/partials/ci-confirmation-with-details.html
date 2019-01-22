@@ -1,0 +1,172 @@
+{{#conditionalWith ciConfirmation config.ciConfirmation}}
+
+{{#if scriptIf}}
+{{{scriptIf}}}
+{{/if}}
+<container class="ciab-confirmation-container ci">
+  <container class="section-wrapper" align="center">
+    <tr class="section-provider">
+      <td>
+        <h6>{{{provider.title}}}</h6>
+        <h4>{{{provider.name}}}</h4>
+      </td>
+      <td class="text-right">
+        {{#if provider.logo}}
+        <img src="{{{provider.logo}}}">
+        {{/if}}
+      </td>
+    </tr>
+    <tr class="section-header">
+      <td colspan="2">
+        <h6>{{{provider.section.header}}}</h6>
+      </td>
+    </tr>
+    {{#each provider.section.items}}
+    {{#if scriptIf}}
+    {{{scriptIf}}}
+    <tr>
+      <td>
+        {{{name}}}
+      </td>
+      <td class="text-right">
+        {{{value}}}
+      </td>
+    </tr>
+      {{#if scriptIf}}
+        %%[ENDIF]%%
+      {{/if}}
+    {{else}}
+    <tr>
+      <td>
+        {{{name}}}
+      </td>
+      <td class="text-right">
+        {{{value}}}
+      </td>
+    </tr>
+    {{/if}}
+    {{/each}}
+    <tr>
+      <td colspan="2" class="feature">
+        {{#each provider.features as |feature index|}}
+        {{#if feature.name}}
+
+        {{#if feature.scriptIf}}
+        {{{feature.scriptIf}}}
+        {{/if}}
+        <div class="feature-list">
+          {{#if feature.value}}
+          <span class="feature-text feature-true">{{{feature.name}}}</span>
+          {{else}}
+          <span class="feature-text">{{{feature.name}}}</span>
+          {{/if}}
+          <!-- script icon -->
+          <span class="feature-icon">
+            {{#if feature.scriptIconIf}}
+            {{#if feature.scriptIconIf}}
+            {{{feature.scriptIconIf}}}
+            {{/if}}
+            <img src="{{getImageUrl true}}" width="14">
+            {{#if feature.scriptIconIf}}
+            %%[ELSE]%%
+            {{/if}}
+            <img src="{{getImageUrl false}}" width="14">
+            {{#if feature.scriptIconIf}}
+            %%[ENDIF]%%
+            {{/if}}<!-- END script icon-->
+            {{else}} <!-- demo icon -->
+            <img src="{{getImageUrl feature.value}}" width="14">
+            <!-- END demo icon -->
+            {{/if}}
+          </span>
+        </div>
+        {{#if feature.scriptIf}}
+        %%[ENDIF]%%
+        {{/if}}
+
+        {{/if}}
+        {{/each}}
+      </td>
+    </tr>
+    <tr class="spacer">
+      <td height="30px"></td>
+    </tr>
+  </container>
+  <container class="section-banner section-wrapper">
+    <tr class="spacer">
+      <td height="10px"></td>
+    </tr>
+    <tr>
+      <td>
+        <h4 class="text-center">{{{banner.title}}}</h4>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <img src="{{{banner.icon}}}">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="text-center">{{{banner.text}}}</p>
+      </td>
+    </tr>
+    <tr class="spacer">
+      <td height="10px"></td>
+    </tr>
+  </container>
+  <container class="section-wrapper" align="center">
+    <tbody>
+    {{#each sections}}
+    <tr class="section-header">
+      <td colspan="2">
+        <h6>{{{header}}}</h6>
+      </td>
+    </tr>
+    {{#if subheader}}
+    <tr class="section-subheader">
+      <td><p><b>{{subheader}}</b></p></td>
+    </tr>
+    {{/if}}
+    {{#each items}}
+    {{#if scriptIf}}
+    {{{scriptIf}}}
+    <tr>
+      <td>
+        {{{name}}}
+      </td>
+      <td class="text-right">
+        {{{value}}}
+      </td>
+    </tr>
+      {{#if scriptIf}}
+        %%[ENDIF]%%
+      {{/if}}
+    {{else}}
+    <tr>
+      <td>
+        {{{name}}}
+      </td>
+      <td class="text-right">
+        {{{value}}}
+      </td>
+    </tr>
+    {{/if}}
+    {{/each}}
+    {{/each}}
+    </tbody>
+  </container>
+  <container class="section-terms section-wrapper">
+    {{#if terms}}
+      <div class="terms">
+        <p><b>{{{terms.title}}}</b></p>
+        <p>{{{terms.details}}}</p>
+      </div>
+    {{/if}}
+  </container>
+</container>
+{{#if scriptIf}}
+%%[ENDIF]%%
+{{/if}}
+
+{{/conditionalWith}}

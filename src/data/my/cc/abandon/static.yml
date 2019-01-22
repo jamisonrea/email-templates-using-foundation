@@ -1,0 +1,75 @@
+featuredText: "Featured Product"
+applyText: Apply Now
+
+header:
+  headerLink: '%%view_email_url%%'
+  headerLinkText: View in your browser
+  headerLogoPath: http://image.s7.exacttarget.com/lib/fe8d13727262077e73/m/1/my-logo.png
+
+headerBanner:
+  headline1: Thank you for comparing credit cards on <a href="#" class="link-remove--mobile">CompareHero.my</a>
+  headline2: "Here are the best deals we found for your needs:"
+  image: http://image.s7.exacttarget.com/lib/fe9813727663007d75/m/2/icon-email-cc.png
+  descriptionList:
+      - description: Our service is completely free
+      - description: It's quick, easy, and impartial
+      - description: We compare the entire market
+headerTitleBannerStatic:
+  firstColumn: Provider
+  secondColumn: ""
+
+menu:
+  - title: Home
+    link: https://www.comparehero.my/
+  - title: Personal Loans / Tax Loans
+    link: https://www.comparehero.my/personal-loan/all
+  - title: Credit Cards
+    link: https://www.comparehero.my/credit-card/all
+  - title: Broadband
+    link: https://www.comparehero.my/broadband
+
+showcase:
+  - title: Personal Loans / Tax Loans
+    imagePath: http://image.email.comparaguru.com/lib/fe9013727262077977/m/1/pl+icon+abandon.png
+    description: Make your dreams a reality with the cheapest personal loan / tax loan
+    buttonText: COMPARE NOW
+    buttonLink: https://www.comparehero.my/personal-loan/all?utm_content=PL_icon
+    footnote: Takes about 15 seconds
+  - title: Credit Cards
+    imagePath: http://image.email.comparaguru.com/lib/fe9013727262077977/m/1/icon-email-green-cc.png
+    description: Get cashback, air miles, and other rewards with the right credit card
+    buttonText: COMPARE NOW
+    buttonLink: https://www.comparehero.my/credit-card/all?utm_content=CC_icon
+    footnote: Takes about 15 seconds
+  - title: Broadband
+    imagePath: http://image.s7.exacttarget.com/lib/fe8d13727262077e73/m/1/broadband-showcase.png
+    description: With over 70 broadband plans for you to compare from, do more online with the fastest speeds in the market.
+    buttonText: COMPARE NOW
+    buttonLink: https://www.comparehero.my/broadband?utm_content=BB_icon
+    footnote: Takes about 15 seconds
+
+footerBanner:
+  headline1: "Malaysia's #1 personal finance comparison site"
+  headline2: CompareHero.my is your go-to website for comparing credit cards, personal loans, mortgage, insurance and other products. Use our free and powerful comparison tool to get unbiased, up-to-date information on personal finance products.
+  descriptionList:
+  buttonText: COMPARE NOW
+  buttonLink: https://www.comparehero.my/credit-card/all?utm_content=Compare_Button
+
+footer:
+  socialMedia:
+    - link: https://www.facebook.com/CompareHero.my
+      imagePath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/cf4ff2a2-0288-402b-8c93-643181110b41.png
+    - link: https://www.instagram.com/comparehero_malaysia/
+      imagePath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/d39a3024-f642-4d24-aa2f-c76ee836027c.png
+  companyLink: http://www.comparehero.com.my/
+  companyName: CompareHero.com.my
+  companyAddress: "Seri Bukit Ceylon, Suite #109, 8 Lorong Ceylon, 50250 Kuala Lumpur, Malaysia"
+  beforeUnsubscribeText: You are receiving this e-mail because your email is subscribed to <a href="#" class="link-remove--mobile">CompareHero.my</a> e-newsletter mailing list. To unsubscribe,
+  unsubscribeLink: '%%unsub_center_url%%'
+  unsubscribeText: click here
+  beforeTermsText: 2017 All rights reserved. Using <a href="#" class="link-remove--mobile">CompareHero.my</a> accepted our
+  privacyText: Privacy Policy
+  privacyLink: https://www.comparehero.my/privacy-policy
+  middleTermsText: and
+  termsText: Terms and Conditions
+  termsLink: https://www.comparehero.my/terms

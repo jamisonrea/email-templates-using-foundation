@@ -1,0 +1,114 @@
+# retention main script, which defines the variables
+scriptMain:
+
+##----- Dynamic Data ------##
+featuredProducts:
+  - scriptIf:
+    provider:
+      name: Provider Name
+      logo: http://assets.ciab.compareglobal.co.uk/denmark/samlino.dk/integration/dk/images/providerLogos/Alka.png
+    featuredText: Sponsoreret
+    buttonText: Få tilbud
+    features:
+      - name:  Kasko
+        value: true
+      - name:  Friskade
+        value: false
+      - name:  Fører
+        value: false
+      - name:  Glas
+        value: true
+      - name:  Vejhjælp
+        value: true
+    apply_url: /
+    originalPrice: kr 30.000
+    discountPrice: kr 20.000
+    discountPercentage: Spar 10%
+    discountType: Samlino rabat
+    membershipDiscountText: Med samlerabat
+    membershipDiscountPrice: kr 4.000
+    deductible: kr 4.000
+    originalText: Oprindelig pris
+    discountText: med samlerabat
+    deductibleText: Selvrisiko
+
+generalProducts:
+  - scriptIf:
+    provider: #1
+      name: Provider Name
+      logo: http://assets.ciab.compareglobal.co.uk/denmark/samlino.dk/integration/dk/images/providerLogos/Alka.png
+    featuredText: Sponsoreret
+    buttonText: Få tilbud
+    features:
+      - name:  Kasko
+        value: true
+      - name:  Friskade
+        value: false
+      - name:  Fører
+        value: false
+      - name:  Glas
+        value: false
+      - name:  Vejhjælp
+        value: false
+    apply_url: /
+    originalPrice: kr 16.898
+    discountPrice: kr 15.208
+    discountPercentage: null
+    discountType: Samlino.dk rabat
+    deductible: kr 4.000
+    membershipDiscountText: Med samlerabat
+    membershipDiscountPrice: null
+    originalText: Oprindelig pris
+    discountText: med samlerabat
+    deductibleText: Selvrisiko
+  - scriptIf:
+    provider: #2
+      name: Provider Name
+      logo: http://assets.ciab.compareglobal.co.uk/denmark/samlino.dk/integration/dk/images/providerLogos/Alka.png
+    featuredText: Sponsoreret
+    buttonText: Få tilbud
+    features:
+      - name:  Kasko
+        value: true
+      - name:  Friskade
+        value: false
+      - name:  Fører
+        value: false
+      - name:  Glas
+        value: true
+      - name:  Vejhjælp
+        value: true
+    apply_url: /
+    originalPrice: kr 31.320
+    discountPrice: null
+    discountPercentage: null
+    membershipDiscountPrice: kr 29.400
+    discountType: Samlino rabat
+    deductible: kr 4.000
+    originalText: Oprindelig pris
+    discountText: med samlerabat
+    deductibleText: Selvrisiko
+  - scriptIf:
+    provider: #3
+      name: Provider Name
+      logo: http://assets.ciab.compareglobal.co.uk/denmark/samlino.dk/integration/dk/images/providerLogos/Alka.png
+    featuredText: Sponsoreret
+    buttonText: Få tilbud
+    features:
+      - name:  feature 1
+        value: true
+      - name:  feature 2
+        value: false
+      - name:
+        value:
+      - name:  feature 4
+        value: true
+    apply_url: /
+    originalPrice: kr 30.000
+    discountPrice: kr 20.000
+    discountPercentage: null
+    discountType: null
+    deductible: kr 4.000
+    originalText: Oprindelig pris
+    discountText: med samlerabat
+    deductibleText: Selvrisiko

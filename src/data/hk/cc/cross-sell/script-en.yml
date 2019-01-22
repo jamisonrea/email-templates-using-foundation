@@ -1,0 +1,71 @@
+scriptMain: '%%[
+            VAR @orderlist, @order, @userlist, @user
+            ]%%
+            %%[
+            SET @userlist = LOOKUPROWS("User", "SubscriberKey", SubscriberKey)
+            SET @orderlist = LOOKUPROWS("TI Order Confirmation", "event_id", EventId)
+            ]%%
+
+            %%[
+            IF ((ROWCOUNT(@orderlist) != 1)
+            OR (ROWCOUNT(@userlist) != 1))
+            THEN
+            RaiseError("Error finding corresponding application and/or user", 1)
+            ENDIF
+            SET @user = ROW(@userlist, 1)
+            SET @order = ROW(@orderlist, 1)
+            ]%%'
+
+header:
+      title: '%%[IF (NOT EMPTY(FIELD(@order,"myself_first_name")))THEN]%% Hello %%=Propercase(FIELD(@order,"myself_first_name"))=%%, %%[ELSE]%%Hello,%%[ENDIF]%%'
+      subtitle: "There are ways to spend less when travelling. If you travel every year, it's a good idea to get a credit card for overseas spending, so you can earn additional cash back, air miles and many other rewards. Here is our selection of credit cards:"
+      bankIcon: 
+      feature_title: 'FEATURES:'
+      
+      ProductTitle_1: Citi Cash Back Visa Card
+      Product_img_url_1: 'http://image.email.moneyhero.com.hk/lib/fe9213727262077e74/m/1/6b889018-5aaa-4a3f-9420-1c2215f8ee41.jpg'
+      Product_usp_1_1: 'Extra coupon for application via MoneyHero'
+      Product_usp_2_1: 'Foreign currency handling fee waiver'
+      Product_usp_3_1: 'Extra travel privileges for Citi Credit cards'    
+      Feature_usp1_1: "Up to HK$1,500 welcome offer" 
+      Feature_usp2_1: "2% unlimited cash rebate on year-round overseas spending"
+      Feature_usp3_1: "First year annual fee waiver"
+      button_content_1: "Apply"
+      button_url_1: "https://www.moneyhero.com.hk/en/credit-card/citibank"
+      
+      ProductTitle_2: Standard Chartered Asia Miles MasterCard
+      Product_img_url_2: 'http://image.email.moneyhero.com.hk/lib/fe9213727262077e74/m/1/25965e6e-83c4-4db1-aeb4-8b4eff71a24f.jpg'
+      Product_usp_1_2: 'Extra coupon for application via MoneyHero'
+      Product_usp_2_2: 'Miles will be automatically credited to your Asia Miles membership accounts'
+      Product_usp_3_2: '10% redemption discount for hotel, car rental and travel experience awards'     
+      Feature_usp1_2: "Up to 100,000 miles welcome offer"
+      Feature_usp2_2: "Earn Asia Mile as low as HK$4 = 1 mile "
+      Feature_usp3_2: "First year annual fee waiver"
+      button_content_2: "Apply"
+      button_url_2: "https://www.moneyhero.com.hk/en/credit-card/standard-chartered"
+
+      ProductTitle_3: CNCBI Air China Dual Currency Credit Card
+      Product_img_url_3: 'http://image.email.moneyhero.com.hk/lib/fe9213727262077e74/m/1/0988105f-e3a5-416a-893f-a596f7560a5f.jpg'
+      Product_usp_1_3: Earn up to 5% cash rebate on overseas transactions
+      Product_usp_2_3: 'Selected welcome gifts' 
+      Product_usp_3_3:  Foreign currency handling fee waiver
+      Feature_usp1_3: "Spend to earn PhoenixMiles to redeem flight tickets to Taiwan, Japan, USA, Europe, New Zealand, etc." 
+      Feature_usp2_3: "First 3 year annual fee waiver" 
+      Feature_usp3_3: "HK$100 cash rebate for successful online application" 
+      button_content_3: "Apply"
+      button_url_3: "https://www.moneyhero.com.hk/en/credit-card/china-citic-bank"
+
+guide: 
+      intro: "Interested in comparing more card deals?"
+      text1: "Check out our credit cards comparison platform "
+      text2: "!" 
+      link: "https://www.moneyhero.com.hk/en/credit-card/best-deals/results"
+      link_title: "here"
+
+footer:
+      unsubscribeLink: "%%profile_center_url%%"
+      unsubscribeText: Unsubscribe
+
+# To obtain the values, assign this to the variable: 
+# %%=FIELD(@application, "<corresponding column name>")=%%
+# %%=SUBSTRING(FIELD(@application,"phone"),1,4)=%%****

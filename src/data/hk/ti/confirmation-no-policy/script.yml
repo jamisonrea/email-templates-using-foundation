@@ -1,0 +1,120 @@
+# retention main script, which defines the variables
+# subscriberKey, eventid for testing
+# eventid ac9cf1b7-b145-5f4d-906f-9f9f1cd59f60
+# subscriberKey hk_9d1f3dcd-e40b-5509-98b7-fb91afe00baa
+
+scriptMain: '%%[
+                 VAR @orderlist, @order, @userlist, @user
+
+                 SET @userlist = LOOKUPROWS("User", "SubscriberKey", SubscriberKey)
+                 SET @orderlist = LOOKUPROWS("TI Order Confirmation", "event_id", EventId)
+
+                 IF ROWCOUNT(@orderlist) != 1 AND ROWCOUNT(@userlist) != 1 THEN
+                     RaiseError("Error finding corresponding order and/or user", 1)
+                 ENDIF
+
+                 SET @user = ROW(@userlist, 1)
+                 SET @order = ROW(@orderlist, 1)
+                 SET @providerlist = LOOKUPROWS("TI Provider BCC", "provider_code", FIELD(@order,"provider_code"))
+                 IF ROWCOUNT(@providerlist) == 1 THEN
+                     SET @provider = ROW(@providerlist, 1)
+                     SET @bcc = FIELD(@provider, "bcc_email")
+                 ENDIF
+             ]%%'
+
+scriptBcc: '%%[
+                 VAR @providerlist, @provider, @bcc
+
+                 SET @providerlist = LOOKUPROWS("TI Provider BCC", "provider_code", FIELD(@order,"provider_code"))
+
+                 IF ROWCOUNT(@providerlist) == 1 THEN
+                     SET @provider = ROW(@providerlist, 1)
+                     SET @bcc = FIELD(@provider, "bcc_email")
+                 ENDIF
+            ]%%'
+
+personalDetails:
+  fullName: '%%=FIELD(@order,"myself_first_name")=%%,'
+tiConfirmation:
+  orderTitle: 
+  orderDescription: Please see your details below
+  orderTitle-zh: 
+  orderDescription-zh: 請檢查以下資料是否正確
+  orderNumber: 
+  sectionHeader: Provider<br>承保機構
+  logo: "%%=FIELD(@order,'provider_logo')=%%"
+  sections:
+    - header: Insurance Details 保單資料
+      items:
+        - name: "Insurance Type: <br>保障類別"
+          value: '%%=ProperCase(FIELD(@order,"category"))=%%'
+        - name: "Plan: <br>保險計劃"
+          value: '%%=FIELD(@order,"product_name")=%%'
+        - name: Date of Enrollment (D/M/Y) <br>登記日期(日/月/年)
+          value: '%%=FormatDate(FIELD(@order,"ship_before_date"),"DD/MM/YYYY")=%%'
+    - header: Period of Insurance 保單有效期
+      items:
+        - name: "From: <br>受保日期"
+          value: '%%=FormatDate(FIELD(@order,"start_date"),"DD/MM/YYYY")=%%'
+        - name: "To: <br>到期日"
+          value: '%%=FormatDate(FIELD(@order,"end_date"),"DD/MM/YYYY")=%%'
+    - header: Trip Summary 旅程資料
+      items:
+        - name: "Applicant Name: <br>申請人姓名"
+          value: '%%=FIELD(@order,"myself_first_name")=%% %%=FIELD(@order,"myself_last_name")=%%'
+        - name: "Destination: <br>旅程目的地"
+          value: '%%=FIELD(@order,"destinations")=%%'
+        - name: "Premium Paid: <br>已繳保費"
+          value: '<b>HKD %%=FormatNumber(FIELD(@order,"payment_amount"),"C2")=%% </b>%%[IF (NOT EMPTY(FIELD(@order, "price_discounted"))) THEN]%% <br>(Discounted Price) %%[ENDIF]%%'
+    - header: Insured Person(s)受保人資料
+      items:
+        - name: "Name: <br>受保人姓名"
+          value: '%%=FIELD(@order,"myself_first_name")=%% %%=FIELD(@order,"myself_last_name")=%%'
+          scriptIf: '%%[IF (NOT EMPTY(FIELD(@order,"myself_first_name"))) THEN]%%'
+        - name: "Name: <br>受保人姓名"
+          value: '%%=FIELD(@order,"parent_0_first_name")=%% %%=FIELD(@order,"parent_0_last_name")=%%'
+          scriptIf: '%%[IF (NOT EMPTY(FIELD(@order,"parent_0_first_name"))) THEN]%%'
+        - name: "Name: <br>受保人姓名"
+          value: '%%=FIELD(@order,"parent_1_first_name")=%% %%=FIELD(@order,"parent_1_last_name")=%%'
+          scriptIf: '%%[IF (NOT EMPTY(FIELD(@order,"parent_1_first_name"))) THEN]%%'
+        - name: "Name: <br>受保人姓名"
+          value: '%%=FIELD(@order,"spouse_first_name")=%% %%=FIELD(@order,"spouse_last_name")=%%'
+          scriptIf: '%%[IF (NOT EMPTY(FIELD(@order,"spouse_first_name"))) THEN]%%'
+        - name: "Name: <br>受保人姓名"
+          value: '%%=FIELD(@order,"children_0_first_name")=%% %%=FIELD(@order,"children_0_last_name")=%%'
+          scriptIf: '%%[IF (NOT EMPTY(FIELD(@order,"children_0_first_name"))) THEN]%%'
+        - name: "Name: <br>受保人姓名"
+          value: '%%=FIELD(@order,"children_1_first_name")=%% %%=FIELD(@order,"children_1_last_name")=%%'
+          scriptIf: '%%[IF (NOT EMPTY(FIELD(@order,"children_1_first_name"))) THEN]%%'
+        - name: "Name: <br>受保人姓名"
+          value: '%%=FIELD(@order,"children_2_first_name")=%% %%=FIELD(@order,"children_2_last_name")=%%'
+          scriptIf: '%%[IF (NOT EMPTY(FIELD(@order,"children_2_first_name"))) THEN]%%'
+        - name: "Name: <br>受保人姓名"
+          value: '%%=FIELD(@order,"companion_0_first_name")=%% %%=FIELD(@order,"companion_0_last_name")=%%'
+          scriptIf: '%%[IF (NOT EMPTY(FIELD(@order,"companion_0_first_name"))) THEN]%%'
+        - name: "Name: <br>受保人姓名"
+          value: '%%=FIELD(@order,"companion_1_first_name")=%% %%=FIELD(@order,"companion_1_last_name")=%%'
+          scriptIf: '%%[IF (NOT EMPTY(FIELD(@order,"companion_1_first_name"))) THEN]%%'
+        - name: "Name: <br>受保人姓名"
+          value: '%%=FIELD(@order,"companion_2_first_name")=%% %%=FIELD(@order,"companion_2_last_name")=%%'
+          scriptIf: '%%[IF (NOT EMPTY(FIELD(@order,"companion_2_first_name"))) THEN]%%'
+        - name: "Name: <br>受保人姓名"
+          value: '%%=FIELD(@order,"companion_3_first_name")=%% %%=FIELD(@order,"companion_3_last_name")=%%'
+          scriptIf: '%%[IF (NOT EMPTY(FIELD(@order,"companion_3_first_name"))) THEN]%%'
+        - name: "Name: <br>受保人姓名"
+          value: '%%=FIELD(@order,"companion_4_first_name")=%% %%=FIELD(@order,"companion_4_last_name")=%%'
+          scriptIf: '%%[IF (NOT EMPTY(FIELD(@order,"companion_4_first_name"))) THEN]%%'
+        - name: "Name: <br>受保人姓名"
+          value: '%%=FIELD(@order,"companion_5_first_name")=%% %%=FIELD(@order,"companion_5_last_name")=%%'
+          scriptIf: '%%[IF (NOT EMPTY(FIELD(@order,"companion_5_first_name"))) THEN]%%'
+
+    - header: Insurance Provider Emergency Hotline<br>保險公司緊急支援熱線
+      items:
+        - name: Phone No. <br>電話
+          value: '%%=FIELD(@order,"provider_hotline")=%%'
+  terms:
+    title: "SUBJECT TO THE FOLLOWING CLAUSES AS ATTACHED:<br>須受以下條款所約束:"
+    details: Subject to the insurer’s Terms and Conditions and exceptions of policy. Please download the <a href="%%=RedirectTo(Field(@order,'terms_url'))=%%" target="_blank">policy wordings</a>.<br>保單須受有關保險公司的條款及細則和除外責任所約束。請下載<a href="%%=RedirectTo(Field(@order,'terms_url'))=%%" target="_blank">保單條款</a>。
+  notes:
+    - text: "*This is a computer-generated notice and requires no signature.<br>*本函為電腦編印文件，毋須簽署。"
+    - text: "*For any inquiry, please feel free to contact us through email inquiry to cs@moneyhero.com.hk<br>*若有任何查詢，請電郵至cs@moneyhero.com.hk與我們聯絡。"

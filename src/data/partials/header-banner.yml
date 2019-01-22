@@ -1,0 +1,8 @@
+headerBanner:
+  headline1: Headline1
+  headline2: Headline2
+  descriptionList:
+    - description: Description 1
+    - description: Description 2
+    - description: Description 3
+  image: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/ce5cc750-7a72-402c-9062-981a68603b4f.png

@@ -1,0 +1,33 @@
+---
+#title and description show on the tab of the email (browser)
+subject:  Her er de bedste [insert product] stilbud til dig
+description: Her er de bedste [insert product] stilbud til dig
+
+staticFile: pt/bb/abandon/static.yml
+scriptFile: pt/bb/abandon/script.yml
+demoFile: pt/bb/abandon/demo.yml
+---
+{{setConfig}}
+{{#if config.scriptMain}}
+{{{config.scriptMain}}}
+{{/if}}
+<wrapper class="ciab-abandon">
+  {{> common-header}}
+  <!-- BEGIN header banner -->
+  {{> common-header-banner}}
+
+  <!-- END header banner -->
+  <!-- BEGIN featured product -->
+  {{#each config.featuredProducts as |product index|}}
+  {{> bb-pt-result-item bbResultItem=product isFeatured=true}}
+  {{/each}}
+  <!-- END featured product-->
+  <!-- BEGIN general product -->
+  {{#each config.generalProducts as |product index|}}
+  {{> bb-pt-result-item bbResultItem=product isFeatured=false}}
+  {{/each}}
+  <!-- END general product -->
+  {{> common-footer-banner}}
+  {{> common-showcase}}
+  {{> common-footer}}
+</wrapper>

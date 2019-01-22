@@ -1,0 +1,46 @@
+{{#conditionalWith tiResultItem config.tiResultItem}}
+{{#if provider.name}}
+
+{{#if scriptIf}}
+{{{scriptIf}}}
+{{/if}}
+<container class="product--ci {{#if ../isFeatured}}featured{{else}}general{{/if}}">
+  <row class="product-row">
+    <columns class="product-column" large="6" small="6">
+      <row>
+        <columns class="provider" large="6" small="12">
+          <p class="provider-name">{{{provider.name}}}</p>
+          <img class="show-for-large provider-logo" src="{{{provider.logo}}}" height="30px">
+          {{#if ../isFeatured}}<p class="show-for-large provider-footer">{{featuredText}}</p>{{/if}}
+        </columns>
+        <columns class="price" large="6" small="12">
+          <div class="price-value">{{{cancellation}}}</div>
+          <div class="price-footer">{{cancellationText}}</div>
+          <div class="price-value">{{{medical}}}</div>
+          <div class="price-footer">{{medicalText}}</div>
+          <div class="price-value">{{{baggage}}}</div>
+          <div class="price-footer">{{baggageText}}</div>
+        </columns>
+      </row>
+    </columns>
+    <columns class="product-column" large="6" small="6">
+      <row>
+        <columns class="price" large="6" small="12">
+          <div class="price-value">{{{originalPrice}}}</div>
+          <div class="price-footer">{{originalText}}</div>
+          <div class="price-value">{{{discountPrice}}}</div>
+          <div class="price-footer">{{discountText}}</div>
+        </columns>
+        <columns class="apply-button-container" large="6" small="12">
+          <a class="apply-button" href="{{{apply_url}}}">{{buttonText}}</a>
+        </columns>
+      </row>
+    </columns>
+  </row>
+</container>
+{{#if scriptIf}}
+%%[ENDIF]%%
+{{/if}}
+
+{{/if}}
+{{/conditionalWith}}

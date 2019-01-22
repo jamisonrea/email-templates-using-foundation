@@ -1,0 +1,75 @@
+# retention main script, which defines the variables
+scriptMain:
+
+##----- Dynamic Data ------##
+featuredProducts:
+  - scriptIf:
+    provider:
+      name: Provider Name
+      logo: http://assets.ciab.compareglobal.co.uk/denmark/samlino.dk/integration/dk/images/providerLogos/Alka.png
+    featuredText: Sponsoreret
+    buttonText: Apply
+    apply_url: /
+    cancellation: $ 100.00
+    medical: $ 200.00
+    baggage: $ 300.00
+    originalPrice: $ 50.00
+    discountPrice: $ 30.00
+    cancellationText: Cancellation Cover
+    medicalText: Medical Cover
+    baggageText: Bags & Belongings
+    originalText: Original Price
+    discountText: Discounted Price
+
+generalProducts:
+  - scriptIf:
+    provider:
+      name: Provider Name
+      logo: http://assets.ciab.compareglobal.co.uk/denmark/samlino.dk/integration/dk/images/providerLogos/Alka.png
+    featuredText: Sponsoreret
+    buttonText: Apply
+    apply_url: /
+    cancellation: $ 100.00
+    medical: $ 200.00
+    baggage: $ 300.00
+    originalPrice: $ 50.00
+    discountPrice: $ 30.00
+    cancellationText: Cancellation Cover
+    medicalText: Medical Cover
+    baggageText: Bags & Belongings
+    originalText: Original Price
+    discountText: Discounted Price
+  - scriptIf:
+    provider:
+      name: Provider Name
+      logo: http://assets.ciab.compareglobal.co.uk/denmark/samlino.dk/integration/dk/images/providerLogos/Alka.png
+    featuredText: Sponsoreret
+    buttonText: Apply
+    apply_url: /
+    cancellation: $ 100.00
+    medical: $ 200.00
+    baggage: $ 300.00
+    originalPrice: $ 50.00
+    discountPrice: $ 30.00
+    cancellationText: Cancellation Cover
+    medicalText: Medical Cover
+    baggageText: Bags & Belongings
+    originalText: Original Price
+    discountText: Discounted Price
+  - scriptIf:
+    provider:
+      name: Provider Name
+      logo: http://assets.ciab.compareglobal.co.uk/denmark/samlino.dk/integration/dk/images/providerLogos/Alka.png
+    featuredText: Sponsoreret
+    buttonText: Apply
+    apply_url: /
+    cancellation: $ 100.00
+    medical: $ 200.00
+    baggage: $ 300.00
+    originalPrice: $ 50.00
+    discountPrice: $ 30.00
+    cancellationText: Cancellation Cover
+    medicalText: Medical Cover
+    baggageText: Bags & Belongings
+    originalText: Original Price
+    discountText: Discounted Price

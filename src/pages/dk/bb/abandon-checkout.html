@@ -1,0 +1,26 @@
+---
+#title and description show on the tab of the email (browser)
+subject: Færdiggør dit køb nu!
+description:
+
+staticFile: dk/bb/abandon-checkout/static.yml
+scriptFile: dk/bb/abandon-checkout/script.yml
+---
+{{setConfig}}
+<!-- ============================== -->
+<!-- Flexible Branding Template -->
+<!-- ============================== -->
+{{{config.scriptMain}}}
+
+<wrapper class="ciab-abandon cc-abandon">
+  {{> common-header}}
+  {{> common-menu}}
+  <!-- BEGIN header banner -->
+  {{> common-header-abandon-checkout}}
+  <!-- END header banner -->
+ {{> pl-abandon-checkout}}
+  <!-- END general product -->
+  {{> common-footer-banner}}
+  {{> common-showcase}}   
+  {{> common-footer}}
+</wrapper>

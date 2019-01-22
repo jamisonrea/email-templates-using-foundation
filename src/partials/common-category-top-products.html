@@ -1,0 +1,22 @@
+<container class="ciab-header-title-banner">
+  {{#if config.headerTitleBanner.columnTitleList}}
+    <container class="ciab-header-title">
+      <table class="ciab-header-title-table" cellspacing="0">
+        <tr class="ciab-header-title-tr">
+          <th class="data-column-header" align="center" valign="middle" cellspacing="0">
+            {{{config.headerTitleBannerStatic.firstColumn}}}
+          </th>
+          <th class="data-column-header" align="center" valign="middle" cellspacing="0">
+            {{{config.headerTitleBannerStatic.secondColumn}}}
+          </th>
+          {{#each config.headerTitleBanner.columnTitleList}}
+            <th class="data-column-header" align="center" valign="middle" cellspacing="0">
+              {{{description}}}
+            </th>
+          {{/each}}
+          <th class="data-column-header-last"></th>
+        </tr>
+      </table>
+    </container>
+  {{/if}}
+</container>

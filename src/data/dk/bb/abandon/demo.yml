@@ -1,0 +1,131 @@
+featuredProducts:
+  - provider:
+      name: Waoo!
+      logo: http://assets.ciab.compareglobal.co.uk/denmark/samlino.dk/integration/dk/images/providerLogos/3.png
+    footerLabel: Ingen binding
+    buttonText: Vælg
+    features:
+      - text: Bingdins Periode
+        value: Ingen binding
+      - text:  Data inkluderet
+        value: Ubegrænset
+      - text: Download hastighed
+        value: 36 Mbit/s
+    priceDetail:
+      discountText: Rabat
+      discount: -20 kr.
+      monthlyPrice: 10 kr.
+      monthlyPriceText: Monthly Cost
+      setupCost:
+        text: Oprettelse
+        value: 0 kr.
+      totalPrice:
+        text: Pris 6 måneder
+        value: 60 kr.
+    apply_url: http://google.com
+  - provider:
+      name: Waoo!
+      logo: http://assets.ciab.compareglobal.co.uk/denmark/samlino.dk/integration/dk/images/providerLogos/3.png
+    footerLabel: Gratis oprettelse
+    buttonText: Vælg
+    features:
+      feature1: 6 måneder <span>Bingdins Periode</span>
+      feature2: 20 GB <span>Data inkluderet</span>
+      feature3: 36 Mbit/s <span>Download hastighed</span>
+    priceDetail:
+      discountText: Rabat
+      discount: -20 kr.
+      monthlyPrice: 10 kr.
+      monthlyPriceText: Monthly Cost
+      setupCost:
+        text: Oprettelse
+        value: 0 kr.
+      totalPrice:
+        text: Pris 6 måneder
+        value: 60 kr.
+    apply_url: http://google.com
+generalProducts:
+  - provider:
+      name: 3 Mobilt
+      logo: http://assets.ciab.compareglobal.co.uk/denmark/samlino.dk/integration/dk/images/providerLogos/Waoo.png
+    footerLabel: Gratis oprettelse
+    buttonText: Vælg
+    features:
+      feature1: 6 måneder <span>Bingdins Periode</span>
+      feature2: 20 GB <span>Data inkluderet</span>
+      feature3: 36 Mbit/s <span>Download hastighed</span>
+    priceDetail:
+      discountText: Rabat
+      discount: -20 kr.
+      monthlyPrice: 10 kr.
+      monthlyPriceText: Monthly Cost
+      setupCost:
+        text: Oprettelse
+        value: 0 kr.
+      totalPrice:
+        text: Pris 6 måneder
+        value: 60 kr.
+    apply_url: http://google.com
+  - provider:
+      name: 3 Mobilt
+      logo: http://assets.ciab.compareglobal.co.uk/denmark/samlino.dk/integration/dk/images/providerLogos/Waoo.png
+    footerLabel: Ingen binding
+    buttonText: Vælg
+    features:
+      feature1: 6 måneder <span>Bingdins Periode</span>
+      feature2: 20 GB <span>Data inkluderet</span>
+      feature3: 36 Mbit/s <span>Download hastighed</span>
+    priceDetail:
+      discountText: Rabat
+      discount: -20 kr.
+      monthlyPrice: 10 kr.
+      monthlyPriceText: Monthly Cost
+      setupCost:
+        text: Oprettelse
+        value: 0 kr.
+      totalPrice:
+        text: Pris 6 måneder
+        value: 60 kr.
+    apply_url: http://google.com
+  - provider:
+      name: 3 Mobilt
+      logo: http://assets.ciab.compareglobal.co.uk/denmark/samlino.dk/integration/dk/images/providerLogos/Waoo.png
+    footerLabel: Gratis oprettelse
+    buttonText: Vælg
+    features:
+      feature1: 6 måneder <span>Bingdins Periode</span>
+      feature2: 20 GB <span>Data inkluderet</span>
+      feature3: 36 Mbit/s <span>Download hastighed</span>
+    priceDetail:
+      discountText: Rabat
+      discount: -20 kr.
+      monthlyPrice: 10 kr.
+      monthlyPriceText: Monthly Cost
+      setupCost:
+        text: Oprettelse
+        value: 0 kr.
+      totalPrice:
+        text: Pris 6 måneder
+        value: 60 kr.
+    apply_url: http://google.com
+  - provider:
+      name: 3 Mobilt
+      logo: http://assets.ciab.compareglobal.co.uk/denmark/samlino.dk/integration/dk/images/providerLogos/Waoo.png
+    footerLabel: Gratis oprettelse
+    buttonText: Vælg
+    features:
+      feature1: 6 måneder <span>Bingdins Periode</span>
+      feature2: 20 GB <span>Data inkluderet</span>
+      feature3: 36 Mbit/s <span>Download hastighed</span>
+    priceDetail:
+      discountText: Rabat
+      discount: -20 kr.
+      monthlyPrice: 10 kr.
+      monthlyPriceText: Monthly Cost
+      setupCost:
+        text: Oprettelse
+        value: 0 kr.
+      totalPrice:
+        text: Pris 6 måneder
+        value: 60 kr.
+    apply_url: http://google.com

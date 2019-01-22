@@ -1,0 +1,225 @@
+scriptMain: '%%[
+            VAR @productslist, @products, @userlist, @user, @columns, @width, @subject
+            ]%%
+            %%[
+            SET @userlist = LOOKUPROWS("User", "SubscriberKey", SubscriberKey)
+            SET @productslist = LOOKUPROWS("CC Top 3 Products", "event_id", EventId)
+            ]%%
+
+            %%[
+            IF ((ROWCOUNT(@productslist) != 1)
+            AND (ROWCOUNT(@userlist) != 1))
+            THEN
+            RaiseError("Error finding corresponding products list and/or user", 1)
+            ENDIF
+            SET @user = ROW(@userlist, 1)
+            SET @products = ROW(@productslist, 1)
+            IF (LOWERCASE(FIELD(@products, "fp_requirements_met1")) != "true" AND LOWERCASE(FIELD(@products, "fp_requirements_met1")) != "unknown"
+            AND LOWERCASE(FIELD(@products, "tp_requirements_met1")) != "true" AND LOWERCASE(FIELD(@products, "tp_requirements_met1")) != "unknown"
+            AND LOWERCASE(FIELD(@products, "tp_requirements_met2")) != "true" AND LOWERCASE(FIELD(@products, "tp_requirements_met2")) != "unknown"
+            AND LOWERCASE(FIELD(@products, "tp_requirements_met3")) != "true" AND LOWERCASE(FIELD(@products, "tp_requirements_met3")) != "unknown")
+            THEN
+            RaiseError("User does not meet any credit card requirements", 1)
+            ENDIF
+            IF EMPTY(FIELD(@products, "tp_col4_name1"))
+            THEN
+            SET @columns = "3"
+            SET @width = "174"
+            ELSE
+            IF EMPTY(FIELD(@products, "tp_col5_name1"))
+            THEN
+            SET @columns = "4"
+            SET @width = "116"
+            ELSE
+            SET @columns = "5"
+            SET @width = "87"
+            ENDIF
+            ENDIF
+            SET @subject = FIELD(@products, "category")
+            ]%%'
+
+headerTitleBanner:
+  columnTitleList:
+    - description: '%%=FIELD(@products, "tp_col3_name1")=%%'
+    - description: '%%=FIELD(@products, "tp_col4_name1")=%%'
+    - description: '%%=FIELD(@products, "tp_col5_name1")=%%'
+columns:
+  provider: Provider
+  eligibility: Requirements
+  column1: '%%=FIELD(@products, "tp_col3_name1")=%%'
+  column2: '%%=FIELD(@products, "tp_col4_name1")=%%'
+  column3: '%%=FIELD(@products, "tp_col5_name1")=%%'
+  eligibilityIcon: '%%[IF (LOWERCASE(FIELD(@products, "fp_requirements_met1")) == "true") THEN]%%
+                    <img src="http://image.email.comparaguru.com/lib/fe9013727262077977/m/1/result-icon-true.gif" height="30" />
+                    %%[ELSE]%%
+                    <img src="http://image.email.comparaguru.com/lib/fe9013727262077977/m/1/result-icon-unknown.gif" height="30" />
+                    %%[ENDIF]%%'
+
+featuredProducts:
+  - provider:
+      name: '%%=FIELD(@products, "fp_creditcard_name1")=%%'
+      logo: "%%=FIELD(@products, 'fp_company_logo1')=%%"
+    footerLabel:
+    displayCondition: '%%[IF (NOT EMPTY(FIELD(@products,"fp_company_name1"))) AND ((LOWERCASE(FIELD(@products, "fp_requirements_met1")) == "true") OR (LOWERCASE(FIELD(@products, "fp_requirements_met1")) == "unknown")) THEN]%%'
+    apply_url: "%%=RedirectTo(FIELD(@products, 'fp_creditcard_url1'))=%%"
+    columns:
+      provider: Provider
+      eligibility: Requirements
+      column1: '%%=FIELD(@products, "fp_col3_name1")=%%'
+      column2: '%%=FIELD(@products, "fp_col4_name1")=%%'
+      column3: '%%=FIELD(@products, "fp_col5_name1")=%%'
+      column1Footer: '%%=FIELD(@products, "fp_col3_desc1")=%%'
+      column2Footer: '%%=FIELD(@products, "fp_col4_desc1")=%%'
+      column3Footer: '%%=FIELD(@products, "fp_col5_desc1")=%%'
+      column1Value: '%%=FIELD(@products, "fp_col3_value1")=%%'
+      column2Value: '%%=FIELD(@products, "fp_col4_value1")=%%'
+      column3Value: '%%=FIELD(@products, "fp_col5_value1")=%%'
+      eligibilityIcon: '%%[IF (LOWERCASE(FIELD(@products, "fp_requirements_met1")) == "true") THEN]%%
+                        <img src="http://image.email.comparaguru.com/lib/fe9013727262077977/m/1/result-icon-true.gif" height="30" />
+                        %%[ELSE]%%
+                        <img src="http://image.email.comparaguru.com/lib/fe9013727262077977/m/1/result-icon-unknown.gif" height="30" />
+                        %%[ENDIF]%%'
+      eligibilityText: '%%[IF (LOWERCASE(FIELD(@products, "fp_requirements_met1")) == "true") THEN]%%
+                        You meet the minimum requirements
+                        %%[ELSE]%%
+                        Not sure
+                        %%[ENDIF]%%'
+  - provider:
+      name: '%%=FIELD(@products, "fp_creditcard_name2")=%%'
+      logo: "%%=FIELD(@products, 'fp_company_logo2')=%%"
+    displayCondition: '%%[IF (NOT EMPTY(FIELD(@products,"fp_company_name2"))) AND ((LOWERCASE(FIELD(@products, "fp_requirements_met2")) == "true") OR (LOWERCASE(FIELD(@products, "fp_requirements_met2")) == "unknown")) THEN]%%'
+    footerLabel:
+    apply_url: "%%=RedirectTo(FIELD(@products, 'fp_creditcard_url2'))=%%"
+    columns:
+      provider: Provider
+      eligibility: Requirements
+      column1: '%%=FIELD(@products, "fp_col3_name2")=%%'
+      column2: '%%=FIELD(@products, "fp_col4_name2")=%%'
+      column3: '%%=FIELD(@products, "fp_col5_name2")=%%'
+      column1Footer: '%%=FIELD(@products, "fp_col3_desc2")=%%'
+      column2Footer: '%%=FIELD(@products, "fp_col4_desc2")=%%'
+      column3Footer: '%%=FIELD(@products, "fp_col5_desc2")=%%'
+      column1Value: '%%=FIELD(@products, "fp_col3_value2")=%%'
+      column2Value: '%%=FIELD(@products, "fp_col4_value2")=%%'
+      column3Value: '%%=FIELD(@products, "fp_col5_value2")=%%'
+      eligibilityIcon: '%%[IF (LOWERCASE(FIELD(@products, "fp_requirements_met2")) == "true") THEN]%%
+                        <img src="http://image.email.comparaguru.com/lib/fe9013727262077977/m/1/result-icon-true.gif" height="30" />
+                        %%[ELSE]%%
+                        <img src="http://image.email.comparaguru.com/lib/fe9013727262077977/m/1/result-icon-unknown.gif" height="30" />
+                        %%[ENDIF]%%'
+      eligibilityText: '%%[IF (LOWERCASE(FIELD(@products, "fp_requirements_met2")) == "true") THEN]%%
+                        You meet the minimum requirements
+                        %%[ELSE]%%
+                        Not sure
+                        %%[ENDIF]%%'
+  - provider:
+      name: '%%=FIELD(@products, "fp_creditcard_name3")=%%'
+      logo: "%%=FIELD(@products, 'fp_company_logo3')=%%"
+    footerLabel:
+    displayCondition: '%%[IF (NOT EMPTY(FIELD(@products,"fp_company_name3"))) AND ((LOWERCASE(FIELD(@products, "fp_requirements_met3")) == "true") OR (LOWERCASE(FIELD(@products, "fp_requirements_met3")) == "unknown")) THEN]%%'
+    apply_url: "%%=RedirectTo(FIELD(@products, 'fp_creditcard_url3'))=%%"
+    columns:
+      provider: Provider
+      eligibility: Requirements
+      column1: '%%=FIELD(@products, "fp_col3_name3")=%%'
+      column2: '%%=FIELD(@products, "fp_col4_name3")=%%'
+      column3: '%%=FIELD(@products, "fp_col5_name3")=%%'
+      column1Footer: '%%=FIELD(@products, "fp_col3_desc3")=%%'
+      column2Footer: '%%=FIELD(@products, "fp_col4_desc3")=%%'
+      column3Footer: '%%=FIELD(@products, "fp_col5_desc3")=%%'
+      column1Value: '%%=FIELD(@products, "fp_col3_value3")=%%'
+      column2Value: '%%=FIELD(@products, "fp_col4_value3")=%%'
+      column3Value: '%%=FIELD(@products, "fp_col5_value3")=%%'
+      eligibilityIcon: '%%[IF (LOWERCASE(FIELD(@products, "fp_requirements_met3")) == "true") THEN]%%
+                        <img src="http://image.email.comparaguru.com/lib/fe9013727262077977/m/1/result-icon-true.gif" height="30" />
+                        %%[ELSE]%%
+                        <img src="http://image.email.comparaguru.com/lib/fe9013727262077977/m/1/result-icon-unknown.gif" height="30" />
+                        %%[ENDIF]%%'
+      eligibilityText: '%%[IF (LOWERCASE(FIELD(@products, "fp_requirements_met3")) == "true") THEN]%%
+                        You meet the minimum requirements
+                        %%[ELSE]%%
+                        Not sure
+                        %%[ENDIF]%%'
+generalProducts:
+  - provider:
+      name: '%%=FIELD(@products, "tp_creditcard_name1")=%%'
+      logo: "%%=FIELD(@products, 'tp_company_logo1')=%%"
+    displayCondition: '%%[IF (NOT EMPTY(FIELD(@products,"tp_company_name1"))) AND ((LOWERCASE(FIELD(@products, "tp_requirements_met1")) == "true") OR (LOWERCASE(FIELD(@products, "tp_requirements_met1")) == "unknown")) THEN]%%'
+    apply_url: "%%=RedirectTo(FIELD(@products, 'tp_creditcard_url1'))=%%"
+    columns:
+      provider: Provider
+      eligibility: Requirements
+      column1: '%%=FIELD(@products, "tp_col3_name1")=%%'
+      column2: '%%=FIELD(@products, "tp_col4_name1")=%%'
+      column3: '%%=FIELD(@products, "tp_col5_name1")=%%'
+      column1Footer: '%%=FIELD(@products, "tp_col3_desc1")=%%'
+      column2Footer: '%%=FIELD(@products, "tp_col4_desc1")=%%'
+      column3Footer: '%%=FIELD(@products, "tp_col5_desc1")=%%'
+      column1Value: '%%=FIELD(@products, "tp_col3_value1")=%%'
+      column2Value: '%%=FIELD(@products, "tp_col4_value1")=%%'
+      column3Value: '%%=FIELD(@products, "tp_col5_value1")=%%'
+      eligibilityIcon: '%%[IF (LOWERCASE(FIELD(@products, "tp_requirements_met1")) == "true") THEN]%%
+                        <img src="http://image.email.comparaguru.com/lib/fe9013727262077977/m/1/result-icon-true.gif" height="30" />
+                        %%[ELSE]%%
+                        <img src="http://image.email.comparaguru.com/lib/fe9013727262077977/m/1/result-icon-unknown.gif" height="30" />
+                        %%[ENDIF]%%'
+      eligibilityText: '%%[IF (LOWERCASE(FIELD(@products, "tp_requirements_met1")) == "true") THEN]%%
+                        You meet the minimum requirements
+                        %%[ELSE]%%
+                        Not sure
+                        %%[ENDIF]%%'
+
+  - provider:
+      name: '%%=FIELD(@products, "tp_creditcard_name2")=%%'
+      logo: "%%=FIELD(@products, 'tp_company_logo2')=%%"
+    displayCondition: '%%[IF (NOT EMPTY(FIELD(@products,"tp_company_name2"))) AND ((LOWERCASE(FIELD(@products, "tp_requirements_met2")) == "true") OR (LOWERCASE(FIELD(@products, "tp_requirements_met2")) == "unknown")) THEN]%%'
+    apply_url: "%%=RedirectTo(FIELD(@products, 'tp_creditcard_url2'))=%%"
+    columns:
+      provider: Provider
+      eligibility: Requirements
+      column1: '%%=FIELD(@products, "tp_col3_name2")=%%'
+      column2: '%%=FIELD(@products, "tp_col4_name2")=%%'
+      column3: '%%=FIELD(@products, "tp_col5_name2")=%%'
+      column1Footer: '%%=FIELD(@products, "tp_col3_desc2")=%%'
+      column2Footer: '%%=FIELD(@products, "tp_col4_desc2")=%%'
+      column3Footer: '%%=FIELD(@products, "tp_col5_desc2")=%%'
+      column1Value: '%%=FIELD(@products, "tp_col3_value2")=%%'
+      column2Value: '%%=FIELD(@products, "tp_col4_value2")=%%'
+      column3Value: '%%=FIELD(@products, "tp_col5_value2")=%%'
+      eligibilityIcon: '%%[IF (LOWERCASE(FIELD(@products, "tp_requirements_met2")) == "true") THEN]%%
+                        <img src="http://image.email.comparaguru.com/lib/fe9013727262077977/m/1/result-icon-true.gif" height="30" />
+                        %%[ELSE]%%
+                        <img src="http://image.email.comparaguru.com/lib/fe9013727262077977/m/1/result-icon-unknown.gif" height="30" />
+                        %%[ENDIF]%%'
+      eligibilityText: '%%[IF (LOWERCASE(FIELD(@products, "tp_requirements_met2")) == "true") THEN]%%
+                        You meet the minimum requirements
+                        %%[ELSE]%%
+                        Not sure
+                        %%[ENDIF]%%'
+  - provider:
+      name: '%%=FIELD(@products, "tp_creditcard_name3")=%%'
+      logo: "%%=FIELD(@products, 'tp_company_logo3')=%%"
+    displayCondition: '%%[IF (NOT EMPTY(FIELD(@products,"tp_company_name3"))) AND ((LOWERCASE(FIELD(@products, "tp_requirements_met3")) == "true") OR (LOWERCASE(FIELD(@products, "tp_requirements_met3")) == "unknown")) THEN]%%'
+    apply_url: "%%=RedirectTo(FIELD(@products, 'tp_creditcard_url3'))=%%"
+    columns:
+      provider: Provider
+      eligibility: Requirements
+      column1: '%%=FIELD(@products, "tp_col3_name3")=%%'
+      column2: '%%=FIELD(@products, "tp_col4_name3")=%%'
+      column3: '%%=FIELD(@products, "tp_col5_name3")=%%'
+      column1Footer: '%%=FIELD(@products, "tp_col3_desc3")=%%'
+      column2Footer: '%%=FIELD(@products, "tp_col4_desc3")=%%'
+      column3Footer: '%%=FIELD(@products, "tp_col5_desc3")=%%'
+      column1Value: '%%=FIELD(@products, "tp_col3_value3")=%%'
+      column2Value: '%%=FIELD(@products, "tp_col4_value3")=%%'
+      column3Value: '%%=FIELD(@products, "tp_col5_value3")=%%'
+      eligibilityIcon: '%%[IF (LOWERCASE(FIELD(@products, "tp_requirements_met3")) == "true") THEN]%%
+                        <img src="http://image.email.comparaguru.com/lib/fe9013727262077977/m/1/result-icon-true.gif" height="30" />
+                        %%[ELSE]%%
+                        <img src="http://image.email.comparaguru.com/lib/fe9013727262077977/m/1/result-icon-unknown.gif" height="30" />
+                        %%[ENDIF]%%'
+      eligibilityText: '%%[IF (LOWERCASE(FIELD(@products, "tp_requirements_met3")) == "true") THEN]%%
+                        You meet the minimum requirements
+                        %%[ELSE]%%
+                        Not sure
+                        %%[ENDIF]%%'

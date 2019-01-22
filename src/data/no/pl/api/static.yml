@@ -1,0 +1,74 @@
+apiDescriptions:
+  detailsTitle: Lånet ditt
+  benefit1: "Navn"
+  benefit2: "E-post"
+  benefit3:   "Telefonnummer"
+  buttonTitle: ""
+  buttonContent: "KLIKK HER FOR Å SE STATUS PÅ LÅNESØKNADEN"
+
+header:
+  headerLink: '%%view_email_url%%'
+  headerLinkText: Se meldingen i nettleseren
+  headerLogoPath: http://image.s7.exacttarget.com/lib/fe8013727c6c037b7d/m/1/samlino-logo.png
+  introText: Vi har en statusoppdatering på lånesøknaden din
+
+headerBanner:
+  headline1: Takk for at du bruker <a href="#" class="link-remove--mobile">Samlino.no</a>
+  headline2: "Vennligst se over dine opplysninger nedenfor"
+  image: http://image.email.vertaaensin.fi/lib/fe8a13727262077e7c/m/1/graphic-coin-euro.png
+  descriptionList:
+      - description: 100% gratis
+      - description: Raskt og enkelt
+      - description: Uavhengig
+
+headerTitleBannerStatic:
+  firstColumn: Tuote
+  secondColumn: "Hakuehdot"
+
+menu:
+  - title: Forsiden
+    link: https://www.vertaaensin.fi/?utm_content=Nav_bar
+  - title: Forbrukslån
+    link: https://www.samlino.no/forbrukslan?utm_content=Nav_bar
+  - title: Kredittkort
+    link: https://www.samlino.no/kredittkort?utm_content=Nav_bar
+
+showcase:
+  - title: Forbrukslån
+    imagePath: http://image.email.comparaguru.com/lib/fe9013727262077977/m/1/pl+icon+abandon.png
+    description: "Låneeksempel: Eff. rente 16,7%, kr 65.000 o/5 år. Totalt 93.908."
+    buttonText: Sammenlign nå
+    buttonLink: https://samlino.no/forbrukslan/funnel#/?category=all?utm_content=PL_icon
+    footnote: Tar under 1 minutt
+  - title: Vennligst se over dine detaljer nedenfor
+    imagePath: http://image.email.comparaguru.com/lib/fe9013727262077977/m/1/icon-email-green-cc.png
+    description: "Eksempel: Eff. rente 22,4%, kr 15.000 o/12 mnd. Totalt 16.711."
+    buttonText: Sammenlign nå
+    buttonLink: https://www.samlino.no/kredittkort/funnel#/?utm_content=CC_icon
+    footnote: Tar under 1 minutt
+
+footerBanner:
+  headline1: "Rask og enkel sammenligning"
+  headline2: <a href="#" class="link-remove--mobile">Samlino.no</a> gir deg upartisk og oppdatert informasjon om finansielle produkter. Basert på deg og dine behov viser vi deg hvilke alternativer du har, slik at du kan sammenligne og ta et informert valg – veldig enkelt og helt gratis!
+  descriptionList:
+  buttonText:
+  buttonLink:
+
+footer:
+  socialMedia:
+    - link: https://www.facebook.com/Samlino.no/
+      imagePath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/cf4ff2a2-0288-402b-8c93-643181110b41.png
+    - link: https://twitter.com//samlino_no
+      imagePath: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/d39a3024-f642-4d24-aa2f-c76ee836027c.png
+  companyLink: https://www.samlino.no/
+  companyName: '%%Member_Busname%%'
+  companyAddress: "%%Member_Addr%% %%Member_City%%, %%Member_State%%, %%Member_PostalCode%%, %%Member_Country%% Tel: 22 95 22 95"
+  termsTitle: Vilkåro
+
+  termsLink: https://www.samlino.no/vilkar
+  termsDescription: ""
+  privacyTitle: Personvern
+  privacyLink: https://www.samlino.no/personvern
+  unsubscribeLink: '%%profile_center_url%%'
+  unsubscribeText: "Avregistrer deg"
+  beforeUnsubscribeText: Du mottar denne eposten fordi du er påmeldt <a href="#" class="link-remove--mobile--unsubscribe">Samlino.no</a> sitt nyhetsbrev.

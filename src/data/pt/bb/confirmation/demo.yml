@@ -1,0 +1,105 @@
+bbConfirmation:
+  orderTitle: "Your order number is:"
+  orderDescription: Please see your details below
+  orderNumber: 1234129807
+  sections:
+    - header: Package Details
+      subheader: Laptop & tablet data
+      logo: 'https://d3b6ttmccdjuev.cloudfront.net/denmark/samlino.dk/staging/dk/images/providerLogos/Telenor.png'
+      items:
+        - name: Download speed
+          value: X Mbps
+        - name: Upload speed
+          value: X Mbps
+        - name: Data limit
+          value: X GB
+    - subheader: TV & Channels
+      items:
+        - name: Number of channels
+          value: X
+        - name: Channels included
+          value: X
+        - name: Premium channels
+          value: X
+    - subheader: Landline
+      items:
+        - name: Local calls included
+          value: X Mins
+        - name: International calls included
+          value: X Mins
+        - name: Local landline costs / min
+          value: € /min
+        - name: Local landline costs / min
+          value: € /min
+        - name: International calls
+          value: X
+        - name: International countries included
+          value: X Paises
+        - name: Transfer Cost
+          value: X €
+    - subheader: Mobile phone
+      items:
+        - name: Local calls included
+          value: X Mins
+        - name: SMS included
+          value: X €/min
+        - name: Local fixed line calls
+          value: X €/min
+        - name: Local mobile calls
+          value: X €/min
+        - name: Local mobile calls
+          value: X €/min
+        - name: SMS message
+          value: X €/SMS
+        - name: MMS message
+          value: X €/SMS
+        - name: Roaming cost
+          value: X
+        - name: International calls cost
+          value: X
+        - name: Extra SIM card cost
+          value: X €
+        - name: Transfer cost
+          value: X €
+        - name: Mobile Data
+          value: X GB
+        - name: Additional data cost
+          value: X
+    - subheader: Mobile Phone
+      items:
+        - name: Download speed
+          value: X Mbps
+        - name: Upload speed
+          value: X Mbps
+        - name: Data limit
+          value: X GB
+        - name: Additional data cost
+          value: X
+    - subheader: Price Calculation
+      items:
+        - name: Contract period
+          value: X
+        - name: Base price
+          value: X €/month
+        - name: Premium channel costs
+          value: X €/month
+        - name: Extra SIM card costs
+          value: X €/month
+        - name: Installaton costs
+          value: X€
+        - name: Discount value
+          value: X€
+        - name: Total cost
+          value: X€
+
+  summary:
+    name: Total Summary
+    value: $600,00.00
+  
+  userInformation:
+    header: Your Details 
+    fullName: James Bond
+    email: john.doe@gmail.com
+    phone: 55 5011 9400
+    address: Flat D 35/F, Tower 9, The Millenium, Uptown, Leon, Guanajuato 66290, Mexico
+    yearsOfStay: 5 years 11 months

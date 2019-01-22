@@ -1,0 +1,32 @@
+---
+#title and description show on the tab of the email (browser)
+subject: Abandon Email CC MY
+description:
+
+staticFile: my/cc/abandon/static.yml
+scriptFile: my/cc/abandon/script.yml
+demoFile:
+---
+{{setConfig}}
+{{{config.scriptMain}}}
+
+<wrapper class="ciab-abandon cc-abandon">
+  {{> common-header}}
+  <!-- BEGIN header banner -->
+  {{> common-header-title-banner}}
+  <!-- END header banner -->
+
+  <!-- BEGIN featured product -->
+  {{#each config.featuredProducts as |product index|}}
+  {{> cc-result-item ccResultItem=product globalConfig=config applyText=../config.applyText featuredText=../config.featuredText isFeatured=true}}
+  {{/each}}
+  <!-- END featured product-->
+  <!-- BEGIN general product -->
+  {{#each config.generalProducts as |product index|}}
+  {{> cc-result-item ccResultItem=product applyText=../config.applyText isFeatured=false}}
+  {{/each}}
+  <!-- END general product -->
+  {{> common-footer-banner}}
+  {{> common-showcase}}
+  {{> common-footer}}
+</wrapper>

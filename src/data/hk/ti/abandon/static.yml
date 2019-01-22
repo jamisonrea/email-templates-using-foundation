@@ -1,0 +1,77 @@
+##----- static content -----##
+header:
+  headerLink: '%%view_email_url%%'
+  headerLinkText: View in your browser
+  headerLogoPath: https://www.moneyhero.com.hk/themes/cgg-confidence-mix/assets/img/en_HK-logo.png
+
+headerBanner:
+  headline1: 'Thank you for visiting <a href="https://www.moneyhero.com.hk/en"> MoneyHero.com.hk</a>'
+  headline2: We have compiled the three bests deal for you
+  descriptionList:
+    - description: 100% Free
+    - description: Quick and easy
+    - description: Independent and impartial
+  image: https://www.moneyhero.com.hk/themes/cgg-confidence-green/assets/img/landing-page/pl_landing_holiday.png
+
+menu:
+  - title: Home
+    link: https://www.moneyhero.com.hk/en/
+  - title: Travel Insurance
+    link: https://www.moneyhero.com.hk/en/travel-insurance
+  - title: Personal Loan
+    link: https://www.moneyhero.com.hk/en/personal-loan
+  - title: Credit Card
+    link: https://www.moneyhero.com.hk/en/credit-card
+  - title: Mortgage
+    link: https://www.moneyhero.com.hk/en/mortgage
+
+showcase:
+  - title: Personal Loan
+    imagePath: http://image.email.moneyhero.com.hk/lib/fe9213727262077975/m/1/0af2d900-9c3a-4db2-9241-0d7f700426ed.png
+    description: Make your dreams a reality with the cheapest personal loan/ tax loan
+    buttonText: Compare Now
+    buttonLink: https://www.moneyhero.com.hk/en/personal-loan
+    footnote: Takes about 15 seconds
+  - title: Credit Card
+    imagePath: http://image.email.moneyhero.com.hk/lib/fe9013727262077977/m/1/icon-email-green-cc.png
+    description: Get cashback, air miles, and other rewards with the right credit card
+    buttonText: Compare Now
+    buttonLink: https://www.moneyhero.com.hk/en/credit-card
+    footnote: Takes about 15 seconds
+  - title: Mortgage
+    imagePath: https://www.moneyhero.com.hk/themes/cgg-confidence-mix/assets/img/extras/mdl2.png
+    description: Build your future and own your space with affordable mortgage plans
+    buttonText: Compare Now
+    buttonLink: https://www.moneyhero.com.hk/en/mortgage
+    footnote: Takes about 15 seconds
+
+footerBanner:
+  headline1: Hongkong's largest comparison portal
+  headline2: MoneyHero is your go-to website for comparing loans and credit cards. Use our powerful comparison tool to get unbiased, up-to-date information.
+  descriptionList:
+  buttonText: Compare Now
+  buttonLink: https://www.moneyhero.com.hk/en
+
+footer:
+  socialMedia:
+    - link: https://www.facebook.com/moneyhero.com.hk
+      imagePath: http://image.email.moneyhero.com.hk/lib/fe9213727262077975/m/1/cf4ff2a2-0288-402b-8c93-643181110b41.png
+    - link: https://plus.google.com/+MoneyheroHk
+      imagePath: http://image.email.moneyhero.com.hk/lib/fe9213727262077975/m/1/15f7bcf9-8a93-47e4-94a3-5c5e17a9a96c.png
+    - link: https://www.youtube.com/user/hongkongmoneyhero
+      imagePath: http://image.email.moneyhero.com.hk/lib/fe9213727262077975/m/1/45921b3a-bd77-4af4-9620-e0d9c0fb4492.png
+  termsTitle: Privacy Policy / Terms and Conditions
+  termsLink: https://www.moneyhero.com.hk/en/privacy-policy
+  termsDescription: 2016 All rights reserved Moneyhero.com.hk. Using Moneyhero.com.hk you accepted our terms and conditions and privacy policy.
+  unsubscribeLink: '%%unsub_center_url%%'
+  unsubscribeText: Unsubscribe
+
+# product item static text
+cancellationText: Cancellation Cover
+medicalText: Medical Cover
+baggageText: Bags & Belongings
+hospitalGuaranteeText: Hospital Guarantee
+personalAccidentText: Personal Accident
+featuredText: Sponsored
+buttonText: Apply
+originalText: Original Price

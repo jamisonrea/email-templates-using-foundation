@@ -1,0 +1,25 @@
+---
+#title and description show on the tab of the email (browser)
+subject: Não perca empréstimos com taxas de juro reduzidas
+description:
+
+staticFile: no/pl/abandon-checkout/static.yml
+scriptFile: no/pl/abandon-checkout/script.yml
+---
+{{setConfig}}
+<!-- ============================== -->
+<!-- Flexible Branding Template -->
+<!-- ============================== -->
+{{{config.scriptMain}}}
+
+<wrapper class="ciab-abandon cc-abandon">
+  {{> common-header}}
+  <!-- BEGIN header banner -->
+  {{> common-header-abandon-checkout}}
+  <!-- END header banner -->
+ {{> pl-abandon-checkout-button}}
+  <!-- END general product -->
+  {{> common-footer-banner}}
+  {{> common-showcase}}   
+  {{> common-footer}}
+</wrapper>

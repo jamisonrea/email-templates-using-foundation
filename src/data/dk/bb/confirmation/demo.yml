@@ -1,0 +1,59 @@
+bbConfirmation:
+  orderTitle: "Dit ordrenummerer"
+  orderDescription: Se dine ordredetaljer nedenfor
+  orderNumber: 1234129807
+  sections:
+    - header: Produktdetaljer
+      logo: https://d3b6ttmccdjuev.cloudfront.net/denmark/samlino.dk/staging/dk/images/providerLogos/Telenor.png
+      items:
+        - name: '<p style="margin-bottom:0; padding-top:10px;">Udbyder</p>'
+          value: '<p style="margin-bottom:0; padding-top:10px; text-align: right;"><b>Telenor</b></p>'
+        - name: '<p style="margin-bottom:0; padding-bottom:15px;">Pakke</p>'
+          value: '<p style="margin-bottom:0; padding-bottom:15px; text-align: right;"> <b>50/5 Mbit</b></p>'
+        - name: Data inkluderet
+          value: Ubegrænset
+        - name: Download hastighed
+          value: 50 Mbit
+        - name: Upload hastighed
+          value: 5 Mbit
+        - name: Bindingsperiode
+          value: 5 måneder
+        - name: Bredbåndstelefoni
+          value: Ja
+        - name: TV
+          value: Nej
+
+    - subheader: Prisdetaljer
+      items:
+        - name: Cost1
+          value: 300.00 kr.
+        - name: Cost2
+          value: 30.00 kr.
+        - name: Cost3
+          value: 30.00 kr.
+        - name: '<p style="border-top:1px solid #dcdad7; margin-bottom: 0; padding: 4px 0;"><b>Engangsomkostninger i alt</b></p>'
+          value: '<p style="border-top:1px solid #dcdad7; margin-bottom: 0; padding: 4px 0; text-align: right;"><b>330.00 kr.</b></p>'
+
+    - subheader: Månedlige omkostninger
+      items:
+        - name: Service 1
+          value: 120.00 kr.
+        - name: Service 2
+          value: 200.00 kr.
+        - name: '<p style="border-top:1px solid #dcdad7; margin-bottom: 0; padding: 4px 0;">Monthly Costs</p>'
+          value: '<p style="border-top:1px solid #dcdad7; margin-bottom: 0; padding: 4px 0; text-align: right;">320.00 kr.</p>'
+        - name: '<p style="border-top:2px solid #312f2e; margin-bottom: 0; padding: 4px 0;"><b>Cost per 6 months</b></p>'
+          value: '<p style="border-top:2px solid #312f2e; margin-bottom: 0; padding: 4px 0; text-align: right;"><b>1920.00 kr.</b></p>'
+        - name: '<p style="color: #056f9d; margin-bottom: 0; padding: 6px 0;">Discount</p>'
+          value: '<p style="color: #056f9d; margin-bottom: 0; padding: 6px 0; text-align: right;">- 20.00 kr.</p>'
+
+  summary:
+    name: 'Total after discount'
+    value: '2500.00 kr.'
+
+  userInformation:
+    header: Dine oplysninger
+    fullName: John Doe
+    email: john.doe@gmail.com
+    phone: 55 5011 9400
+    address: Flat D 35/F, Tower 9, The Millenium, Uptown, Leon, Guanajuato 66290, Mexico

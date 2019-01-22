@@ -1,0 +1,61 @@
+personalDetails:
+  fullName: Anj
+ciConfirmation:
+  provider:
+    title: Provider
+    name: Alka
+    logo: http://assets.ciab.compareglobal.co.uk/denmark/samlino.dk/integration/dk/images/providerLogos/Alka.png
+    section:
+      header: Purchase Information
+      items:
+        - name: "Car name:"
+          value: 2015 911 Turbo S Cabriolet
+        - name: "Price:"
+          value: 2.000 kr
+        - name: "Deductible:"
+          value: 39.045 kr
+        - name: "Coverage:"
+          value:
+    features:
+      - name:  Kasko
+        value: true
+      - name:  Friskade
+        value: false
+      - name:  Fører
+        value: false
+      - name:  Glas
+        value: true
+      - name:  Vejhjælp
+        value: true
+  banner:
+    title: Just one more step for your application
+    icon: http://image.email.samlino.dk/lib/fe9213727262077975/m/1/6d5dbe81-fad5-4ac3-b063-23a6dd25bfb5.png
+    text: Your information has been sent to <b>Alka</b>, you will be receiving a phone call from them shortly to confirm your details to complete your application
+  sections:
+    - header: Driver Details
+      items:
+        - name: "Name:"
+          value: John Wong
+        - name: "Email Address"
+          value: john@samlino.dk
+        - name: "Phone number:"
+          value: 12313123131
+    - header: Car Details
+      items:
+        - name: "License Plate Number"
+          value: SOB 1258
+        - name: "Variant"
+          value: 1999 Volkswagon New Beetle
+    - header: Insurance Details
+      items:
+        - name: "Number of Damage"
+          value: 18
+        - name: "Last Damage"
+          value: 2017
+        - name: "Current Provider"
+          value: AIA
+        - name: "Years in Current Provider"
+          value: 2
+  terms:
+    title: "Contact Samlino DK directly if you have any problem"
+    details: "Telefon: 70605858 (Man-Fre: 09-17)<br/>Email: info@samlino.dk (vi svarer inden for 2 hverdage)"

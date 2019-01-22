@@ -1,0 +1,215 @@
+# "pt_f57b661c-a80b-5b7e-9609-87581fbf0f2e"
+# "43b8812c-7f54-50ee-8d2f-b21d586b76e1"
+scriptMain: '%%[
+                 VAR @productslist, @products, @userlist, @user, @resultspageurl, @apply_url
+             ]%%
+
+             %%[
+                 SET @userlist = LOOKUPROWS("User", "SubscriberKey", SubscriberKey)
+                 SET @productslist = LOOKUPROWS("BB Top 3 Products", "event_id", EventId)
+             ]%%
+
+             %%[
+                 IF ((ROWCOUNT(@productslist) != 1)
+                     AND (ROWCOUNT(@userlist) != 1))
+                 THEN
+                     RaiseError("Error finding corresponding products list and/or user", 1)
+                 ENDIF
+                 SET @user = ROW(@userlist, 1)
+                 SET @products = ROW(@productslist, 1)
+                 IF EMPTY(FIELD(@products,"tp_0_company_name")) AND EMPTY(FIELD(@products,"fp_0_company_name")) THEN
+                     RaiseError("No available products to show the customer", true)
+                 ENDIF
+                 SET @resultspageurl = CONCAT(FIELD(@products, "results_page_url"))
+             ]%%'
+featuredProducts:
+  - scriptIf: '%%[IF (NOT EMPTY(FIELD(@products,"fp_0_company_name"))) THEN]%%
+               %%[IF (NOT EMPTY(FIELD(@products,"fp_0_apply_url"))) THEN
+                    SET @apply_url=FIELD(@products,"fp_0_apply_url")
+                  ELSE
+                    SET @apply_url=FIELD(@products,"results_page_url")
+                  ENDIF]%%'
+    provider:
+      sponsoredStaticText: Anúncio patrocinado
+      name: '%%=FIELD(@products,"fp_0_company_name")=%%'
+      logo: "%%=FIELD(@products,'fp_0_product_logo')=%%"
+    addressCoverage:
+      - value: '%%=FIELD(@products,"ft_0_available_address")=%%'
+        scriptIf: '%%[IF (NOT EMPTY(FIELD(@products,"ft_0_available_address"))) THEN]%%'
+        scriptAvailableAddress: '%%[IF FIELD(@products, "ft_0_available_address")==1 THEN]%%'
+        scriptNotAvailableAddress: '%%[ELSEIF FIELD(@products, "ft_0_available_address")==0 THEN]%%'
+        scriptAddressNotConfirmed: '%%[ELSEIF FIELD(@products, "ft_0_available_address")==-1 THEN]%%'
+    footerLabel: #Gratis oprettelse
+    buttonText: ADERIR
+    services:
+      - text:
+        value: '%%=FIELD(@products,"fp_0_service")=%%'
+    features:
+      - text: Canais
+        value: '%%=FIELD(@products,"fp_0_no_of_channels")=%%'
+    priceDetail:
+      monthlyPrice: '%%=FIELD(@products,"ft_0_avg_monthly_cost")=%% &euro;'
+      setupCost:
+        text: Valor mensal
+        value: '%%=FIELD(@products,"fp_0_monthly_cost")=%% &euro;'
+      totalPrice:
+        text: Custo instalação
+        value: '%%[IF (NOT EMPTY(FIELD(@products,"fp_0_installation_cost"))) THEN]%%
+                 %%=FIELD(@products,"fp_0_installation_cost")=%% &euro;
+                 %%[ELSE]%%
+                 0 &euro;
+                 %%[ENDIF]%%'
+    apply_url: '%%=RedirectTo(@apply_url)=%%'
+
+  - scriptIf: '%%[IF (NOT EMPTY(FIELD(@products,"fp_1_company_name"))) THEN]%%
+               %%[IF (NOT EMPTY(FIELD(@products,"fp_1_apply_url"))) THEN
+                    SET @apply_url=FIELD(@products,"fp_1_apply_url")
+                  ELSE
+                    SET @apply_url=FIELD(@products,"results_page_url")
+                  ENDIF]%%'
+    provider:
+      sponsoredStaticText: Anúncio patrocinado
+      name: '%%=FIELD(@products,"fp_1_company_name")=%%'
+      logo: "%%=FIELD(@products,'fp_1_product_logo')=%%"
+    addressCoverage:
+      - value: '%%=FIELD(@products,"ft_1_available_address")=%%'
+        scriptIf: '%%[IF (NOT EMPTY(FIELD(@products,"ft_1_available_address"))) THEN]%%'
+        scriptAvailableAddress: '%%[IF FIELD(@products, "ft_1_available_address")==1 THEN]%%'
+        scriptNotAvailableAddress: '%%[ELSEIF FIELD(@products, "ft_1_available_address")==0 THEN]%%'
+        scriptAddressNotConfirmed: '%%[ELSEIF FIELD(@products, "ft_1_available_address")==-1 THEN]%%'
+    footerLabel: #Gratis oprettelse
+    buttonText: ADERIR
+    services:
+      - text:
+        value: '%%=FIELD(@products,"fp_1_service")=%%'
+    features:
+      - text: Canais
+        value: '%%=FIELD(@products,"fp_1_no_of_channels")=%%'
+    priceDetail:
+      monthlyPrice: '%%=FIELD(@products,"ft_1_avg_monthly_cost")=%% &euro;'
+      setupCost:
+        text: Valor mensal
+        value: '%%=FIELD(@products,"fp_1_monthly_cost")=%% &euro;'
+      totalPrice:
+        text: Custo instalação
+        value: '%%[IF (NOT EMPTY(FIELD(@products,"fp_1_installation_cost"))) THEN]%%
+                 %%=FIELD(@products,"fp_1_installation_cost")=%% &euro;
+                 %%[ELSE]%%
+                 0 &euro;
+                 %%[ENDIF]%%'
+    apply_url: '%%=RedirectTo(@apply_url)=%%'
+
+generalProducts:
+  - scriptIf: '%%[IF (NOT EMPTY(FIELD(@products,"tp_0_company_name"))) THEN]%%
+               %%[IF (NOT EMPTY(FIELD(@products,"tp_0_apply_url"))) THEN
+                    SET @apply_url=FIELD(@products,"tp_0_apply_url")
+                  ELSE
+                    SET @apply_url=FIELD(@products,"results_page_url")
+                  ENDIF]%%'
+    provider:
+      sponsoredStaticText: Anúncio patrocinado
+      name: '%%=FIELD(@products,"tp_0_company_name")=%%'
+      logo: "%%=FIELD(@products,'tp_0_product_logo')=%%"
+    addressCoverage:
+      - value: '%%=FIELD(@products,"tp_0_available_address")=%%'
+        scriptIf: '%%[IF (NOT EMPTY(FIELD(@products,"tp_0_available_address"))) THEN]%%'
+        scriptAvailableAddress: '%%[IF FIELD(@products, "tp_0_available_address")==1 THEN]%%'
+        scriptNotAvailableAddress: '%%[ELSEIF FIELD(@products, "tp_0_available_address")==0 THEN]%%'
+        scriptAddressNotConfirmed: '%%[ELSEIF FIELD(@products, "tp_0_available_address")==-1 THEN]%%'
+    footerLabel: #Gratis oprettelse
+    buttonText: ADERIR
+    services:
+      - text:
+        value: '%%=FIELD(@products,"tp_0_service")=%%'
+    features:
+      - text: Canais
+        value: '%%=FIELD(@products,"tp_0_no_of_channels")=%%'
+    priceDetail:
+      monthlyPrice: '%%=FIELD(@products,"tp_0_avg_monthly_cost")=%% &euro;'
+      setupCost:
+        text: Valor mensal
+        value: '%%=FIELD(@products,"tp_0_monthly_cost")=%% &euro;'
+      totalPrice:
+        text: Custo instalação
+        value: '%%[IF (NOT EMPTY(FIELD(@products,"tp_0_installation_cost"))) THEN]%%
+                 %%=FIELD(@products,"tp_0_installation_cost")=%% &euro;
+                 %%[ELSE]%%
+                 0 &euro;
+                 %%[ENDIF]%%'
+    apply_url: '%%=RedirectTo(@apply_url)=%%'
+
+  - scriptIf: '%%[IF (NOT EMPTY(FIELD(@products,"tp_1_company_name"))) THEN]%%
+               %%[IF (NOT EMPTY(FIELD(@products,"tp_1_apply_url"))) THEN
+                    SET @apply_url=FIELD(@products,"tp_1_apply_url")
+                  ELSE
+                    SET @apply_url=FIELD(@products,"results_page_url")
+                  ENDIF]%%'
+    provider:
+      sponsoredStaticText: Anúncio patrocinado
+      name: '%%=FIELD(@products,"tp_1_company_name")=%%'
+      logo: "%%=FIELD(@products,'tp_1_product_logo')=%%"
+    addressCoverage:
+      - value: '%%=FIELD(@products,"tp_1_available_address")=%%'
+        scriptIf: '%%[IF (NOT EMPTY(FIELD(@products,"tp_1_available_address"))) THEN]%%'
+        scriptAvailableAddress: '%%[IF FIELD(@products, "tp_1_available_address")==1 THEN]%%'
+        scriptNotAvailableAddress: '%%[ELSEIF FIELD(@products, "tp_1_available_address")==0 THEN]%%'
+        scriptAddressNotConfirmed: '%%[ELSEIF FIELD(@products, "tp_1_available_address")==-1 THEN]%%'
+    footerLabel: #Gratis oprettelse
+    buttonText: ADERIR
+    services:
+      - text:
+        value: '%%=FIELD(@products,"tp_1_service")=%%'
+    features:
+      - text: Canais
+        value: '%%=FIELD(@products,"tp_1_no_of_channels")=%%'
+    priceDetail:
+      monthlyPrice: '%%=FIELD(@products,"tp_1_avg_monthly_cost")=%% &euro;'
+      setupCost:
+        text: Valor mensal
+        value: '%%=FIELD(@products,"tp_1_monthly_cost")=%% &euro;'
+      totalPrice:
+        text: Custo instalação
+        value: '%%[IF (NOT EMPTY(FIELD(@products,"tp_1_installation_cost"))) THEN]%%
+                 %%=FIELD(@products,"tp_1_installation_cost")=%% &euro;
+                 %%[ELSE]%%
+                 0 &euro;
+                 %%[ENDIF]%%'
+    apply_url: '%%=RedirectTo(@apply_url)=%%'
+
+  - scriptIf: '%%[IF (NOT EMPTY(FIELD(@products,"tp_2_company_name"))) THEN]%%
+               %%[IF (NOT EMPTY(FIELD(@products,"tp_2_apply_url"))) THEN
+                    SET @apply_url=FIELD(@products,"tp_2_apply_url")
+                  ELSE
+                    SET @apply_url=FIELD(@products,"results_page_url")
+                  ENDIF]%%'
+    provider:
+      sponsoredStaticText: Anúncio patrocinado
+      name: '%%=FIELD(@products,"tp_2_company_name")=%%'
+      logo: "%%=FIELD(@products,'tp_2_product_logo')=%%"
+    addressCoverage:
+      - value: '%%=FIELD(@products,"tp_2_available_address")=%%'
+        scriptIf: '%%[IF (NOT EMPTY(FIELD(@products,"tp_2_available_address"))) THEN]%%'
+        scriptAvailableAddress: '%%[IF FIELD(@products, "tp_2_available_address")==1 THEN]%%'
+        scriptNotAvailableAddress: '%%[ELSEIF FIELD(@products, "tp_2_available_address")==0 THEN]%%'
+        scriptAddressNotConfirmed: '%%[ELSEIF FIELD(@products, "tp_2_available_address")==-1 THEN]%%'
+    footerLabel: #Gratis oprettelse
+    buttonText: ADERIR
+    services:
+      - text:
+        value: '%%=FIELD(@products,"tp_2_service")=%%'
+    features:
+      - text: Canais
+        value: '%%=FIELD(@products,"tp_2_no_of_channels")=%%'
+    priceDetail:
+      monthlyPrice: '%%=FIELD(@products,"tp_2_avg_monthly_cost")=%% &euro;'
+      setupCost:
+        text: Valor mensal
+        value: '%%=FIELD(@products,"tp_2_monthly_cost")=%% &euro;'
+      totalPrice:
+        text: Custo instalação
+        value: '%%[IF (NOT EMPTY(FIELD(@products,"tp_2_installation_cost"))) THEN]%%
+                 %%=FIELD(@products,"tp_2_installation_cost")=%% &euro;
+                 %%[ELSE]%%
+                 0 &euro;
+                 %%[ENDIF]%%'
+    apply_url: '%%=RedirectTo(@apply_url)=%%'

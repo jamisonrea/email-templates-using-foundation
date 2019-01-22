@@ -1,0 +1,95 @@
+{{#conditionalWith ccResultItem config.ccResultItem}}
+{{{displayCondition}}}
+<center class="container--cc">
+  <container class="product--cc product  {{#if ../isFeatured}}featured{{else}}general{{/if}}">
+    {{#if apply_url}}
+      <div class="show-for-large">
+        <table class="product-row show-for-desktop">
+          <tr>
+            <td class="product-name-column" colspan="5">
+              <p class="provider-name text-left">{{{provider.name}}}</p>
+            </td>
+            <td class="sponsored-column">
+              {{#if ../isFeatured}}
+                <p>{{../featuredText}}</p>
+              {{/if}}
+            </td>
+          </tr>
+          <tr>
+            <td class="data-row provider-logo" align="center" valign="top">
+              <img class="provider-logo" src="{{{provider.logo}}}" height="40px">
+            </td>
+            <td class="data-row eligibility" align="center" valign="top">
+              {{{columns.eligibilityIcon}}}
+              <small class="eligibility-text">{{{columns.eligibilityText}}}</small>
+            </td>
+            <td class="data-row" align="center" valign="top">
+              <p class="column-value">{{{columns.column1Value}}}</p>
+              <small class="column-value-description">{{{columns.column1Footer}}}</small>
+            </td>
+            <td class="data-row" align="center" valign="top">
+              <p class="column-value">{{{columns.column2Value}}}</p>
+              <small class="column-value-description">{{{columns.column2Footer}}}</small>
+            </td>
+            <td class="data-row" align="center" valign="top">
+              <p class="column-value">{{{columns.column3Value}}}</p>
+              <small class="column-value-description">{{{columns.column3Footer}}}</small>
+            </td>
+            <td class="apply-button-container" align="center" valign="top">
+              {{#if applyCondition}}
+              {{{applyCondition}}}
+              {{/if}}
+              <a class="apply-button" href="{{{apply_url}}}">{{../applyText}}</a>
+              {{#if applyCondition}}
+              %%[ENDIF]%%
+              {{/if}}
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="hide-for-large-only">
+        <table class="product-row show-for-mobile">
+          <tr>
+            <td class="half-column left provider-column">
+              <p class="provider-name text-left">{{{provider.name}}}</p>
+              <img class="provider-logo" src="{{{provider.logo}}}" height="40px">
+            </td>
+            <td class="half-column right data-column">
+               <p class="column-value first">{{{columns.column1Value}}}</p>
+              <small class="column-value-description">{{{columns.column1}}}</small>
+              <small class="column-value-description">{{{columns.column1Footer}}}</small>
+              <p class="column-value">{{{columns.column2Value}}}</p>
+              <small class="column-value-description">{{{columns.column2}}}</small>
+              <small class="column-value-description">{{{columns.column2Footer}}}</small>
+              <p class="column-value">{{{columns.column3Value}}}</p>
+              <small class="column-value-description">{{{columns.column3}}}</small>
+              <small class="column-value-description">{{{columns.column3Footer}}}</small>
+            </td>
+          </tr>
+          <tr>
+            <td class="half-column left eligibility-column">
+              {{{columns.eligibilityIcon}}}
+              <small class="eligibility-text">{{{columns.eligibilityText}}}</small>
+              {{#if ../isFeatured}}
+                <p class="sponsored-word">{{../featuredText}}</p>
+              {{/if}}
+            </td>
+            <td class="half-column right apply-button-container" align="center" valign="middle">
+              {{#if applyCondition}}
+              {{{applyCondition}}}
+              {{/if}}
+              <a class="apply-button" href="{{{apply_url}}}">{{../applyText}}</a>
+              {{#if applyCondition}}
+              %%[ENDIF]%%
+              {{/if}}
+            </td>
+          </tr>
+        </table>
+      </div>
+    {{/if}}
+  </container>
+</center>
+{{#if displayCondition}}
+  %%[ENDIF]%%
+{{/if}}
+{{/conditionalWith}}

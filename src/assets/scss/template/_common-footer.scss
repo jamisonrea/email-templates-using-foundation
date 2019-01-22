@@ -1,0 +1,77 @@
+.ciab-footer{
+	//WORK AROUND FOR REMOVING LINKS ON MOBILE VIEW
+  .link-remove--mobile {
+  	color: #989898 !important;
+  	text-decoration: none !important;
+  	cursor: default !important;
+  }
+	.link-remove--mobile--unsubscribe {
+  	color: #85807d !important;
+  	text-decoration: none !important;
+  	cursor: default !important;
+  }
+
+	.ciab-menu{
+		margin-top: 15px;
+		@media only screen and (max-width: #{$global-breakpoint}) {
+			width: 100%;
+		}
+	}
+	&-social-list{
+		td{
+			padding: 20px 0;
+			text-align: center!important;
+			a img{
+				display: inline;
+			}
+		}
+	}
+
+	&-terms {
+	    font-size: 11px;
+	    padding: 0 25px;
+	    text-align: center;
+	    margin-top: 10px;
+	    color: map-get( $color, dark-gray );
+	    @media only screen and (max-width: #{$global-breakpoint}) {
+	      padding: 0 16px;
+	    }
+	    & a,
+	    & a:link,
+	    & a:active,
+	    & a:visited {
+	    	color: map-get( $color, dark-gray );
+	    }
+  	}
+
+	&-company {
+		text-align: center;
+		font-size: 12ppx;
+		margin-bottom: 5px;
+
+		a.ciab-footer-name {
+			color: #669d34;
+			font-weight: bold;
+			font-size: 12px;
+		}
+	}
+
+	&-address {
+		text-align: center;
+		font-size: 12px;
+		color: #85807d;
+	}
+
+	&-unsubscribe{
+		font-size: 12px;
+		color: #85807d;
+
+		a {
+			color: #669d34;
+			text-decoration: underline;
+		}
+	}
+}
+table.ciab-footer{
+	background-color: map-get( $color, light-gray4 );
+}

@@ -1,0 +1,64 @@
+scriptMain: '%%[
+            VAR @userlist, @user
+            ]%%
+            %%[
+            SET @userlist = LOOKUPROWS("User", "SubscriberKey", SubscriberKey)
+            ]%%
+
+            %%[
+            
+            SET @user = ROW(@userlist, 1) ]%%'
+
+header:
+      title: '%%[IF (NOT EMPTY(FIELD(@user,"first_name")))THEN]%% Hola %%=Propercase(FIELD(@user,"first_name"))=%%, %%[ELSE]%%Hola,%%[ENDIF]%%'
+      subtitle: "Otra forma de financiar o pagar tus deudas es con una tarjeta de crédito. Además, por el simple hecho de pagar tus compras con el plástico, acumulas puntos que podrás cambiar por diversos artículos o experiencias, tienes acceso a promociones y beneficios exclusivos, preventas de espectáculos, eventos deportivos y culturales, juntas millas de viaje y muchos más beneficios. Conoce cuál es tu tarjeta de crédito ideal."
+      bankIcon: 
+      feature_title: 'VENTAJAS:'
+      
+      ProductTitle_1: Santander Free
+      Product_img_url_1: 'http://image.email.comparaguru.com/lib/fe9013727262077977/m/1/santanderFree.png'
+      Product_usp_1_1: Sin anualidad de por vida
+      Product_usp_2_1: '1 punto por cada dólar gastado'
+      Product_usp_3_1: 'Ingreso mínimo: $7,500'    
+      Feature_usp1_1: "Sin cuota anual de por vida" 
+      Feature_usp2_1: "Asistencia médica y legal en México y en el extranjero"
+      Feature_usp3_1: "Seguro contra mal uso del plástico"
+      button_content_1: "La quiero"
+      button_url_1: "https://www.comparaguru.com/tarjetas-de-credito"
+      
+      ProductTitle_2: Tarjeta de Crédito Clásica Citibanamex
+      Product_img_url_2: 'http://image.email.comparaguru.com/lib/fe9013727262077977/m/1/banamexClasica.png'
+      Product_usp_1_2: '$645 más IVA por anualidad'
+      Product_usp_2_2: 'Hasta 7% de bonificación en Punto Premia'
+      Product_usp_3_2: 'Ingresos requeridos: $7,000'     
+      Feature_usp1_2: "3, 6 y 12 MSI en gastos médicos y de belleza"
+      Feature_usp2_2: "Puedes elegir la fecha de corte del plástico que más te convenga"
+      Feature_usp3_2: "Acesso a preventas de espectáculos y eventos deportivos y culturales"
+      button_content_2: "Pídela ahora"
+      button_url_2: "https://www.comparaguru.com/tarjetas-de-credito"
+
+      ProductTitle_3: La Tarjeta De Credito Básica American Express
+      Product_img_url_3: 'http://image.email.comparaguru.com/lib/fe9013727262077977/m/1/americanExpressBasica.png'
+      Product_usp_1_3: Sin comisión anual 
+      Product_usp_2_3: 'Servicio de atención 24/7' 
+      Product_usp_3_3: "Ingreso mínimo: $10,000"
+      Feature_usp1_3: "Sin cuota de anualidad de por vida" 
+      Feature_usp2_3: "Ventajas: Difiere tus compras a 3 y hasta 12 MSI" 
+      Feature_usp3_3: "Domicilia el pago de tus servicios a tu tarjeta"
+      button_content_3: "Solicítala ya"
+      button_url_3: "https://www.comparaguru.com/tarjetas-de-credito"
+
+guide: 
+      intro: "¿Estás seguro que tienes la mejor tarjeta de crédito?"
+      text1: "Para aplicar con total tranquilidad, lee"
+      text2: "nuestra guía de tarjetas de crédito." 
+      link: "https://www.comparaguru.com/tarjetas-de-credito/guia"
+      link_title: "aquí"
+
+footer:
+      unsubscribeLink: "%%profile_center_url%%"
+      unsubscribeText: Cancelar suscripción
+
+# To obtain the values, assign this to the variable: 
+# %%=FIELD(@application, "<corresponding column name>")=%%
+# %%=SUBSTRING(FIELD(@application,"phone"),1,4)=%%****

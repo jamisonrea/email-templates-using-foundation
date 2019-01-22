@@ -1,0 +1,26 @@
+---
+#title and description show on the tab of the email (browser)
+subject: PT BB Confirmation Email
+description:
+
+staticFile: pt/bb/confirmation/static.yml
+scriptFile: pt/bb/confirmation/script.yml
+demoFile: 
+---
+{{setConfig}}
+{{#if config.scriptMain}}
+{{{config.scriptMain}}}
+{{/if}}
+<wrapper class="ciab-confirmation">
+    {{> common-header}}
+    {{> common-header-banner}}
+    <!-- BEGIN confirmation product -->
+	{{> bb-confirmation bbConfirmation=config.bbConfirmation}}
+	{{> common-abandon-checkout-other-results}}
+    {{> common-survey}}
+
+    <!-- END  confirmation product -->
+    {{> common-footer-banner}}
+    {{> common-showcase}}
+    {{> common-footer}}
+</wrapper>

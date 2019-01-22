@@ -1,0 +1,23 @@
+survey:
+  title: "title survey"
+  rating:
+    - title: "1"
+      link: /
+    - title: "2"
+      link: /
+    - title: "3"
+      link: /
+    - title: "4"
+      link: /
+    - title: "5"
+      link: /
+    - title: "6"
+      link: /
+    - title: "7"
+      link: /
+    - title: "8"
+      link: /
+    - title: "9"
+      link: /
+    - title: "10"
+      link: /

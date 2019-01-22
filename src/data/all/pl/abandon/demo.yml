@@ -1,0 +1,120 @@
+
+headerTitleBanner:
+  columnTitleList:
+    - description: Korko
+    - description: Todellinen vuosikorko
+    - description: Kuukausierä
+
+featuredProducts:
+  - provider:
+      name: Provider1
+      logo:
+    footerLabel:
+    displayCondition:
+    apply_url: /
+    columns:
+      provider: Provider
+      eligibility: Requirements
+      column1Footer: Save 10 euros
+      column2Footer: Save 10 euros
+      column3Footer: Save 10 euros
+      column1: Interest rate
+      column2: Total cost
+      column3: Monthly cost
+      column1Value: 41%
+      column2Value: S$ 205,000
+      column3Value: S$ 20,202
+      eligibilityIcon: '<img src="http://image.email.comparaguru.com/lib/fe9013727262077977/m/1/result-icon-true.gif" height="30" />'
+  - provider:
+      name: Provider2
+      logo:
+    displayCondition:
+    footerLabel:
+    apply_url: /
+    columns:
+          provider: Provider
+          eligibility: Requirements
+          column1Footer: Save 10 euros
+          column2Footer: Save 10 euros
+          column3Footer: Save 10 euros
+          column1: Interest rate
+          column2: Total cost
+          column3: Monthly cost
+          column1Value: 41%
+          column2Value: S$ 205,000
+          column3Value: S$ 20,202
+          eligibilityIcon: '<img src="http://image.email.comparaguru.com/lib/fe9013727262077977/m/1/result-icon-true.gif" height="30" />'
+  - provider:
+        name: Provider 3
+        logo:
+    footerLabel:
+    displayCondition:
+    apply_url: /
+    columns:
+          provider: Provider
+          eligibility: Requirements
+          column1Footer: Save 10 euros
+          column2Footer: Save 10 euros
+          column3Footer: Save 10 euros
+          column1: Interest rate
+          column2: Total cost
+          column3: Monthly cost
+          column1Value: 41%
+          column2Value: S$ 205,000
+          column3Value: S$ 20,202
+          eligibilityIcon: '<img src="http://image.email.comparaguru.com/lib/fe9013727262077977/m/1/result-icon-true.gif" height="30" />'
+generalProducts:
+  - provider:
+      name: Provider 1
+      logo:
+    displayCondition:
+    apply_url: /
+    columns:
+          provider: Provider
+          eligibility: Requirements
+          column1Footer: Save 10 euros
+          column2Footer: Save 10 euros
+          column3Footer: Save 10 euros
+          column1: Interest rate
+          column2: Total cost
+          column3: Monthly cost
+          column1Value: 41%
+          column2Value: S$ 205,000
+          column3Value: S$ 20,202
+          eligibilityIcon: '<img src="http://image.email.comparaguru.com/lib/fe9013727262077977/m/1/result-icon-true.gif" height="30" />'
+  - provider:
+      name: Provider 2
+      logo:
+    displayCondition:
+    apply_url: /
+    columns:
+          provider: Provider
+          eligibility: Requirements
+          column1: Interest rate
+          column2: Total cost
+          column3: Monthly cost
+          column1Footer: Save 10 euros
+          column2Footer: Save 10 euros
+          column3Footer: Save 10 euros
+          column1Value: 41%
+          column2Value: S$ 205,000
+          column3Value: S$ 20,202
+          eligibilityIcon: '<img src="http://image.email.comparaguru.com/lib/fe9013727262077977/m/1/result-icon-true.gif" height="30" />'
+  - provider:
+      name: Provider 3
+      logo:
+    displayCondition:
+    apply_url: /
+    columns:
+          provider: Provider
+          eligibility: Requirements
+          column1: Interest rate
+          column2: Total cost
+          column3: Monthly cost
+          column1Footer: Save 10 euros
+          column2Footer: Save 10 euros
+          column3Footer: Save 10 euros
+          column1Value: 41%
+          column2Value: S$ 205,000
+          column3Value: S$ 20,202
+          eligibilityIcon: '<img src="http://image.email.comparaguru.com/lib/fe9013727262077977/m/1/result-icon-true.gif" height="30" />'

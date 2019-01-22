@@ -1,0 +1,114 @@
+# retention main script, which defines the variables
+scriptMain: '%%[
+                 VAR @productslist, @products, @userlist, @user, @category
+
+                 SET @userlist = LOOKUPROWS("User", "SubscriberKey", SubscriberKey)
+                 SET @productslist = LOOKUPROWS("TI Top 3 Products", "event_id", EventId)
+
+                 IF ROWCOUNT(@productslist) != 1 AND ROWCOUNT(@userlist) != 1 THEN
+                     RaiseError("Error finding corresponding products list and/or user", 1)
+                 ENDIF
+
+                 SET @user = ROW(@userlist, 1)
+                 SET @products = ROW(@productslist, 1)
+
+                 IF EMPTY(FIELD(@products,"top_product_0_provider_name")) AND EMPTY(FIELD(@products,"featured_product_0_provider_name")) THEN
+                     RaiseError("No available products to show the customer", true)
+                 ENDIF
+
+                 SET @category = FIELD(@products,"category")
+             ]%%'
+
+##----- Dynamic Data ------##
+scriptIfSingleAnnual: '%%[IF @category=="single" OR @category=="annual" THEN]%%'
+scriptIfChina: '%%[IF @category=="china" THEN]%%'
+
+featuredProducts: # one featured product
+  - scriptIf: '%%[IF NOT EMPTY(FIELD(@products,"ft_product_0_provider_name")) THEN]%%'
+    provider:
+      name: '%%=FIELD(@products,"ft_product_0_provider_name")=%%'
+      logo: "%%=FIELD(@products,'ft_product_0_provider_logo')=%%"
+    apply_url: "%%=RedirectTo(FIELD(@products, 'ft_product_0_apply_url'))=%%"
+    originalPrice: '%%=FormatNumber(FIELD(@products,"ft_product_0_price_original"),"C2")=%%'
+    discountPrice: '%%=FormatNumber(FIELD(@products,"ft_product_0_price_discounted"),"C2")=%%'
+    medical: '%%=FormatNumber(FIELD(@products,"ft_product_0_cover_medical"),"C0")=%%'
+    cancellation: '%%=FormatNumber(FIELD(@products,"ft_product_0_cover_cancellation"),"C0")=%%'
+    baggage: '%%=FormatNumber(FIELD(@products,"ft_product_0_cover_baggage"),"C0")=%%'
+    personalAccident: '%%=FormatNumber(FIELD(@products,"ft_product_0_cover_personal_accident"),"C0")=%%'
+    hospitalGuarantee: '%%[IF FIELD(@products,"ft_product_0_cover_hospital_guarantee")==TRUE THEN]%% YES %%[ELSE]%% NO %%[ENDIF]%%'
+    scriptIfOriginalPrice: '%%[IF FIELD(@products,"ft_product_0_price_original") != FIELD(@products,"ft_product_0_price_discounted") THEN]%%'
+    discountText: 'Discounted Price for all %%=FIELD(@products,"ft_product_0_total_traveller")=%% travellers'
+
+  - scriptIf: '%%[IF NOT EMPTY(FIELD(@products,"ft_product_1_provider_name")) THEN]%%'
+    provider:
+      name: '%%=FIELD(@products,"ft_product_1_provider_name")=%%'
+      logo: "%%=FIELD(@products,'ft_product_1_provider_logo')=%%"
+    apply_url: "%%=RedirectTo(FIELD(@products, 'ft_product_1_apply_url'))=%%"
+    originalPrice: '%%=FormatNumber(FIELD(@products,"ft_product_1_price_original"),"C2")=%%'
+    discountPrice: '%%=FormatNumber(FIELD(@products,"ft_product_1_price_discounted"),"C2")=%%'
+    medical: '%%=FormatNumber(FIELD(@products,"ft_product_1_cover_medical"),"C0")=%%'
+    cancellation: '%%=FormatNumber(FIELD(@products,"ft_product_1_cover_cancellation"),"C0")=%%'
+    baggage: '%%=FormatNumber(FIELD(@products,"ft_product_1_cover_baggage"),"C0")=%%'
+    personalAccident: '%%=FormatNumber(FIELD(@products,"ft_product_1_cover_personal_accident"),"C0")=%%'
+    hospitalGuarantee: '%%[IF FIELD(@products,"ft_product_1_cover_hospital_guarantee")==TRUE THEN]%% YES %%[ELSE]%% NO %%[ENDIF]%%'
+    scriptIfOriginalPrice: '%%[IF FIELD(@products,"ft_product_1_price_original") != FIELD(@products,"ft_product_1_price_discounted") THEN]%%'
+    discountText: 'Discounted Price for all %%=FIELD(@products,"ft_product_1_total_traveller")=%% travellers'
+  - scriptIf: '%%[IF NOT EMPTY(FIELD(@products,"ft_product_2_provider_name")) THEN]%%'
+    provider:
+      name: '%%=FIELD(@products,"ft_product_2_provider_name")=%%'
+      logo: "%%=FIELD(@products,'ft_product_2_provider_logo')=%%"
+    apply_url: "%%=RedirectTo(FIELD(@products, 'ft_product_2_apply_url'))=%%"
+    originalPrice: '%%=FormatNumber(FIELD(@products,"ft_product_2_price_original"),"C2")=%%'
+    discountPrice: '%%=FormatNumber(FIELD(@products,"ft_product_2_price_discounted"),"C2")=%%'
+    medical: '%%=FormatNumber(FIELD(@products,"ft_product_2_cover_medical"),"C0")=%%'
+    cancellation: '%%=FormatNumber(FIELD(@products,"ft_product_2_cover_cancellation"),"C0")=%%'
+    baggage: '%%=FormatNumber(FIELD(@products,"ft_product_2_cover_baggage"),"C0")=%%'
+    personalAccident: '%%=FormatNumber(FIELD(@products,"ft_product_2_cover_personal_accident"),"C0")=%%'
+    hospitalGuarantee: '%%[IF FIELD(@products,"ft_product_2_cover_hospital_guarantee")==TRUE THEN]%% YES %%[ELSE]%% NO %%[ENDIF]%%'
+    scriptIfOriginalPrice: '%%[IF FIELD(@products,"ft_product_2_price_original") != FIELD(@products,"ft_product_2_price_discounted") THEN]%%'
+    discountText: 'Discounted Price for all %%=FIELD(@products,"ft_product_2_total_traveller")=%% travellers'
+
+generalProducts: # three general products
+  - scriptIf: '%%[IF NOT EMPTY(FIELD(@products,"top_product_0_provider_name")) THEN]%%'
+    provider:
+      name: '%%=FIELD(@products,"top_product_0_provider_name")=%%'
+      logo: "%%=FIELD(@products,'top_product_0_provider_logo')=%%"
+    apply_url: "%%=RedirectTo(FIELD(@products, 'top_product_0_apply_url'))=%%"
+    originalPrice: '%%=FormatNumber(FIELD(@products,"top_product_0_price_original"),"C2")=%%'
+    discountPrice: '%%=FormatNumber(FIELD(@products,"top_product_0_price_discounted"),"C2")=%%'
+    medical: '%%=FormatNumber(FIELD(@products,"top_product_0_cover_medical"),"C0")=%%'
+    cancellation: '%%=FormatNumber(FIELD(@products,"top_product_0_cover_cancellation"),"C0")=%%'
+    baggage: '%%=FormatNumber(FIELD(@products,"top_product_0_cover_baggage"),"C0")=%%'
+    personalAccident: '%%=FormatNumber(FIELD(@products,"top_product_0_cover_personal_accident"),"C0")=%%'
+    hospitalGuarantee: '%%[IF FIELD(@products,"top_product_0_cover_hospital_guarantee")==TRUE THEN]%% YES %%[ELSE]%% NO %%[ENDIF]%%'
+    scriptIfOriginalPrice: '%%[IF FIELD(@products,"top_product_0_price_original") != FIELD(@products,"top_product_0_price_discounted") THEN]%%'
+    discountText: 'Discounted Price for all %%=FIELD(@products,"top_product_0_total_traveller")=%% travellers'
+
+  - scriptIf: '%%[IF NOT EMPTY(FIELD(@products,"top_product_1_provider_name")) THEN]%%'
+    provider:
+      name: '%%=FIELD(@products,"top_product_1_provider_name")=%%'
+      logo: "%%=FIELD(@products,'top_product_1_provider_logo')=%%"
+    apply_url: "%%=RedirectTo(FIELD(@products, 'top_product_1_apply_url'))=%%"
+    originalPrice: '%%=FormatNumber(FIELD(@products,"top_product_1_price_original"),"C2")=%%'
+    discountPrice: '%%=FormatNumber(FIELD(@products,"top_product_1_price_discounted"),"C2")=%%'
+    medical: '%%=FormatNumber(FIELD(@products,"top_product_1_cover_medical"),"C0")=%%'
+    cancellation: '%%=FormatNumber(FIELD(@products,"top_product_1_cover_cancellation"),"C0")=%%'
+    baggage: '%%=FormatNumber(FIELD(@products,"top_product_1_cover_baggage"),"C0")=%%'
+    personalAccident: '%%=FormatNumber(FIELD(@products,"top_product_1_cover_personal_accident"),"C0")=%%'
+    hospitalGuarantee: '%%[IF FIELD(@products,"top_product_1_cover_hospital_guarantee")==TRUE THEN]%% YES %%[ELSE]%% NO %%[ENDIF]%%'
+    scriptIfOriginalPrice: '%%[IF FIELD(@products,"top_product_1_price_original") != FIELD(@products,"top_product_1_price_discounted") THEN]%%'
+    discountText: 'Discounted Price for all %%=FIELD(@products,"top_product_1_total_traveller")=%% travellers'
+  - scriptIf: '%%[IF NOT EMPTY(FIELD(@products,"top_product_2_provider_name")) THEN]%%'
+    provider:
+      name: '%%=FIELD(@products,"top_product_2_provider_name")=%%'
+      logo: "%%=FIELD(@products,'top_product_2_provider_logo')=%%"
+    apply_url: "%%=RedirectTo(FIELD(@products, 'top_product_2_apply_url'))=%%"
+    originalPrice: '%%=FormatNumber(FIELD(@products,"top_product_2_price_original"),"C2")=%%'
+    discountPrice: '%%=FormatNumber(FIELD(@products,"top_product_2_price_discounted"),"C2")=%%'
+    medical: '%%=FormatNumber(FIELD(@products,"top_product_2_cover_medical"),"C0")=%%'
+    cancellation: '%%=FormatNumber(FIELD(@products,"top_product_2_cover_cancellation"),"C0")=%%'
+    baggage: '%%=FormatNumber(FIELD(@products,"top_product_2_cover_baggage"),"C0")=%%'
+    personalAccident: '%%=FormatNumber(FIELD(@products,"top_product_2_cover_personal_accident"),"C0")=%%'
+    hospitalGuarantee: '%%[IF FIELD(@products,"top_product_2_cover_hospital_guarantee")==TRUE THEN]%% YES %%[ELSE]%% NO %%[ENDIF]%%'
+    scriptIfOriginalPrice: '%%[IF FIELD(@products,"top_product_2_price_original") != FIELD(@products,"top_product_2_price_discounted") THEN]%%'
+    discountText: 'Discounted Price for all %%=FIELD(@products,"top_product_2_total_traveller")=%% travellers'
