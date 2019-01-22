@@ -1,7 +1,5 @@
 # retention main script, which defines the variables
 # subscriberKey, eventid for testing
-# "dk_ec19b9e7-2ac7-5ac1-aaeb-ef34fc39e869"
-# "event_5a7a2eae-592d-53b9-b09e-c846e646f87c"
 scriptMain: '%%[
                  VAR @productslist, @products, @userlist, @user, @resultspageurl, @apply_url
              ]%%

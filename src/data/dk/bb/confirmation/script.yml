@@ -1,5 +1,4 @@
-# "pt_ec19b9e7-2ac7-5ac1-aaeb-ef34fc39e869"
-# "5d7febe9-4291-597c-b05a-5c445990e5a0"
+
 scriptMain: '%%[
                 VAR @orderlist, @order, @userlist, @user
             ]%%

@@ -1,5 +1,3 @@
-# "dk_ec19b9e7-2ac7-5ac1-aaeb-ef34fc39e869"
-# "event_8ff46fca-bc94-506e-b630-0538e4285ab9"
 scriptMain: '%%[
                  VAR @productslist, @products, @userlist, @user, @resultspageurl, @apply_url
              ]%%

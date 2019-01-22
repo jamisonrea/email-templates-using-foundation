@@ -1,7 +1,5 @@
 # retention main script, which defines the variables
 # subscriberKey, eventid for testing
-# eventid ac9cf1b7-b145-5f4d-906f-9f9f1cd59f60
-# subscriberKey hk_9d1f3dcd-e40b-5509-98b7-fb91afe00baa
 
 scriptMain: '%%[
                  VAR @orderlist, @order, @userlist, @user
